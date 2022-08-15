@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
+		CF08D2D828AA62EC002F30CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* ContentView.swift */; };
+		CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
+		CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */; };
+		CF08D2E728AA62ED002F30CE /* RelaxAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2E628AA62ED002F30CE /* RelaxAppTests.swift */; };
+		CF08D2F128AA62ED002F30CE /* RelaxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2F028AA62ED002F30CE /* RelaxAppUITests.swift */; };
+		CF08D2F328AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CF08D2E328AA62ED002F30CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF08D2CA28AA62EC002F30CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF08D2D128AA62EC002F30CE;
+			remoteInfo = RelaxApp;
+		};
+		CF08D2ED28AA62ED002F30CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF08D2CA28AA62EC002F30CE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CF08D2D128AA62EC002F30CE;
+			remoteInfo = RelaxApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CF08D2D228AA62EC002F30CE /* RelaxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppApp.swift; sourceTree = "<group>"; };
+		CF08D2D728AA62EC002F30CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF08D2D928AA62EC002F30CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CF08D2E228AA62ED002F30CE /* RelaxAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF08D2E628AA62ED002F30CE /* RelaxAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppTests.swift; sourceTree = "<group>"; };
+		CF08D2EC28AA62ED002F30CE /* RelaxAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF08D2F028AA62ED002F30CE /* RelaxAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITests.swift; sourceTree = "<group>"; };
+		CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF08D2CF28AA62EC002F30CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2DF28AA62ED002F30CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2E928AA62ED002F30CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CF08D2C928AA62EC002F30CE = {
+			isa = PBXGroup;
+			children = (
+				CF08D2D428AA62EC002F30CE /* RelaxApp */,
+				CF08D2E528AA62ED002F30CE /* RelaxAppTests */,
+				CF08D2EF28AA62ED002F30CE /* RelaxAppUITests */,
+				CF08D2D328AA62EC002F30CE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CF08D2D328AA62EC002F30CE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D2D228AA62EC002F30CE /* RelaxApp.app */,
+				CF08D2E228AA62ED002F30CE /* RelaxAppTests.xctest */,
+				CF08D2EC28AA62ED002F30CE /* RelaxAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF08D2D428AA62EC002F30CE /* RelaxApp */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */,
+				CF08D2D728AA62EC002F30CE /* ContentView.swift */,
+				CF08D2D928AA62EC002F30CE /* Assets.xcassets */,
+				CF08D2DB28AA62EC002F30CE /* Preview Content */,
+			);
+			path = RelaxApp;
+			sourceTree = "<group>";
+		};
+		CF08D2DB28AA62EC002F30CE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CF08D2E528AA62ED002F30CE /* RelaxAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D2E628AA62ED002F30CE /* RelaxAppTests.swift */,
+			);
+			path = RelaxAppTests;
+			sourceTree = "<group>";
+		};
+		CF08D2EF28AA62ED002F30CE /* RelaxAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D2F028AA62ED002F30CE /* RelaxAppUITests.swift */,
+				CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */,
+			);
+			path = RelaxAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF08D2D128AA62EC002F30CE /* RelaxApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF08D2F628AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxApp" */;
+			buildPhases = (
+				CF08D2CE28AA62EC002F30CE /* Sources */,
+				CF08D2CF28AA62EC002F30CE /* Frameworks */,
+				CF08D2D028AA62EC002F30CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RelaxApp;
+			productName = RelaxApp;
+			productReference = CF08D2D228AA62EC002F30CE /* RelaxApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CF08D2E128AA62ED002F30CE /* RelaxAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF08D2F928AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxAppTests" */;
+			buildPhases = (
+				CF08D2DE28AA62ED002F30CE /* Sources */,
+				CF08D2DF28AA62ED002F30CE /* Frameworks */,
+				CF08D2E028AA62ED002F30CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF08D2E428AA62ED002F30CE /* PBXTargetDependency */,
+			);
+			name = RelaxAppTests;
+			productName = RelaxAppTests;
+			productReference = CF08D2E228AA62ED002F30CE /* RelaxAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CF08D2EB28AA62ED002F30CE /* RelaxAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF08D2FC28AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxAppUITests" */;
+			buildPhases = (
+				CF08D2E828AA62ED002F30CE /* Sources */,
+				CF08D2E928AA62ED002F30CE /* Frameworks */,
+				CF08D2EA28AA62ED002F30CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CF08D2EE28AA62ED002F30CE /* PBXTargetDependency */,
+			);
+			name = RelaxAppUITests;
+			productName = RelaxAppUITests;
+			productReference = CF08D2EC28AA62ED002F30CE /* RelaxAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF08D2CA28AA62EC002F30CE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					CF08D2D128AA62EC002F30CE = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					CF08D2E128AA62ED002F30CE = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = CF08D2D128AA62EC002F30CE;
+					};
+					CF08D2EB28AA62ED002F30CE = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = CF08D2D128AA62EC002F30CE;
+					};
+				};
+			};
+			buildConfigurationList = CF08D2CD28AA62EC002F30CE /* Build configuration list for PBXProject "RelaxApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF08D2C928AA62EC002F30CE;
+			productRefGroup = CF08D2D328AA62EC002F30CE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF08D2D128AA62EC002F30CE /* RelaxApp */,
+				CF08D2E128AA62ED002F30CE /* RelaxAppTests */,
+				CF08D2EB28AA62ED002F30CE /* RelaxAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF08D2D028AA62EC002F30CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
+				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2E028AA62ED002F30CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2EA28AA62ED002F30CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF08D2CE28AA62EC002F30CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF08D2D828AA62EC002F30CE /* ContentView.swift in Sources */,
+				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2DE28AA62ED002F30CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF08D2E728AA62ED002F30CE /* RelaxAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF08D2E828AA62ED002F30CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF08D2F328AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift in Sources */,
+				CF08D2F128AA62ED002F30CE /* RelaxAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CF08D2E428AA62ED002F30CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF08D2D128AA62EC002F30CE /* RelaxApp */;
+			targetProxy = CF08D2E328AA62ED002F30CE /* PBXContainerItemProxy */;
+		};
+		CF08D2EE28AA62ED002F30CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CF08D2D128AA62EC002F30CE /* RelaxApp */;
+			targetProxy = CF08D2ED28AA62ED002F30CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CF08D2F428AA62ED002F30CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CF08D2F528AA62ED002F30CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF08D2F728AA62ED002F30CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RelaxApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CF08D2F828AA62ED002F30CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"RelaxApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CF08D2FA28AA62ED002F30CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RelaxApp.app/RelaxApp";
+			};
+			name = Debug;
+		};
+		CF08D2FB28AA62ED002F30CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RelaxApp.app/RelaxApp";
+			};
+			name = Release;
+		};
+		CF08D2FD28AA62ED002F30CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RelaxApp;
+			};
+			name = Debug;
+		};
+		CF08D2FE28AA62ED002F30CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3KGQYCYXPG;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = lydess.RelaxAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RelaxApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF08D2CD28AA62EC002F30CE /* Build configuration list for PBXProject "RelaxApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF08D2F428AA62ED002F30CE /* Debug */,
+				CF08D2F528AA62ED002F30CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF08D2F628AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF08D2F728AA62ED002F30CE /* Debug */,
+				CF08D2F828AA62ED002F30CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF08D2F928AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF08D2FA28AA62ED002F30CE /* Debug */,
+				CF08D2FB28AA62ED002F30CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF08D2FC28AA62ED002F30CE /* Build configuration list for PBXNativeTarget "RelaxAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF08D2FD28AA62ED002F30CE /* Debug */,
+				CF08D2FE28AA62ED002F30CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF08D2CA28AA62EC002F30CE /* Project object */;
+}
