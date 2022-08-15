@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
-		CF08D2D828AA62EC002F30CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* ContentView.swift */; };
+		CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
 		CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
 		CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */; };
 		CF08D2E728AA62ED002F30CE /* RelaxAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2E628AA62ED002F30CE /* RelaxAppTests.swift */; };
 		CF08D2F128AA62ED002F30CE /* RelaxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2F028AA62ED002F30CE /* RelaxAppUITests.swift */; };
 		CF08D2F328AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */; };
+		CF08D30028AA6334002F30CE /* Project.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2FF28AA6334002F30CE /* Project.rtf */; };
+		CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
+		CF08D30728AA82E6002F30CE /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30628AA82E6002F30CE /* StateManager.swift */; };
+		CF08D34228AA87C0002F30CE /* Custom models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34128AA87C0002F30CE /* Custom models.swift */; };
+		CF08D34428AA887C002F30CE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		CF08D2D228AA62EC002F30CE /* RelaxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppApp.swift; sourceTree = "<group>"; };
-		CF08D2D728AA62EC002F30CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CF08D2D728AA62EC002F30CE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CF08D2D928AA62EC002F30CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF08D2E228AA62ED002F30CE /* RelaxAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,11 @@
 		CF08D2EC28AA62ED002F30CE /* RelaxAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF08D2F028AA62ED002F30CE /* RelaxAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITests.swift; sourceTree = "<group>"; };
 		CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF08D2FF28AA6334002F30CE /* Project.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Project.rtf; sourceTree = "<group>"; };
+		CF08D30328AA63C2002F30CE /* NoiseBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseBlock.swift; sourceTree = "<group>"; };
+		CF08D30628AA82E6002F30CE /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateManager.swift; path = ../../../../../StateManager.swift; sourceTree = "<group>"; };
+		CF08D34128AA87C0002F30CE /* Custom models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Custom models.swift"; path = "../../../../../Custom models.swift"; sourceTree = "<group>"; };
+		CF08D34328AA887C002F30CE /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 		CF08D2C928AA62EC002F30CE = {
 			isa = PBXGroup;
 			children = (
+				CF08D2FF28AA6334002F30CE /* Project.rtf */,
 				CF08D2D428AA62EC002F30CE /* RelaxApp */,
 				CF08D2E528AA62ED002F30CE /* RelaxAppTests */,
 				CF08D2EF28AA62ED002F30CE /* RelaxAppUITests */,
@@ -94,8 +105,11 @@
 		CF08D2D428AA62EC002F30CE /* RelaxApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF08D30828AA835F002F30CE /* Debug */,
+				CF08D30528AA82DB002F30CE /* Model */,
+				CF08D30128AA63AB002F30CE /* VIews */,
 				CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */,
-				CF08D2D728AA62EC002F30CE /* ContentView.swift */,
+				CF08D2D728AA62EC002F30CE /* RootView.swift */,
 				CF08D2D928AA62EC002F30CE /* Assets.xcassets */,
 				CF08D2DB28AA62EC002F30CE /* Preview Content */,
 			);
@@ -125,6 +139,39 @@
 				CF08D2F228AA62ED002F30CE /* RelaxAppUITestsLaunchTests.swift */,
 			);
 			path = RelaxAppUITests;
+			sourceTree = "<group>";
+		};
+		CF08D30128AA63AB002F30CE /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D30228AA63B4002F30CE /* Subviews */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		CF08D30228AA63B4002F30CE /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D30328AA63C2002F30CE /* NoiseBlock.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		CF08D30528AA82DB002F30CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D30628AA82E6002F30CE /* StateManager.swift */,
+				CF08D34128AA87C0002F30CE /* Custom models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF08D30828AA835F002F30CE /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D34328AA887C002F30CE /* Debug.swift */,
+			);
+			path = Debug;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
 				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,
 			);
@@ -257,8 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF08D2D828AA62EC002F30CE /* ContentView.swift in Sources */,
+				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
+				CF08D34428AA887C002F30CE /* Debug.swift in Sources */,
+				CF08D34228AA87C0002F30CE /* Custom models.swift in Sources */,
+				CF08D30728AA82E6002F30CE /* StateManager.swift in Sources */,
 				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,
+				CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

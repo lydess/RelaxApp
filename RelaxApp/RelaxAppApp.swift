@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RelaxAppApp: App {
+    @StateObject var statem = StateManager()
+    var debug = Debug()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //TODO: REMOVE DEBUG LIST MENTIONED BELOW
+            RootView()
         }
     }
 }
