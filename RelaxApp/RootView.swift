@@ -18,7 +18,7 @@ struct RootView: View {
         case 0:
             HomeView()
         case 1:
-            DetailPage(block: statem.currentnoiseblock)
+            DetailPage(block: statem.currentitem)
         default:
             EmptyView()
         }
