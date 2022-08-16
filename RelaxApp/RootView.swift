@@ -7,9 +7,10 @@
 
 import SwiftUI
 
+let globalstate = StateManager()
 
 struct RootView: View {
-    @StateObject var statem = StateManager()
+    @StateObject var statem = globalstate
     var debug = Debug()
     
     var body: some View {
