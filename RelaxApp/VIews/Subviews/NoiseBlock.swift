@@ -34,6 +34,7 @@ struct NoiseBlock: View {
         }.background(backcolor)
             .cornerRadius(25)
             .padding()
+        
             
     }
 }

@@ -19,6 +19,8 @@
 		CF08D30728AA82E6002F30CE /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30628AA82E6002F30CE /* StateManager.swift */; };
 		CF08D34228AA87C0002F30CE /* Custom models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34128AA87C0002F30CE /* Custom models.swift */; };
 		CF08D34428AA887C002F30CE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
+		CF08D34628AB0FC3002F30CE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34528AB0FC3002F30CE /* HomeView.swift */; };
+		CF08D34828AB1364002F30CE /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34728AB1364002F30CE /* DetailPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		CF08D30628AA82E6002F30CE /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateManager.swift; path = ../../../../../StateManager.swift; sourceTree = "<group>"; };
 		CF08D34128AA87C0002F30CE /* Custom models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Custom models.swift"; path = "../../../../../Custom models.swift"; sourceTree = "<group>"; };
 		CF08D34328AA887C002F30CE /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		CF08D34528AB0FC3002F30CE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = ../../../../../HomeView.swift; sourceTree = "<group>"; };
+		CF08D34728AB1364002F30CE /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailPage.swift; path = ../../../../../DetailPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				CF08D30228AA63B4002F30CE /* Subviews */,
+				CF08D34528AB0FC3002F30CE /* HomeView.swift */,
+				CF08D34728AB1364002F30CE /* DetailPage.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -306,7 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
+				CF08D34628AB0FC3002F30CE /* HomeView.swift in Sources */,
 				CF08D34428AA887C002F30CE /* Debug.swift in Sources */,
+				CF08D34828AB1364002F30CE /* DetailPage.swift in Sources */,
 				CF08D34228AA87C0002F30CE /* Custom models.swift in Sources */,
 				CF08D30728AA82E6002F30CE /* StateManager.swift in Sources */,
 				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,

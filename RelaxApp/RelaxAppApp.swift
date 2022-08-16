@@ -13,7 +13,6 @@ struct RelaxAppApp: App {
     var debug = Debug()
     var body: some Scene {
         WindowGroup {
-            //TODO: REMOVE DEBUG LIST MENTIONED BELOW
             RootView()
         }
     }
