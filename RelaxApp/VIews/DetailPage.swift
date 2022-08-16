@@ -6,18 +6,26 @@
 //
 
 import SwiftUI
-
+import AVKit
 struct DetailPage: View {
-    var audiohadler = AudioHandler()
+    var audiohandle = AudioHandler()
+    var player: AVAudioPlayer?
+    @State var doshow = false
+    
     var block:MenuBlocks
     var body: some View {
         HStack{
             Button(action: {print("tap")},
                    label: {Image(systemName: "gearshape.fill")})
-            Button(action: {audiohadler.debugplayer()},
+            Button(action: {doshow.toggle()},
                    label: {Image(systemName: "playpause.fill")})
             Button(action: {print("tap")},
                    label: {Image(systemName: "stop.fill")})
+            
+            if doshow {ProgressView().task {
+                
+                audiohandle.Play().play()
+            }}
         }
     }
 }

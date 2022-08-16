@@ -6,18 +6,38 @@
 //
 
 import Foundation
-import AVFAudio
+
+import UIKit
+import AVKit
+
 
 class AudioHandler {
-    var filepath = URL(fileURLWithPath: "/Users/williamvise/Documents/xcode/RelaxApp/RelaxApp/Debug/mp3file.mp3")
-    func debugplayer() {
+    var player: AVAudioPlayer!
+   
+
+    
+    
+    func Play() -> AVAudioPlayer {
+        
+        guard let fileurl = Bundle.main.url(
+          forResource: "mp3file",
+          withExtension: "mp3") ?? URL(string: "") else { return player }
         do{
-            var player = try AVAudioPlayer(contentsOf: filepath)
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+             player = try AVAudioPlayer(contentsOf: fileurl)
+                return player
             
-            player.play()
+            print("play")
         }catch{
-            print("Error occoured " + error.localizedDescription)
+            print(error)
+            print("balls")
         }
+        
+        return player
+        
+        
+        
         
     }
     

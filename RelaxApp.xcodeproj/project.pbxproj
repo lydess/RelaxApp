@@ -23,6 +23,8 @@
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
 		CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
+		CFFBD76B28ABB2070067B67E /* Tada-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */; };
+		CFFBD76F28ABB7420067B67E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF612EA028AB6C3600AA8B9C /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioHandler.swift; path = RelaxApp/Audio/AudioHandler.swift; sourceTree = SOURCE_ROOT; };
+		CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tada-sound.mp3"; sourceTree = "<group>"; };
+		CFFBD76C28ABB7420067B67E /* RelaxApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RelaxApp.entitlements; sourceTree = "<group>"; };
+		CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFBD76F28ABB7420067B67E /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,7 @@
 				CF08D2E528AA62ED002F30CE /* RelaxAppTests */,
 				CF08D2EF28AA62ED002F30CE /* RelaxAppUITests */,
 				CF08D2D328AA62EC002F30CE /* Products */,
+				CFFBD76D28ABB7420067B67E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +120,7 @@
 		CF08D2D428AA62EC002F30CE /* RelaxApp */ = {
 			isa = PBXGroup;
 			children = (
+				CFFBD76C28ABB7420067B67E /* RelaxApp.entitlements */,
 				CF612EA428AB716B00AA8B9C /* Audio */,
 				CF612E9628AB68C000AA8B9C /* Model */,
 				CF08D30828AA835F002F30CE /* Debug */,
@@ -171,6 +179,7 @@
 		CF08D30828AA835F002F30CE /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */,
 				CF08D34C28AB2B9D002F30CE /* mp3file.mp3 */,
 				CF08D34328AA887C002F30CE /* Debug.swift */,
 			);
@@ -192,6 +201,14 @@
 				CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		CFFBD76D28ABB7420067B67E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,
+				CFFBD76B28ABB2070067B67E /* Tada-sound.mp3 in Resources */,
 				CF08D34D28AB2B9D002F30CE /* mp3file.mp3 in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
 				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,
@@ -490,6 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RelaxApp/RelaxApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RelaxApp/Preview Content\"";
@@ -519,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = RelaxApp/RelaxApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RelaxApp/Preview Content\"";
