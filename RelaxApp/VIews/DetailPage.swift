@@ -22,56 +22,60 @@ struct DetailPage: View {
             VStack{
                 Text(block.noisetitle).font(.headline)
                     .padding()
+                HStack{Button("<"){statem.currentscreen = 0}}
                 Text(block.descripton).font(.body)
                     .padding()
                 block.image
                 Spacer()
             }
-        
-        HStack{
-            Button(action: {print("tap")},
-                   label: {Image(systemName: "gearshape.fill")})
+            
             VStack {
-                if statem.sharedplayer.isPlaying == false {
-                    if Audioisconfigured {
-                        Button(action: {
-                            statem.sharedplayer.play()
-                       
-                    },
-                               label: {Image(systemName: "play.fill")})
-                    } else {
-                    
-                    Button(action: {
-                    doshow.toggle()
-                  
-                },
-                           label: {Image(systemName: "play.fill")})
-                }
-                }
-                else {
-                        Button(action: {
-                        statem.sharedplayer.pause()
+                Spacer()
+                HStack{
+                Button(action: {print("tap")},
+                       label: {Image(systemName: "gearshape.fill").resizable().frame(width: 44, height: 44, alignment: .center).padding()})
+                VStack {
+                    if statem.sharedplayer.isPlaying == false {
+                        if Audioisconfigured {
+                            Button(action: {
+                                statem.sharedplayer.play()
+                           
+                        },
+                                   label: {Image(systemName: "play.fill").resizable().frame(width: 44, height: 44, alignment: .center).padding(40.0)})
+                        } else {
                         
+                        Button(action: {
+                        doshow.toggle()
+                      
                     },
-                               label: {Image(systemName: "pause.fill")})
-                    
-                    
+                               label: {Image(systemName: "play.fill").resizable().frame(width: 44, height: 44, alignment: .center).padding(40.0)})
+                    }
+                    }
+                    else {
+                            Button(action: {
+                            statem.sharedplayer.pause()
+                            
+                        },
+                                   label: {Image(systemName: "pause.fill").resizable().frame(width: 44, height: 44, alignment: .center).padding(40.0)})
+                        
+                        
+                    }
                 }
-            }
-            Button(action: {print("tap")},
-                   label: {Image(systemName: "stop.fill")})
-            
-            if doshow {ProgressView().task {
-                statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
-                if Audioisconfigured == false { statem.sharedplayer.play()
-                    Audioisconfigured.toggle()
-                }
+                Button(action: {print("tap")},
+                       label: {Image(systemName: "stop.fill").resizable().frame(width: 44, height: 44, alignment: .center)})
                 
-                doshow.toggle()
-            }}
-            
-            
-        }
+                if doshow {ProgressView().task {
+                    statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                    if Audioisconfigured == false { statem.sharedplayer.play()
+                        Audioisconfigured.toggle()
+                    }
+                    
+                    doshow.toggle()
+                }}
+                
+                
+                }
+            }.padding(.bottom,50)
             if Audioisconfigured {
                 ProgressView(value: statem.musicstatus)
                     .progressViewStyle(.linear)
@@ -81,6 +85,7 @@ struct DetailPage: View {
                     }
                     .frame(width: 250, height: 100, alignment: .center)
                     .offset(x: 0, y: 100)
+                    
                 Button("debug"){
                     statem.sharedplayer.currentTime = 2.0
                     

@@ -23,6 +23,7 @@
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
 		CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
+		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CFFBD76B28ABB2070067B67E /* Tada-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */; };
 		CFFBD76F28ABB7420067B67E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */; };
 		CFFBD77328AC4C8F0067B67E /* Payday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFBD77228AC4C8F0067B67E /* Payday.mp3 */; };
@@ -65,6 +66,8 @@
 		CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF612EA028AB6C3600AA8B9C /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioHandler.swift; path = RelaxApp/Audio/AudioHandler.swift; sourceTree = SOURCE_ROOT; };
+		CF74D6E028ACCAB7003104FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackBar.swift; sourceTree = "<group>"; };
 		CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tada-sound.mp3"; sourceTree = "<group>"; };
 		CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		CFFBD77228AC4C8F0067B67E /* Payday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Payday.mp3; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		CF08D2D428AA62EC002F30CE /* RelaxApp */ = {
 			isa = PBXGroup;
 			children = (
+				CF74D6E028ACCAB7003104FF /* Info.plist */,
 				CF612EA428AB716B00AA8B9C /* Audio */,
 				CF612E9628AB68C000AA8B9C /* Model */,
 				CF08D30828AA835F002F30CE /* Debug */,
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				CF08D30328AA63C2002F30CE /* NoiseBlock.swift */,
+				CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */,
 				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
 				CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */,
 				CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */,
@@ -525,6 +531,7 @@
 				DEVELOPMENT_TEAM = 3KGQYCYXPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RelaxApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -555,6 +562,7 @@
 				DEVELOPMENT_TEAM = 3KGQYCYXPG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RelaxApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
