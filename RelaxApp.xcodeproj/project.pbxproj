@@ -99,6 +99,7 @@
 		CF08D2C928AA62EC002F30CE = {
 			isa = PBXGroup;
 			children = (
+				CF74D6DF28ACB3B5003104FF /* Built-in audio */,
 				CF08D2FF28AA6334002F30CE /* Project.rtf */,
 				CF08D2D428AA62EC002F30CE /* RelaxApp */,
 				CF08D2E528AA62ED002F30CE /* RelaxAppTests */,
@@ -179,9 +180,6 @@
 		CF08D30828AA835F002F30CE /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */,
-				CFFBD77228AC4C8F0067B67E /* Payday.mp3 */,
-				CF08D34C28AB2B9D002F30CE /* mp3file.mp3 */,
 				CF08D34328AA887C002F30CE /* Debug.swift */,
 			);
 			path = Debug;
@@ -202,6 +200,16 @@
 				CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		CF74D6DF28ACB3B5003104FF /* Built-in audio */ = {
+			isa = PBXGroup;
+			children = (
+				CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */,
+				CFFBD77228AC4C8F0067B67E /* Payday.mp3 */,
+				CF08D34C28AB2B9D002F30CE /* mp3file.mp3 */,
+			);
+			path = "Built-in audio";
 			sourceTree = "<group>";
 		};
 		CFFBD76D28ABB7420067B67E /* Frameworks */ = {

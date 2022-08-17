@@ -17,27 +17,40 @@ class AudioHandler {
 
     
     
-    func Play() -> AVAudioPlayer {
+    func SetAudio(fileSelected:sounds) -> AVAudioPlayer {
+        
         
         guard let fileurl = Bundle.main.url(
-          forResource: "Payday",
+          forResource: setfile(selectedFile: fileSelected),
           withExtension: "mp3") ?? URL(string: "") else { return player }
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
              player = try AVAudioPlayer(contentsOf: fileurl)
                 return player
-            
-            print("play")
         }catch{
             print(error)
-            print("balls")
+            
         }
         
         return player
         
         
         
+        
+    }
+    
+    func setfile(selectedFile: sounds) -> String {
+        switch selectedFile {
+        case .payday:
+            return "Payday"
+        case .tada:
+            return "Tada-sound"
+        case .generic:
+            return "mp3file"
+        }
+        
+        return "Failure"
         
     }
     

@@ -15,7 +15,14 @@ struct MenuBlocks {
     var duration:Int
     var image:Image?
     var id: UUID
+    var sound: sounds
     
    
+}
+
+enum sounds : String {
+    case payday
+    case tada
+    case generic
 }
 
