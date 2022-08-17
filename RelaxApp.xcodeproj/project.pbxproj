@@ -25,6 +25,7 @@
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
 		CFFBD76B28ABB2070067B67E /* Tada-sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */; };
 		CFFBD76F28ABB7420067B67E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */; };
+		CFFBD77328AC4C8F0067B67E /* Payday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFFBD77228AC4C8F0067B67E /* Payday.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,8 +66,8 @@
 		CF612EA028AB6C3600AA8B9C /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioHandler.swift; path = RelaxApp/Audio/AudioHandler.swift; sourceTree = SOURCE_ROOT; };
 		CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tada-sound.mp3"; sourceTree = "<group>"; };
-		CFFBD76C28ABB7420067B67E /* RelaxApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RelaxApp.entitlements; sourceTree = "<group>"; };
 		CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		CFFBD77228AC4C8F0067B67E /* Payday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Payday.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +121,6 @@
 		CF08D2D428AA62EC002F30CE /* RelaxApp */ = {
 			isa = PBXGroup;
 			children = (
-				CFFBD76C28ABB7420067B67E /* RelaxApp.entitlements */,
 				CF612EA428AB716B00AA8B9C /* Audio */,
 				CF612E9628AB68C000AA8B9C /* Model */,
 				CF08D30828AA835F002F30CE /* Debug */,
@@ -180,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CFFBD76A28ABB2070067B67E /* Tada-sound.mp3 */,
+				CFFBD77228AC4C8F0067B67E /* Payday.mp3 */,
 				CF08D34C28AB2B9D002F30CE /* mp3file.mp3 */,
 				CF08D34328AA887C002F30CE /* Debug.swift */,
 			);
@@ -317,6 +318,7 @@
 			files = (
 				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,
 				CFFBD76B28ABB2070067B67E /* Tada-sound.mp3 in Resources */,
+				CFFBD77328AC4C8F0067B67E /* Payday.mp3 in Resources */,
 				CF08D34D28AB2B9D002F30CE /* mp3file.mp3 in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
 				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,

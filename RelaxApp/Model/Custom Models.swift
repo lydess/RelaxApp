@@ -13,6 +13,7 @@ struct MenuBlocks {
     var noisetitle:String
     var descripton:String
     var duration:Int
+    var image:Image?
     var id: UUID
     
    

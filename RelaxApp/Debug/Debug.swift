@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Debug{
 func setuplist() -> [MenuBlocks] {
@@ -14,11 +15,13 @@ func setuplist() -> [MenuBlocks] {
                                     noisetitle: "Brown Noise",
                                     descripton: "Great for people with ADD or on the spectrum",
                                     duration: 60,
+                                    image: Image(uiImage: UIImage(named: "asset")!),
                                     id: UUID()))
         corelist.append(MenuBlocks(backcolor: .cyan,
                                     noisetitle: "White Noise",
                                     descripton: "More racey version for white people",
-                                    duration: 40,
+                                   duration: 40,
+                                    image: Image(uiImage: UIImage(named: "asset")!),
                                     id: UUID()))
         return corelist
     }

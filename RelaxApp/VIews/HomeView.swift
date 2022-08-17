@@ -15,8 +15,18 @@ struct HomeView: View {
             Text("Sounds").onAppear(perform: {State.currentlist = debug.setuplist()})
             ScrollView{
                 ForEach(State.currentlist, id: \.id){ block in
-                    Button(action: {State.currentscreen = 1}, label: {
-                        NoiseBlock(backcolor: block.backcolor, noisetitle: block.noisetitle, descripton: block.descripton, duration: block.duration)
+                    Button(action: {
+                        State.currentscreen = 1
+                        State.currentitem = MenuBlocks(backcolor: block.backcolor, noisetitle: block.noisetitle, descripton: block.descripton, duration: 6,image: block.image, id: UUID())
+                        
+                    }, label: {
+                        NoiseBlock(backcolor: block.backcolor,
+                                   noisetitle: block.noisetitle,
+                                   descripton: block.descripton,
+                                   duration: block.duration,
+                                   image: block.image!
+                                   
+                        )
                         
                     })
                     
