@@ -23,6 +23,9 @@
 		CF391CE828AF513800026B70 /* Mayor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE728AF511500026B70 /* Mayor.ttf */; };
 		CF391CE928AF557400026B70 /* White.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDD28AF3F0C00026B70 /* White.mp3 */; };
 		CF391CEA28AF557600026B70 /* Brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDB28AF3BE800026B70 /* Brown.mp3 */; };
+		CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CEB28AF618700026B70 /* Rain.mp3 */; };
+		CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CED28AF626D00026B70 /* Todo.rtf */; };
+		CF391CF028AF62C700026B70 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391CEF28AF62C700026B70 /* DebugView.swift */; };
 		CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
@@ -69,6 +72,9 @@
 		CF391CE328AF4FF000026B70 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
 		CF391CE428AF4FF000026B70 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		CF391CE728AF511500026B70 /* Mayor.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mayor.ttf; sourceTree = "<group>"; };
+		CF391CEB28AF618700026B70 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rain.mp3; sourceTree = "<group>"; };
+		CF391CED28AF626D00026B70 /* Todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Todo.rtf; path = ../../Todo.rtf; sourceTree = "<group>"; };
+		CF391CEF28AF62C700026B70 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugView.swift; path = ../../../../DebugView.swift; sourceTree = "<group>"; };
 		CF612E9A28AB692200AA8B9C /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		CF612E9C28AB695300AA8B9C /* Custom Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Models.swift"; sourceTree = "<group>"; };
 		CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 		CF08D2C928AA62EC002F30CE = {
 			isa = PBXGroup;
 			children = (
+				CF391CED28AF626D00026B70 /* Todo.rtf */,
 				CF391CE228AF4FE700026B70 /* Fonts */,
 				CF74D6DF28ACB3B5003104FF /* Built-in audio */,
 				CF08D2FF28AA6334002F30CE /* Project.rtf */,
@@ -193,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				CF08D34328AA887C002F30CE /* Debug.swift */,
+				CF391CEF28AF62C700026B70 /* DebugView.swift */,
 			);
 			path = Debug;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				CF391CDD28AF3F0C00026B70 /* White.mp3 */,
+				CF391CEB28AF618700026B70 /* Rain.mp3 */,
 				CF391CDB28AF3BE800026B70 /* Brown.mp3 */,
 			);
 			path = "Built-in audio";
@@ -346,6 +355,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */,
+				CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */,
 				CF391CE628AF4FF000026B70 /* OFL.txt in Resources */,
 				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
@@ -378,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF391CF028AF62C700026B70 /* DebugView.swift in Sources */,
 				CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */,
 				CF391CE128AF4DAC00026B70 /* Colorassets.swift in Sources */,
 				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,

@@ -25,6 +25,8 @@ struct RootView: View {
             case 1:
                 DetailPage(block: statem.currentDisplayedItem)
                     .background(Colorassets.mainback)
+            case 2:
+                DebugView()
             default:
                 EmptyView()
             }

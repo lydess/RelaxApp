@@ -28,6 +28,14 @@ func setuplist() -> [MenuBlocks] {
                                     id: UUID(),
                                     sound: .white,
                                     savedtime: 0.0))
+    corelist.append(MenuBlocks(backcolor: Colorassets.silver,
+                                    noisetitle: "Rainfall",
+                                    descripton: "Sounds of rain falling in an open field",
+                                    duration: 40,
+                                    image: Image(uiImage: UIImage(named: "Rain")!),
+                                    id: UUID(),
+                                    sound: .rain,
+                                    savedtime: 0.0))
         return corelist
     }
 }

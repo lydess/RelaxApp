@@ -49,6 +49,9 @@ class AudioHandler {
             
         case .white:
             return "White"
+        
+        case .rain:
+            return "Rain"
         }
     
     }

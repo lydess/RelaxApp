@@ -50,7 +50,7 @@ struct DetailPage: View {
                             statem.sharedplayer.play()
                             statem.isplaying = true
                         
-                    }, label: { Text("Play").font(.custom("VarelaRound-Regular", size: 24))
+                    }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
                         
                     })
                 } else {
@@ -63,7 +63,7 @@ struct DetailPage: View {
                         statem.isplaying = true
 
                         
-                    }, label: { Text("Play").font(.custom("VarelaRound-Regular", size: 24))
+                    }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
                         
                     })
                     

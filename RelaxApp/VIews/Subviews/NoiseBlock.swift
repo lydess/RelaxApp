@@ -16,22 +16,28 @@ struct NoiseBlock: View {
     var image: Image
     var body: some View {
         VStack{
+            ZStack{
             HStack {
                 Text(noisetitle)
-                    .font(.system(size: 30)).bold().padding([.leading,.top])
-                Spacer()
+                    .font(.custom("VarelaRound-Regular", size: 28))
+                    .padding()
+                
                 
             }
-            HStack{
-                Spacer()
-                Button(action: {}, label: {Image(systemName: "chevron.right")})
-                    .padding(.trailing)
+                VStack {
+                    Spacer()
+                    HStack{
+                    Spacer()
+                    Button(action: {}, label: {Image(systemName: "chevron.right")})
+                        .padding(.trailing)
+                    }
+                    Spacer()
+                }
+                
             }
-            Text(descripton)
-                .multilineTextAlignment(.center)
-                .padding([.top,.bottom])
+            
         }.background(backcolor)
-            .cornerRadius(25)
+            .cornerRadius(10)
             .padding()
         
             

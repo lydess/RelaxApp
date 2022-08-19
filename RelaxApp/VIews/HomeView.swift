@@ -10,12 +10,36 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var State = globalstate
     var debug = Debug()
+    init() {
+         UIScrollView.appearance().bounces = false
+      }
     var body: some View {
         VStack {
-            Text("Sounds").onAppear(perform: {State.currentlist = debug.setuplist()})
+            VStack{
+            HStack {
+                ZStack{
+                HStack{
+                    Rectangle().foregroundColor(.clear).frame(width: 300, height: 44, alignment: .center)
+                    Button(action: {
+                        State.currentscreen = 2
+                    }, label: {Image(systemName: "gearshape.fill")
+                        .resizable()
+                        .frame(width: 33, height: 33, alignment: .center)
+                        
+                    }).buttonStyle(.plain)
+                        .foregroundColor(Colorassets.silver)
+                }
+                Text("Sounds")
+                        .font(.custom("VarelaRound-Regular", size: 24))
+                        .onAppear(perform: {State.currentlist = debug.setuplist()})
+                }
                 
-            Text("Sounds").font(.custom("VarelaRound-Regular", size: 24))
-                      
+            }.padding(.top,10)
+            
+            }
+                
+            
+                    
             ScrollView{
                 ForEach(State.currentlist, id: \.id){ block in
                     Button(action: {
@@ -39,7 +63,7 @@ struct HomeView: View {
                                    
                         )
                         
-                    })
+                    }).buttonStyle(.plain)
                     
                 }
             }

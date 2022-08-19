@@ -24,6 +24,7 @@ struct MenuBlocks {
 enum AvailableSounds : String {
     case brown
     case white
+    case rain
 }
 
 
