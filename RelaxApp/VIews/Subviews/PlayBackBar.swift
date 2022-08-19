@@ -54,7 +54,7 @@ struct PlayBackBar: View {
                 .background(.green)
             .cornerRadius(borderradius)
             Text("currently playing: \n")
-            Text(block.noisetitle)
+            Text(statem.currentPlayingItem.noisetitle)
         }
         
             

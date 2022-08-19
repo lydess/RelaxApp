@@ -16,21 +16,28 @@ struct RootView: View {
     
     
     var body: some View {
-        ZStack{
-        switch statem.currentscreen {
-        case 0:
-            HomeView()
-        case 1:
-            DetailPage(block: statem.currentDisplayedItem)
-        default:
-            EmptyView()
-        }
-            if statem.isplaying{PlayBackBar(player: nil, block: statem.currentPlayingItem)}
+        ZStack {
+            VStack{
+            switch statem.currentscreen {
+            case 0:
+                HomeView()
+            case 1:
+                DetailPage(block: statem.currentDisplayedItem)
+            default:
+                EmptyView()
+            }
+                
+                
             
-        
-        }.onAppear(perform: {
-            statem.setupRemoteTransportControls()
+            }.onAppear(perform: {
+                statem.setupRemoteTransportControls()
         })
+            VStack{
+                Spacer()
+            if statem.isplaying{
+                PlayBackBar(player: nil, block: statem.currentPlayingItem)}
+        }
+        }
         
     }
 }

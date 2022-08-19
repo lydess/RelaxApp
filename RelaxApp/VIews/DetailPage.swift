@@ -13,8 +13,7 @@ struct DetailPage: View {
     @StateObject var statem = globalstate
     @State var doshow = false
     @State var Audioisconfigured = false
-    var pview = ProgressView(value: 0.5)
-    var block:MenuBlocks
+    @State var block:MenuBlocks
     
     
     var body: some View {
@@ -33,9 +32,15 @@ struct DetailPage: View {
                 
                 Text(block.descripton).font(.body)
                     .padding()
+                
+                Button("debug"){
+                    print(statem.currentDisplayedItem.noisetitle)
+                }
+                
                 block.image
                 if statem.isplaying {
                     Button("Play"){
+                        statem.currentPlayingItem = block
                         statem.sharedplayer.stop()
                         statem.isplaying = false
                         statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
@@ -45,6 +50,7 @@ struct DetailPage: View {
                     }
                 } else {
                     Button("Play"){
+                        statem.currentPlayingItem = block
                         statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
                         statem.sharedplayer.numberOfLoops = 100
                         statem.sharedplayer.play()

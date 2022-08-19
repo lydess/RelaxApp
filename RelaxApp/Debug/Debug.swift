@@ -15,7 +15,7 @@ func setuplist() -> [MenuBlocks] {
                                     noisetitle: "Brown Noise",
                                     descripton: "Great for people with ADD or on the spectrum",
                                     duration: 60,
-                                    image: Image(uiImage: UIImage(named: "asset")!),
+                                    image: Image(uiImage: UIImage(named: "Brown")!),
                                     id: UUID(),
                                    sound: .brown,
                                    savedtime: 0.0
@@ -24,7 +24,7 @@ func setuplist() -> [MenuBlocks] {
                                     noisetitle: "White Noise",
                                     descripton: "More racey version for white people",
                                     duration: 40,
-                                    image: Image(uiImage: UIImage(named: "asset")!),
+                                    image: Image(uiImage: UIImage(named: "Brown")!),
                                     id: UUID(),
                                    sound: .white,
                                    savedtime: 0.0))
