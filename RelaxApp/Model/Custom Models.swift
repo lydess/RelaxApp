@@ -16,6 +16,7 @@ struct MenuBlocks {
     var image:Image?
     var id: UUID
     var sound: sounds
+    var savedtime: Float
     
    
 }

@@ -13,14 +13,19 @@ struct RootView: View {
     @StateObject var statem = globalstate
     var debug = Debug()
     
+    
     var body: some View {
+        ZStack{
         switch statem.currentscreen {
         case 0:
             HomeView()
         case 1:
-            DetailPage(block: statem.currentitem)
+            DetailPage(block: statem.currentDisplayedItem)
         default:
             EmptyView()
+        }
+            PlayBackBar(player: nil, block: statem.currentPlayingItem)
+        
         }
         
     }

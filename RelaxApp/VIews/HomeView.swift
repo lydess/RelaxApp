@@ -17,7 +17,7 @@ struct HomeView: View {
                 ForEach(State.currentlist, id: \.id){ block in
                     Button(action: {
                         State.currentscreen = 1
-                        State.currentitem = MenuBlocks(backcolor: block.backcolor, noisetitle: block.noisetitle, descripton: block.descripton, duration: 6, id: UUID(), sound: block.sound)
+                        State.currentDisplayedItem = MenuBlocks(backcolor: block.backcolor, noisetitle: block.noisetitle, descripton: block.descripton, duration: 6, id: UUID(), sound: block.sound, savedtime: 0.0)
                         
                     }, label: {
                         NoiseBlock(backcolor: block.backcolor,
