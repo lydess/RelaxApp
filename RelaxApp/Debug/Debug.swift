@@ -36,6 +36,15 @@ func setuplist() -> [MenuBlocks] {
                                     id: UUID(),
                                     sound: .rain,
                                     savedtime: 0.0))
+    corelist.append(MenuBlocks(backcolor: Colorassets.silver,
+                                    noisetitle: "Fire",
+                                    descripton: "Sound of a campfire crackling in the night",
+                                    duration: 40,
+                                    image: Image(uiImage: UIImage(named: "Fire")!),
+                                    id: UUID(),
+                                    sound: .fire,
+                                    savedtime: 0.0))
+
         return corelist
     }
 }

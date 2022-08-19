@@ -36,14 +36,16 @@ struct RootView: View {
                 
             
             }.onAppear(perform: {
+                
                 statem.setupRemoteTransportControls()
+                
         })
             VStack{
                 Spacer()
             if statem.isplaying{
                 PlayBackBar(player: nil, block: statem.currentPlayingItem)}
         }
-        }
+        }.background(Colorassets.mainback)
         
     }
 }

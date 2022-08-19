@@ -26,6 +26,7 @@
 		CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CEB28AF618700026B70 /* Rain.mp3 */; };
 		CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CED28AF626D00026B70 /* Todo.rtf */; };
 		CF391CF028AF62C700026B70 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391CEF28AF62C700026B70 /* DebugView.swift */; };
+		CF391CF228AF74BD00026B70 /* Fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CF128AF74BD00026B70 /* Fire.mp3 */; };
 		CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
@@ -75,6 +76,7 @@
 		CF391CEB28AF618700026B70 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rain.mp3; sourceTree = "<group>"; };
 		CF391CED28AF626D00026B70 /* Todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Todo.rtf; path = ../../Todo.rtf; sourceTree = "<group>"; };
 		CF391CEF28AF62C700026B70 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DebugView.swift; path = ../../../../DebugView.swift; sourceTree = "<group>"; };
+		CF391CF128AF74BD00026B70 /* Fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fire.mp3; sourceTree = "<group>"; };
 		CF612E9A28AB692200AA8B9C /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		CF612E9C28AB695300AA8B9C /* Custom Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Models.swift"; sourceTree = "<group>"; };
 		CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			children = (
 				CF391CDD28AF3F0C00026B70 /* White.mp3 */,
 				CF391CEB28AF618700026B70 /* Rain.mp3 */,
+				CF391CF128AF74BD00026B70 /* Fire.mp3 */,
 				CF391CDB28AF3BE800026B70 /* Brown.mp3 */,
 			);
 			path = "Built-in audio";
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */,
+				CF391CF228AF74BD00026B70 /* Fire.mp3 in Resources */,
 				CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */,
 				CF391CE628AF4FF000026B70 /* OFL.txt in Resources */,
 				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,

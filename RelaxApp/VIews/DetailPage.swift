@@ -54,6 +54,7 @@ struct DetailPage: View {
                             statem.sharedplayer.numberOfLoops = 100
                             statem.sharedplayer.play()
                             statem.isplaying = true
+                            statem.UpdateNowPlaying(block: block)
                         
                     }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
                         
@@ -66,6 +67,7 @@ struct DetailPage: View {
                         statem.sharedplayer.numberOfLoops = 100
                         statem.sharedplayer.play()
                         statem.isplaying = true
+                        statem.UpdateNowPlaying(block: block)
 
                         
                     }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))

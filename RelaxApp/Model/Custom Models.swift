@@ -25,6 +25,7 @@ enum AvailableSounds : String {
     case brown
     case white
     case rain
+    case fire
 }
 
 

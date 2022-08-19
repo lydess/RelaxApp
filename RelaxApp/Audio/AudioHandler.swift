@@ -12,16 +12,12 @@ import AVKit
 
 
 class AudioHandler {
-    var player: AVAudioPlayer!
-   
-
-    
-    
+    private var player: AVAudioPlayer!
     func SetAudio(fileSelected:AvailableSounds) -> AVAudioPlayer {
         
         
         guard let fileurl = Bundle.main.url(
-          forResource: setString(selectedFile: fileSelected),
+            forResource: StateManager.shared.setString(selectedFile: fileSelected),
           withExtension: ".mp3") ?? URL(string: "") else { return player }
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -29,7 +25,7 @@ class AudioHandler {
              player = try AVAudioPlayer(contentsOf: fileurl)
             
                 return player
-        }catch{
+        } catch {
             print(error)
             
         }
@@ -42,19 +38,7 @@ class AudioHandler {
     }
     
     
-    func setString(selectedFile: AvailableSounds) -> String {
-        switch selectedFile {
-        case .brown:
-            return "Brown"
-            
-        case .white:
-            return "White"
-        
-        case .rain:
-            return "Rain"
-        }
     
-    }
     
 }
 

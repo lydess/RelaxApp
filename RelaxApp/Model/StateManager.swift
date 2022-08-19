@@ -18,7 +18,7 @@ class StateManager: ObservableObject {
     @Published var musicstatus = 0.0
     @Published var isplaying = false
     
-    func setupRemoteTransportControls() {
+     func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter
         let commandCenter = MPRemoteCommandCenter.shared()
 
@@ -38,5 +38,34 @@ class StateManager: ObservableObject {
             return .success
         }
         
+    }
+    func UpdateNowPlaying(block: MenuBlocks) {
+        // Define Now Playing Info
+        var nowPlayingInfo = [String : Any]()
+        nowPlayingInfo[MPMediaItemPropertyTitle] = globalstate.currentPlayingItem.noisetitle
+
+        if let image = UIImage(named: setString(selectedFile: globalstate.currentDisplayedItem.sound)) {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] =
+                MPMediaItemArtwork(boundsSize: image.size) { size in
+                    return image
+            }
+        }
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+    
+    func setString(selectedFile: AvailableSounds) -> String {
+        switch selectedFile {
+        case .brown:
+            return "Brown"
+            
+        case .white:
+            return "White"
+        
+        case .rain:
+            return "Rain"
+        case .fire:
+            return "Fire"
+        }
+    
     }
 }
