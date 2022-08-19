@@ -20,9 +20,7 @@ struct NoiseBlock: View {
                 Text(noisetitle)
                     .font(.system(size: 30)).bold().padding([.leading,.top])
                 Spacer()
-                Text(String(duration))
-                Text("Min")
-                    .padding(.trailing)
+                
             }
             HStack{
                 Spacer()

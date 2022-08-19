@@ -13,6 +13,9 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Text("Sounds").onAppear(perform: {State.currentlist = debug.setuplist()})
+                .font(.custom("Mayor", size: 24))
+            Text("Sounds").font(.system(size: 24))
+                      
             ScrollView{
                 ForEach(State.currentlist, id: \.id){ block in
                     Button(action: {
@@ -40,7 +43,7 @@ struct HomeView: View {
                     
                 }
             }
-        }.background(LinearGradient(colors: [.red,.orange], startPoint: .topLeading, endPoint: .bottomTrailing))
+        }
     }
 }
 

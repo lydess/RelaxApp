@@ -15,14 +15,15 @@ struct MenuBlocks {
     var duration:Int
     var image:Image?
     var id: UUID
-    var sound: sounds
+    var sound: AvailableSounds
     var savedtime: Float
     
    
 }
 
-enum sounds : String {
+enum AvailableSounds : String {
     case brown
     case white
 }
+
 

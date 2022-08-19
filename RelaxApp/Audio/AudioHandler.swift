@@ -17,11 +17,11 @@ class AudioHandler {
 
     
     
-    func SetAudio(fileSelected:sounds) -> AVAudioPlayer {
+    func SetAudio(fileSelected:AvailableSounds) -> AVAudioPlayer {
         
         
         guard let fileurl = Bundle.main.url(
-          forResource: setfile(selectedFile: fileSelected),
+          forResource: setString(selectedFile: fileSelected),
           withExtension: ".mp3") ?? URL(string: "") else { return player }
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -42,19 +42,15 @@ class AudioHandler {
     }
     
     
-    func setfile(selectedFile: sounds) -> String {
+    func setString(selectedFile: AvailableSounds) -> String {
         switch selectedFile {
         case .brown:
-            return "brown"
+            return "Brown"
             
         case .white:
             return "White"
         }
-   
-        
-        
-        
-        
+    
     }
     
 }

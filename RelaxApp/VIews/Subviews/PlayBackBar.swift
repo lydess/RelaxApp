@@ -9,10 +9,10 @@ import SwiftUI
 import AVFAudio
 
 struct PlayBackBar: View {
-    let buttonheight = CGFloat(37)
-    let buttonwidth = CGFloat(37)
-    let buttonpadding = CGFloat(23)
-    let borderradius = CGFloat(65)
+    let buttonheight = CGFloat(40)
+    let buttonwidth = CGFloat(40)
+    let buttonpadding = CGFloat(29)
+    let borderradius = CGFloat(25)
     let audiohandle = AudioHandler()
     let player: AVAudioPlayer?
     @StateObject var statem = globalstate
@@ -49,11 +49,10 @@ struct PlayBackBar: View {
                     
                 }
                 
-            }   .background(Rectangle().foregroundColor(.teal).cornerRadius(borderradius))
+            }   .background(Rectangle().foregroundColor(Color(uiColor: UIColor(named: "Playbar")!)).cornerRadius(borderradius))
                 
                 .background(.green)
             .cornerRadius(borderradius)
-            Text("currently playing: \n")
             Text(statem.currentPlayingItem.noisetitle)
         }
         

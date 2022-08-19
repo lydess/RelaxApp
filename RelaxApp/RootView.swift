@@ -21,8 +21,10 @@ struct RootView: View {
             switch statem.currentscreen {
             case 0:
                 HomeView()
+                    .background(Colorassets.mainback)
             case 1:
                 DetailPage(block: statem.currentDisplayedItem)
+                    .background(Colorassets.mainback)
             default:
                 EmptyView()
             }
