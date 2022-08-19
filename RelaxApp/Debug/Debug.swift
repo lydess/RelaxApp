@@ -28,7 +28,7 @@ func setuplist() -> [MenuBlocks] {
                                     id: UUID(),
                                     sound: .white,
                                     savedtime: 0.0))
-    corelist.append(MenuBlocks(backcolor: Colorassets.silver,
+    corelist.append(MenuBlocks(backcolor: Colorassets.bleu,
                                     noisetitle: "Rainfall",
                                     descripton: "Sounds of rain falling in an open field",
                                     duration: 40,
@@ -36,7 +36,7 @@ func setuplist() -> [MenuBlocks] {
                                     id: UUID(),
                                     sound: .rain,
                                     savedtime: 0.0))
-    corelist.append(MenuBlocks(backcolor: Colorassets.silver,
+    corelist.append(MenuBlocks(backcolor: Colorassets.red,
                                     noisetitle: "Fire",
                                     descripton: "Sound of a campfire crackling in the night",
                                     duration: 40,

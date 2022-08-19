@@ -31,9 +31,11 @@ struct DetailPage: View {
                     VStack{
                     Text(block.noisetitle).font(.headline)
                         .padding()
+                        .animation(.easeInOut(duration: 5), value: statem.currentscreen)
                     
                     Text(block.descripton).font(.body)
                         .padding()
+                        .animation(.easeInOut(duration: 5), value: statem.currentscreen)
                     
                     }
                 } else {
@@ -42,9 +44,14 @@ struct DetailPage: View {
                 
                 block.image?.resizable()
                     .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center).padding(20)
-                    .gesture(DragGesture(minimumDistance: 5, coordinateSpace: .local)
-                        .onChanged{ _ in
-                            withAnimation{statem.currentscreen = 0}
+                    .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
+                        .onChanged{ trans in
+                            var lastpoint = trans.location.y
+                            if trans.startLocation.y < trans.location.y{
+                                withAnimation{statem.currentscreen = 0}
+                            } else {print("EHHH")}
+                            
+                            
                         })
                 ZStack{
                     HStack{
