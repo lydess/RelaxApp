@@ -33,30 +33,40 @@ struct DetailPage: View {
                 Text(block.descripton).font(.body)
                     .padding()
                 
-                Button("debug"){
-                    print(statem.currentDisplayedItem.noisetitle)
-                }
                 
-                block.image
-                if statem.isplaying {
-                    Button("Play"){
-                        statem.currentPlayingItem = block
-                        statem.sharedplayer.stop()
-                        statem.isplaying = false
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
-                        statem.sharedplayer.numberOfLoops = 100
-                        statem.sharedplayer.play()
-                        statem.isplaying = true
-                    }
-                } else {
-                    Button("Play"){
-                        statem.currentPlayingItem = block
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
-                        statem.sharedplayer.numberOfLoops = 100
-                        statem.sharedplayer.play()
-                        statem.isplaying = true
+                
+                block.image?.resizable()
+                    .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center).padding(20)
+                if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
+                    
+                }else if statem.isplaying {
+                    Button(action: {
+                            print("dupes")
+                            statem.currentPlayingItem = block
+                            statem.sharedplayer.stop()
+                            statem.isplaying = false
+                            statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                            statem.sharedplayer.numberOfLoops = 100
+                            statem.sharedplayer.play()
+                            statem.isplaying = true
                         
-                    }
+                    }, label: { Text("Play").font(.custom("VarelaRound-Regular", size: 24))
+                        
+                    })
+                } else {
+                    Button(action: {
+                        print("not dupes")
+                        statem.currentPlayingItem = block
+                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.sharedplayer.numberOfLoops = 100
+                        statem.sharedplayer.play()
+                        statem.isplaying = true
+
+                        
+                    }, label: { Text("Play").font(.custom("VarelaRound-Regular", size: 24))
+                        
+                    })
+                    
                 }
                 Spacer()
                 
@@ -71,3 +81,6 @@ struct DetailPage_Previews: PreviewProvider {
         DetailPage(block: MenuBlocks(backcolor: .red, noisetitle: "Title", descripton: "Desc", duration: 50, id: UUID(), sound: .white, savedtime: 0.0))
     }
 }
+
+
+

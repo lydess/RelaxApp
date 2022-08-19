@@ -17,12 +17,12 @@
 		CF08D30028AA6334002F30CE /* Project.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2FF28AA6334002F30CE /* Project.rtf */; };
 		CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
 		CF08D34428AA887C002F30CE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
-		CF391CDC28AF3BE800026B70 /* Brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDB28AF3BE800026B70 /* Brown.mp3 */; };
-		CF391CDE28AF3F0C00026B70 /* White.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDD28AF3F0C00026B70 /* White.mp3 */; };
 		CF391CE128AF4DAC00026B70 /* Colorassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391CE028AF4DAC00026B70 /* Colorassets.swift */; };
 		CF391CE528AF4FF000026B70 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE328AF4FF000026B70 /* VarelaRound-Regular.ttf */; };
 		CF391CE628AF4FF000026B70 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE428AF4FF000026B70 /* OFL.txt */; };
 		CF391CE828AF513800026B70 /* Mayor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE728AF511500026B70 /* Mayor.ttf */; };
+		CF391CE928AF557400026B70 /* White.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDD28AF3F0C00026B70 /* White.mp3 */; };
+		CF391CEA28AF557600026B70 /* Brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDB28AF3BE800026B70 /* Brown.mp3 */; };
 		CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
@@ -348,12 +348,12 @@
 			files = (
 				CF391CE628AF4FF000026B70 /* OFL.txt in Resources */,
 				CF08D30028AA6334002F30CE /* Project.rtf in Resources */,
-				CF391CDC28AF3BE800026B70 /* Brown.mp3 in Resources */,
-				CF391CDE28AF3F0C00026B70 /* White.mp3 in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
 				CF391CE828AF513800026B70 /* Mayor.ttf in Resources */,
 				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,
+				CF391CE928AF557400026B70 /* White.mp3 in Resources */,
 				CF391CE528AF4FF000026B70 /* VarelaRound-Regular.ttf in Resources */,
+				CF391CEA28AF557600026B70 /* Brown.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
