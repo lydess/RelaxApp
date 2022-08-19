@@ -65,6 +65,7 @@ class StateManager: ObservableObject {
             return "Rain"
         case .fire:
             return "Fire"
+        
         }
     
     }

@@ -42,6 +42,13 @@ struct DetailPage: View {
                 
                 block.image?.resizable()
                     .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center).padding(20)
+                    .gesture(DragGesture(minimumDistance: 5, coordinateSpace: .local)
+                        .onChanged{ _ in
+                            withAnimation{statem.currentscreen = 0}
+                        })
+                ZStack{
+                    HStack{
+                    
                 if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
                     
                 }else if statem.isplaying {
@@ -74,11 +81,21 @@ struct DetailPage: View {
                         
                     })
                     
+                }}
+                    HStack{
+                        Spacer()
+                        Button(
+                            action: {
+                            
+                        },
+                            label: {Image(systemName: "chevron.down")
+                            
+                        }
+                        ).padding(.trailing, 50)
+                    }
                 }
                 Spacer()
-                
             }
-
         }
     }
 }

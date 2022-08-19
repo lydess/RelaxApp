@@ -25,7 +25,7 @@ struct RootView: View {
             case 1:
                 DetailPage(block: statem.currentDisplayedItem)
                     .background(Colorassets.mainback)
-                    .transition(.move(edge: .trailing))
+                    .transition(.move(edge: .bottom))
                     
             case 2:
                 DebugView()

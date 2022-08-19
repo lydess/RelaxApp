@@ -21,11 +21,12 @@ struct MenuBlocks {
    
 }
 
-enum AvailableSounds : String {
+enum AvailableSounds : String, CaseIterable {
     case brown
     case white
     case rain
     case fire
+   
 }
 
 
