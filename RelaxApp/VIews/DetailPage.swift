@@ -29,9 +29,17 @@ struct DetailPage: View {
                     .padding()
                 block.image
                 if statem.isplaying {
-                    Button("Play"){}
+                    Button("Play"){
+                        statem.sharedplayer.stop()
+                        statem.isplaying = false
+                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.isplaying = true
+                    }
                 } else {
-                    Button("Play"){}
+                    Button("Play"){
+                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.isplaying = true
+                    }
                 }
                 Spacer()
                 

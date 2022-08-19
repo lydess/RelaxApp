@@ -24,7 +24,8 @@ struct RootView: View {
         default:
             EmptyView()
         }
-            PlayBackBar(player: nil, block: statem.currentPlayingItem)
+            if statem.isplaying{PlayBackBar(player: nil, block: statem.currentPlayingItem)}
+            
         
         }
         

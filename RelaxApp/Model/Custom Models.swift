@@ -25,5 +25,6 @@ enum sounds : String {
     case payday
     case tada
     case generic
+    case destiny
 }
 

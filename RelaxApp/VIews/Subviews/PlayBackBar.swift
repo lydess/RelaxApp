@@ -11,6 +11,7 @@ import AVFAudio
 struct PlayBackBar: View {
     let buttonheight = CGFloat(44)
     let buttonwidth = CGFloat(44)
+    var buttonpadding = CGFloat(25)
     let audiohandle = AudioHandler()
     let player: AVAudioPlayer?
     @StateObject var statem = globalstate
@@ -19,28 +20,36 @@ struct PlayBackBar: View {
     
     var body: some View {
         VStack{
-            ProgressView(value: statem.sharedplayer.currentTime)
+            ProgressView(value: statem.sharedplayer.currentTime / statem.sharedplayer.duration)
                 .frame(width: 250, height: 100, alignment: .center)
                 .onReceive(time) { _ in
                     
                 }
-                .onAppear(perform: {
-                statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
-                })
+            // TODO: REMOVE DEBUG ONAPPEAR SECTION
+                
                 
                 
             HStack{
                 Button(action: {
-                    print("fred")
+                    statem.sharedplayer.play()
                 },
                        label: {
                     Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
-                }).padding(40)
+                }).padding(buttonpadding)
                 Button(action: {
-                    
+                    statem.sharedplayer.pause()
                 },
                        label: {
-                    Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
+                    Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
+                    
+                })
+                Button(action: {
+                    statem.sharedplayer.stop()
+                    statem.isplaying = false
+                },
+                       label: {
+                    Image(systemName: "stop.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
+                    
                 })
                 
             }

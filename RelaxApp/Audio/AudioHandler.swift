@@ -22,7 +22,7 @@ class AudioHandler {
         
         guard let fileurl = Bundle.main.url(
           forResource: setfile(selectedFile: fileSelected),
-          withExtension: "mp3") ?? URL(string: "") else { return player }
+          withExtension: ".mp3") ?? URL(string: "") else { return player }
         do{
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
@@ -48,9 +48,12 @@ class AudioHandler {
             return "Tada-sound"
         case .generic:
             return "mp3file"
+        case .destiny:
+            return "long"
         }
         
-        return "Failure"
+        
+        
         
     }
     
