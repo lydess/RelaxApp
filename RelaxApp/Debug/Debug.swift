@@ -26,7 +26,7 @@ func setuplist() -> [MenuBlocks] {
                                     duration: 40,
                                     image: Image(uiImage: UIImage(named: "asset")!),
                                     id: UUID(),
-                                   sound: .payday,
+                                   sound: .white,
                                    savedtime: 0.0))
         return corelist
     }

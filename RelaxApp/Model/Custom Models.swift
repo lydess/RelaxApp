@@ -22,10 +22,7 @@ struct MenuBlocks {
 }
 
 enum sounds : String {
-    case payday
-    case tada
-    case generic
-    case destiny
     case brown
+    case white
 }
 

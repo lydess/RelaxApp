@@ -27,6 +27,7 @@ class AudioHandler {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
              player = try AVAudioPlayer(contentsOf: fileurl)
+            
                 return player
         }catch{
             print(error)
@@ -40,19 +41,16 @@ class AudioHandler {
         
     }
     
+    
     func setfile(selectedFile: sounds) -> String {
         switch selectedFile {
-        case .payday:
-            return "Payday"
-        case .tada:
-            return "Tada-sound"
-        case .generic:
-            return "mp3file"
-        case .destiny:
-            return "long"
         case .brown:
             return "brown"
+            
+        case .white:
+            return "White"
         }
+   
         
         
         

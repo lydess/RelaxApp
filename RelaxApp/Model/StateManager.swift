@@ -7,14 +7,36 @@
 
 import Foundation
 import AVKit
-
+import MediaPlayer
 class StateManager: ObservableObject {
     static let shared = StateManager()
     @Published var sharedplayer = AVAudioPlayer()
-    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug", duration: 60, id: UUID(), sound: .destiny, savedtime: 0.0)
-    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debugplaying", descripton: "Descbug playing", duration: 60, id: UUID(), sound: .destiny, savedtime: 0.0)
+    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug", duration: 60, id: UUID(), sound: .brown, savedtime: 0.0)
+    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debugplaying", descripton: "Descbug playing", duration: 60, id: UUID(), sound: .white, savedtime: 0.0)
     @Published var currentlist = [MenuBlocks]()
     @Published var currentscreen = 0
     @Published var musicstatus = 0.0
     @Published var isplaying = false
+    
+    func setupRemoteTransportControls() {
+        // Get the shared MPRemoteCommandCenter
+        let commandCenter = MPRemoteCommandCenter.shared()
+
+        // Add handler for Play Command
+        commandCenter.playCommand.addTarget { [unowned self] event in
+            self.sharedplayer.play()
+            self.isplaying = true
+            return .success
+        }
+        
+        
+
+        // Add handler for Pause Command
+        commandCenter.pauseCommand.addTarget { [unowned self] event in
+            self.sharedplayer.pause()
+            self.isplaying = false
+            return .success
+        }
+        
+    }
 }

@@ -39,11 +39,14 @@ struct DetailPage: View {
                         statem.sharedplayer.stop()
                         statem.isplaying = false
                         statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.sharedplayer.numberOfLoops = 100
+                        statem.sharedplayer.play()
                         statem.isplaying = true
                     }
                 } else {
                     Button("Play"){
                         statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.sharedplayer.numberOfLoops = 100
                         statem.sharedplayer.play()
                         statem.isplaying = true
                         
@@ -59,6 +62,6 @@ struct DetailPage: View {
 
 struct DetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPage(block: MenuBlocks(backcolor: .red, noisetitle: "Title", descripton: "Desc", duration: 50, id: UUID(), sound: .tada, savedtime: 0.0))
+        DetailPage(block: MenuBlocks(backcolor: .red, noisetitle: "Title", descripton: "Desc", duration: 50, id: UUID(), sound: .white, savedtime: 0.0))
     }
 }

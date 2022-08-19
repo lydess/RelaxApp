@@ -10,6 +10,7 @@ import SwiftUI
 let globalstate = StateManager()
 
 struct RootView: View {
+
     @StateObject var statem = globalstate
     var debug = Debug()
     
@@ -27,7 +28,9 @@ struct RootView: View {
             if statem.isplaying{PlayBackBar(player: nil, block: statem.currentPlayingItem)}
             
         
-        }
+        }.onAppear(perform: {
+            statem.setupRemoteTransportControls()
+        })
         
     }
 }

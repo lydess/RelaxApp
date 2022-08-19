@@ -63,6 +63,6 @@ struct PlayBackBar: View {
 
 struct PlayBackBar_Previews: PreviewProvider {
     static var previews: some View {
-        PlayBackBar(player: nil, block: MenuBlocks(backcolor: .red, noisetitle: "title", descripton: "desc", duration: 60, id: UUID(), sound: .payday, savedtime: 0.0))
+        PlayBackBar(player: nil, block: MenuBlocks(backcolor: .red, noisetitle: "title", descripton: "desc", duration: 60, id: UUID(), sound: .white, savedtime: 0.0))
     }
 }
