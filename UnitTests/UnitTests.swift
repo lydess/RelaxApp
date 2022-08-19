@@ -24,7 +24,7 @@ class UnitTests: XCTestCase {
         
         
         for x in AvailableSounds.allCases {
-            var filename = StateManager.shared.setString(selectedFile: x)
+            let filename = StateManager.shared.setString(selectedFile: x)
             let example = UIImage(named: filename)
             XCTAssert(example != nil)
         }
