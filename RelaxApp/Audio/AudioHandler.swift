@@ -50,6 +50,8 @@ class AudioHandler {
             return "mp3file"
         case .destiny:
             return "long"
+        case .brown:
+            return "brown"
         }
         
         

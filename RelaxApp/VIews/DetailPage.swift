@@ -16,15 +16,21 @@ struct DetailPage: View {
     var pview = ProgressView(value: 0.5)
     var block:MenuBlocks
     
-    var time = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         ZStack{
+            VStack {
+                HStack{Button("<"){
+                    
+                    statem.currentscreen = 0}.padding(40)
+                    Spacer()
+                }
+                Spacer()
+            }
             VStack{
                 Text(block.noisetitle).font(.headline)
                     .padding()
-                HStack{Button("<"){
-                    
-                    statem.currentscreen = 0}}
+                
                 Text(block.descripton).font(.body)
                     .padding()
                 block.image
@@ -38,7 +44,9 @@ struct DetailPage: View {
                 } else {
                     Button("Play"){
                         statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.sharedplayer.play()
                         statem.isplaying = true
+                        
                     }
                 }
                 Spacer()

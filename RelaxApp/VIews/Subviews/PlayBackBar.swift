@@ -9,9 +9,10 @@ import SwiftUI
 import AVFAudio
 
 struct PlayBackBar: View {
-    let buttonheight = CGFloat(44)
-    let buttonwidth = CGFloat(44)
-    var buttonpadding = CGFloat(25)
+    let buttonheight = CGFloat(37)
+    let buttonwidth = CGFloat(37)
+    let buttonpadding = CGFloat(23)
+    let borderradius = CGFloat(65)
     let audiohandle = AudioHandler()
     let player: AVAudioPlayer?
     @StateObject var statem = globalstate
@@ -19,41 +20,44 @@ struct PlayBackBar: View {
     var time = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack{
-            ProgressView(value: statem.sharedplayer.currentTime / statem.sharedplayer.duration)
-                .frame(width: 250, height: 100, alignment: .center)
-                .onReceive(time) { _ in
+        VStack {
+            VStack{
+                
+                HStack{
+                    Button(action: {
+                        statem.sharedplayer.play()
+                    },
+                           label: {
+                        Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
+                    }).padding(buttonpadding)
+                        .buttonStyle(.plain)
+                    Button(action: {
+                        statem.sharedplayer.pause()
+                    },
+                           label: {
+                        Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
+                        
+                    }).buttonStyle(.plain)
+                    Button(action: {
+                        statem.sharedplayer.stop()
+                        statem.isplaying = false
+                    },
+                           label: {
+                        Image(systemName: "stop.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
+                        
+                    }).buttonStyle(.plain)
                     
                 }
-            // TODO: REMOVE DEBUG ONAPPEAR SECTION
                 
+            }   .background(Rectangle().foregroundColor(.teal).cornerRadius(borderradius))
                 
-                
-            HStack{
-                Button(action: {
-                    statem.sharedplayer.play()
-                },
-                       label: {
-                    Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
-                }).padding(buttonpadding)
-                Button(action: {
-                    statem.sharedplayer.pause()
-                },
-                       label: {
-                    Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
-                    
-                })
-                Button(action: {
-                    statem.sharedplayer.stop()
-                    statem.isplaying = false
-                },
-                       label: {
-                    Image(systemName: "stop.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
-                    
-                })
-                
-            }
+                .background(.green)
+            .cornerRadius(borderradius)
+            Text("currently playing: \n")
+            Text(block.noisetitle)
         }
+        
+            
     }
 }
 
