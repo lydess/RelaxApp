@@ -11,8 +11,7 @@ struct DetailPage: View {
     var audiohandle = AudioHandler()
     var player: AVAudioPlayer?
     @StateObject var statem = globalstate
-    @State var doshow = false
-    @State var Audioisconfigured = false
+
     @State var block:MenuBlocks
     
     
@@ -20,20 +19,26 @@ struct DetailPage: View {
         ZStack{
             VStack {
                 HStack{Button("<"){
+                    withAnimation{statem.currentscreen = 0}
                     
-                    statem.currentscreen = 0}.padding(40)
+                    }.padding(40)
                     Spacer()
                 }
                 Spacer()
             }
             VStack{
-                Text(block.noisetitle).font(.headline)
-                    .padding()
-                
-                Text(block.descripton).font(.body)
-                    .padding()
-                
-                
+                if statem.currentscreen == 1 {
+                    VStack{
+                    Text(block.noisetitle).font(.headline)
+                        .padding()
+                    
+                    Text(block.descripton).font(.body)
+                        .padding()
+                    
+                    }
+                } else {
+                    /*@START_MENU_TOKEN@*/EmptyView()/*@END_MENU_TOKEN@*/
+                }
                 
                 block.image?.resizable()
                     .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center).padding(20)

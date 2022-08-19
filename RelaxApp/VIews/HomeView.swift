@@ -51,7 +51,9 @@ struct HomeView: View {
                                                                 id: UUID(),
                                                                 sound: block.sound,
                                                                 savedtime: 0.0)
-                        State.currentscreen = 1
+                        withAnimation{
+                            State.currentscreen = 1
+                        }
                         
                         
                     }, label: {
