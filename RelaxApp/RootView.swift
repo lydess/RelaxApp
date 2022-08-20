@@ -28,6 +28,8 @@ struct RootView: View {
                     .transition(.move(edge: .bottom))
                     
             case 2:
+                OptionsView()
+            case 100:
                 DebugView()
             default:
                 EmptyView()
@@ -43,7 +45,10 @@ struct RootView: View {
             VStack{
                 Spacer()
             if statem.isplaying{
-                PlayBackBar(player: nil, block: statem.currentPlayingItem)}
+                PlayBackBar(player: nil, block: statem.currentPlayingItem)
+                    
+                
+            }
         }
         }.background(Colorassets.mainback)
         

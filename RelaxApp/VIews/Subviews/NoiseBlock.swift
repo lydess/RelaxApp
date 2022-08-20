@@ -28,8 +28,8 @@ struct NoiseBlock: View {
                     Spacer()
                     HStack{
                     Spacer()
-                    Button(action: {}, label: {Image(systemName: "chevron.right")})
-                        .padding(.trailing)
+        
+                        
                     }
                     Spacer()
                 }

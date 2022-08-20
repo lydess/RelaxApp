@@ -1,0 +1,47 @@
+//
+//  Prefrences.swift
+//  RelaxApp
+//
+//  Created by william Vise on 20/8/2022.
+//
+
+import SwiftUI
+
+struct OptionsView: View {
+    @State var playbuttontoggle = false
+    @StateObject var statem = globalstate
+    let defaults = UserDefaults.standard
+    var body: some View {
+        VStack{
+            HStack {
+                Button("Save Changes"){
+                    defaults.set(true, forKey: "checkconfig")
+                    defaults.set(playbuttontoggle, forKey: "playpos")
+                    statem.currentscreen = 0
+                }
+                Button("Exit without saving"){
+                    statem.currentscreen = 0
+                }
+            }
+            VStack {
+                Text("Settings")
+                HStack{
+                    Text("Play Button on the right side of the screen").padding()
+                    Spacer()
+                    Toggle(isOn: $playbuttontoggle, label: {})
+                        .padding(.trailing,50)
+                }
+            }
+            
+        }
+    }
+}
+
+struct Prefrences_Previews: PreviewProvider {
+    static var previews: some View {
+        OptionsView()
+    }
+}
+
+
+

@@ -32,6 +32,10 @@ struct HomeView: View {
                 Text("Tracks")
                         .font(.custom("VarelaRound-Regular", size: 24))
                         .onAppear(perform: {State.currentlist = debug.setuplist()})
+                    HStack {
+                        Button("debug"){State.currentscreen = 100}.padding(.leading,50)
+                        Spacer()
+                    }
                 }
                 
             }.padding(.top,10)
@@ -64,7 +68,7 @@ struct HomeView: View {
                                        duration: block.duration,
                                        image: block.image!
                                        
-                            )
+                            ).shadow(color: .gray, radius: 10, x: -5, y: 0)
                             block.image?
                                 .resizable()
                                 .frame(width: 100, height: 100, alignment: .center)
@@ -72,7 +76,7 @@ struct HomeView: View {
                                 .padding()
                             
                         }).buttonStyle(.plain)
-                            .shadow(color: block.backcolor, radius: 20, x: -5, y: 5)
+                            
                             
                         
                         

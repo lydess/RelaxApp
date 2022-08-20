@@ -17,25 +17,21 @@ struct DetailPage: View {
     
     var body: some View {
         ZStack{
-            VStack {
-                HStack{Button("<"){
-                    withAnimation{statem.currentscreen = 0}
-                    
-                    }.padding(40)
-                    Spacer()
-                }
-                Spacer()
-            }
+                
+            
             VStack{
                 if statem.currentscreen == 1 {
                     VStack{
-                    Text(block.noisetitle).font(.headline)
+                    Text(block.noisetitle)
                         .padding()
                         .animation(.easeInOut(duration: 5), value: statem.currentscreen)
+                        .font(.custom("VarelaRound-Regular", size: 26))
+                        .offset(x: 0, y: 10)
                     
-                    Text(block.descripton).font(.body)
-                        .padding()
+                    Text(block.descripton)
+                        .padding(20)
                         .animation(.easeInOut(duration: 5), value: statem.currentscreen)
+                        .font(.custom("VarelaRound-Regular", size: 17))
                     
                     }
                 } else {

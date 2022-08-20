@@ -69,4 +69,13 @@ class StateManager: ObservableObject {
         }
     
     }
+    
+    func defaultsConfigCheck() -> Bool {
+        let testcase = UserDefaults.standard.string(forKey: "checkconfig")
+        if testcase == nil {
+            return false
+        }
+        return true
+        
+    }
 }
