@@ -10,7 +10,7 @@ import SwiftUI
 let globalstate = StateManager()
 
 struct RootView: View {
-
+    
     @StateObject var statem = globalstate
     var debug = Debug()
     

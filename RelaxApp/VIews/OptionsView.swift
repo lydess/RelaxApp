@@ -14,6 +14,7 @@ struct OptionsView: View {
     var body: some View {
         VStack{
             HStack {
+                Spacer()
                 Button("Save Changes"){
                     defaults.set(true, forKey: "checkconfig")
                     defaults.set(playbuttontoggle, forKey: "playpos")
@@ -22,7 +23,8 @@ struct OptionsView: View {
                 Button("Exit without saving"){
                     statem.currentscreen = 0
                 }
-            }
+                Spacer()
+            }.padding(.bottom,40)
             VStack {
                 Text("Settings")
                 HStack{
@@ -32,6 +34,7 @@ struct OptionsView: View {
                         .padding(.trailing,50)
                 }
             }
+            Spacer()
             
         }
     }

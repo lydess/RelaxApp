@@ -10,6 +10,9 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var State = globalstate
     var debug = Debug()
+    @State var openinganim = false
+    @State var animoffset = CGFloat(850)
+    
     init() {
          UIScrollView.appearance().bounces = false
       }
@@ -33,7 +36,7 @@ struct HomeView: View {
                         .font(.custom("VarelaRound-Regular", size: 24))
                         .onAppear(perform: {State.currentlist = debug.setuplist()})
                     HStack {
-                        Button("debug"){State.currentscreen = 100}.padding(.leading,50)
+                        //Button("debug"){State.currentscreen = 100}.padding(.leading,50)
                         Spacer()
                     }
                 }
@@ -72,17 +75,33 @@ struct HomeView: View {
                             block.image?
                                 .resizable()
                                 .frame(width: 100, height: 100, alignment: .center)
-                                .cornerRadius(2)
+                                .cornerRadius(5)
                                 .padding()
                             
                         }).buttonStyle(.plain)
+                            //.opacity(openinganim ? 0 : 1)
+                            .offset(x: 0, y: animoffset)
+                            .animation(.interactiveSpring(response: 1.0, dampingFraction: 0.55, blendDuration: 2).delay(Double.random(in: 0.1...0.3)), value: openinganim)
                             
-                            
-                        
-                        
                     }.frame(width: 400, height: 125, alignment: .center)
+                        .onAppear(perform: {
+                            print(UserDefaults.standard.bool(forKey: "firstlaunch"))
+                            if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
+                                animoffset = CGFloat(850)
+                                openinganim.toggle()
+                                animoffset = 0
+                                UserDefaults.standard.set(true, forKey: "firstlaunch")
+                                print("first launch, executing")
+                            } else {
+                                animoffset = CGFloat(0)
+                            }
+                        })
+                        
+                    
                     
                 }
+                
+                
             }
         }
     }
