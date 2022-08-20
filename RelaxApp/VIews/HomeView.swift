@@ -11,7 +11,7 @@ struct HomeView: View {
     @StateObject var State = globalstate
     var debug = Debug()
     @State var openinganim = false
-    @State var animoffset = CGFloat(650)
+    @State var animoffset = CGFloat(850)
     
     init() {
          UIScrollView.appearance().bounces = false
@@ -36,7 +36,7 @@ struct HomeView: View {
                         .font(.custom("VarelaRound-Regular", size: 24))
                         .onAppear(perform: {State.currentlist = debug.setuplist()})
                     HStack {
-                        Button("debug"){State.currentscreen = 100}.padding(.leading,50)
+                        //Button("debug"){State.currentscreen = 100}.padding(.leading,50)
                         Spacer()
                     }
                 }
@@ -87,7 +87,7 @@ struct HomeView: View {
                         .onAppear(perform: {
                             print(UserDefaults.standard.bool(forKey: "firstlaunch"))
                             if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
-                                animoffset = CGFloat(650)
+                                animoffset = CGFloat(850)
                                 openinganim.toggle()
                                 animoffset = 0
                                 UserDefaults.standard.set(true, forKey: "firstlaunch")
