@@ -13,18 +13,24 @@ struct OptionsView: View {
     let defaults = UserDefaults.standard
     var body: some View {
         VStack{
-            HStack {
-                Spacer()
-                Button("Save Changes"){
-                    defaults.set(true, forKey: "checkconfig")
-                    defaults.set(playbuttontoggle, forKey: "playpos")
-                    statem.currentscreen = 0
+            ZStack {
+                HStack{
+                    Button("debug"){statem.currentscreen = 100}
+                    Spacer()
                 }
-                Button("Exit without saving"){
-                    statem.currentscreen = 0
-                }
-                Spacer()
-            }.padding(.bottom,40)
+                HStack {
+                    Spacer()
+                    Button("Save Changes"){
+                        defaults.set(true, forKey: "checkconfig")
+                        defaults.set(playbuttontoggle, forKey: "playpos")
+                        statem.currentscreen = 0
+                    }
+                    Button("Exit without saving"){
+                        statem.currentscreen = 0
+                    }
+                    Spacer()
+                }.padding(.bottom,40)
+            }
             VStack {
                 Text("Settings")
                 HStack{

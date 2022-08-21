@@ -12,6 +12,7 @@ struct HomeView: View {
     var debug = Debug()
     @State var openinganim = false
     @State var animoffset = CGFloat(850)
+    @State var showsheet = false
     
     init() {
          UIScrollView.appearance().bounces = false
@@ -25,9 +26,10 @@ struct HomeView: View {
                     Rectangle().foregroundColor(.clear).frame(width: 300, height: 44, alignment: .center)
                     Button(action: {
                         State.currentscreen = 2
-                    }, label: {Image(systemName: "gearshape.fill")
+                    }, label: {Image(systemName: "gearshape")
                         .resizable()
                         .frame(width: 33, height: 33, alignment: .center)
+                        .foregroundColor(Colorassets.gear)
                         
                     }).buttonStyle(.plain)
                         .foregroundColor(Colorassets.silver)
@@ -59,9 +61,10 @@ struct HomeView: View {
                                                                     id: UUID(),
                                                                     sound: block.sound,
                                                                     savedtime: 0.0)
-                            withAnimation{
-                                State.currentscreen = 1
-                            }
+                           // withAnimation{
+                           //     State.currentscreen = 1
+                           // }
+                            
                             
                             
                         }, label: {
