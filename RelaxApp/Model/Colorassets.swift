@@ -16,5 +16,6 @@ class Colorassets {
     static let pink = Color(uiColor: UIColor(named: "Pink") ?? .brown)
     static let red = Color(uiColor: UIColor(named: "Red") ?? .blue)
     static let bleu = Color(uiColor: UIColor(named: "Bleu") ?? .blue)
-    static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .gray) 
+    static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .gray)
+    static let black = Color(uiColor: UIColor(named: "Black") ?? .brown)
 }

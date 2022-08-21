@@ -37,6 +37,8 @@ struct HomeView: View {
                 Text("Tracks")
                         .font(.custom("VarelaRound-Regular", size: 24))
                         .onAppear(perform: {State.currentlist = debug.setuplist()})
+                        .foregroundColor(Colorassets.gear)
+                        .padding(.trailing, 90)
                     HStack {
                         //Button("debug"){State.currentscreen = 100}.padding(.leading,50)
                         Spacer()
@@ -61,20 +63,29 @@ struct HomeView: View {
                                                                     id: UUID(),
                                                                     sound: block.sound,
                                                                     savedtime: 0.0)
-                           // withAnimation{
-                           //     State.currentscreen = 1
-                           // }
+                           withAnimation{
+                               State.currentscreen = 1
+                           }
                             
                             
                             
                         }, label: {
                             NoiseBlock(backcolor: block.backcolor,
                                        noisetitle: block.noisetitle,
+                                       textcolor: .black,
                                        descripton: block.descripton,
                                        duration: block.duration,
                                        image: block.image!
                                        
-                            ).shadow(color: .gray, radius: 10, x: -5, y: 0)
+                            ).background(content: {EmptyView()
+                                .frame(width: 150, height: 100, alignment: .leading)
+                                .cornerRadius(3)
+                                .shadow(color: Colorassets.gear, radius: 2, x: -5, y: 5)
+                                
+                                .offset(x: -100, y: 40)
+                                
+                            })
+                                
                             block.image?
                                 .resizable()
                                 .frame(width: 100, height: 100, alignment: .center)

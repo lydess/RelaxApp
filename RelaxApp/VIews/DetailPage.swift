@@ -27,11 +27,13 @@ struct DetailPage: View {
                         .animation(.easeInOut(duration: 5), value: statem.currentscreen)
                         .font(.custom("VarelaRound-Regular", size: 26))
                         .offset(x: 0, y: 10)
+                        .foregroundColor(Colorassets.gear)
                     
                     Text(block.descripton)
                         .padding(20)
                         .animation(.easeInOut(duration: 5), value: statem.currentscreen)
                         .font(.custom("VarelaRound-Regular", size: 17))
+                        .foregroundColor(Colorassets.black)
                     
                     }
                 } else {
@@ -43,9 +45,9 @@ struct DetailPage: View {
                     .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
                         .onChanged{ trans in
                             var lastpoint = trans.location.y
-                            if trans.startLocation.y < trans.location.y{
+                            if trans.startLocation.y < trans.location.y {
                                 withAnimation{statem.currentscreen = 0}
-                            } else {print("EHHH")}
+                            }
                             
                             
                         })
@@ -54,7 +56,7 @@ struct DetailPage: View {
                     
                 if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
                     
-                }else if statem.isplaying {
+                } else if statem.isplaying {
                     Button(action: {
                             print("dupes")
                             statem.currentPlayingItem = block
@@ -65,9 +67,7 @@ struct DetailPage: View {
                             statem.sharedplayer.play()
                             statem.isplaying = true
                             statem.UpdateNowPlaying(block: block)
-                        
                     }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
-                        
                     })
                 } else {
                     Button(action: {
@@ -78,10 +78,23 @@ struct DetailPage: View {
                         statem.sharedplayer.play()
                         statem.isplaying = true
                         statem.UpdateNowPlaying(block: block)
-
-                        
-                    }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
-                        
+                    }, label: {
+                            Text("Listen")
+                                .font(.custom("VarelaRound-Regular", size: 24))
+                            .foregroundColor(Colorassets.gear)
+                            .background(content: {
+                                ZStack {
+                                    Rectangle()
+                                        .frame(width: 95, height: 45, alignment: .center)
+                                        .cornerRadius(40)
+                                        .foregroundColor(Colorassets.gear)
+                                    Rectangle()
+                                                .frame(width: 85, height: 33, alignment: .center)
+                                                .foregroundColor(Colorassets.mainback)
+                                                .cornerRadius(40)
+                                }
+                            }
+                            )
                     })
                     
                 }}
@@ -89,9 +102,12 @@ struct DetailPage: View {
                         Spacer()
                         Button(
                             action: {
+                                withAnimation{statem.currentscreen = 0}
                             
                         },
-                            label: {Image(systemName: "chevron.down")
+                            label: {
+                                Image(systemName: "chevron.down")
+                                    .foregroundColor(Colorassets.gear)
                             
                         }
                         ).padding(.trailing, 50)

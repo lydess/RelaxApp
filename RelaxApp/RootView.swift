@@ -22,10 +22,12 @@ struct RootView: View {
             case 0:
                 HomeView()
                     .background(Colorassets.mainback)
+                    
             case 1:
                 DetailPage(block: statem.currentDisplayedItem)
-                    .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))
+                    .background(Colorassets.mainback)
+                    
                     
             case 2:
                 OptionsView()

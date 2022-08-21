@@ -19,7 +19,6 @@
 		CF391CE928AF557400026B70 /* White.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDD28AF3F0C00026B70 /* White.mp3 */; };
 		CF391CEA28AF557600026B70 /* Brown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CDB28AF3BE800026B70 /* Brown.mp3 */; };
 		CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CEB28AF618700026B70 /* Rain.mp3 */; };
-		CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CED28AF626D00026B70 /* Todo.rtf */; };
 		CF391CF228AF74BD00026B70 /* Fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CF128AF74BD00026B70 /* Fire.mp3 */; };
 		CF391D3628AF852500026B70 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D3528AF852500026B70 /* UnitTests.swift */; };
 		CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
@@ -68,7 +67,6 @@
 		CF391CE428AF4FF000026B70 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		CF391CE728AF511500026B70 /* Mayor.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mayor.ttf; sourceTree = "<group>"; };
 		CF391CEB28AF618700026B70 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Rain.mp3; sourceTree = "<group>"; };
-		CF391CED28AF626D00026B70 /* Todo.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Todo.rtf; path = ../../Todo.rtf; sourceTree = "<group>"; };
 		CF391CF128AF74BD00026B70 /* Fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fire.mp3; sourceTree = "<group>"; };
 		CF391D3328AF852500026B70 /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF391D3528AF852500026B70 /* UnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTests.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 		CF08D2C928AA62EC002F30CE = {
 			isa = PBXGroup;
 			children = (
-				CF391CED28AF626D00026B70 /* Todo.rtf */,
 				CF391CE228AF4FE700026B70 /* Fonts */,
 				CF74D6DF28ACB3B5003104FF /* Built-in audio */,
 				CF08D2D428AA62EC002F30CE /* RelaxApp */,
@@ -315,7 +312,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF391CEE28AF626D00026B70 /* Todo.rtf in Resources */,
 				CF391CF228AF74BD00026B70 /* Fire.mp3 in Resources */,
 				CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */,
 				CF391CE628AF4FF000026B70 /* OFL.txt in Resources */,
