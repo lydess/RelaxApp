@@ -14,6 +14,7 @@ struct HomeView: View {
     @State var animoffset = CGFloat(850)
     @State var showsheet = false
     
+    
     init() {
          UIScrollView.appearance().bounces = false
       }
@@ -65,7 +66,7 @@ struct HomeView: View {
                                                                     savedtime: 0.0)
                            withAnimation{
                                State.currentscreen = 1
-                           }
+                            }
                             
                             
                             
