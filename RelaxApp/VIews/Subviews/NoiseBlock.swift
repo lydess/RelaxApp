@@ -12,7 +12,6 @@ struct NoiseBlock: View {
     var noisetitle: String
     var textcolor:Color
     var descripton: String
-    var duration: Int
     var id = UUID()
     var image: Image
     var body: some View {
@@ -48,6 +47,6 @@ struct NoiseBlock: View {
 
 struct NoiseBlock_Previews: PreviewProvider {
     static var previews: some View {
-        NoiseBlock(backcolor: .red,noisetitle: "Brown noise", textcolor: Colorassets.gear,descripton: "Great for people with ADHD and Autism for quieting loud and chattering minds", duration: 60, image: Image(systemName: "cirlce"))
+        NoiseBlock(backcolor: .red,noisetitle: "Brown noise", textcolor: Colorassets.gear,descripton: "Great for people with ADHD and Autism for quieting loud and chattering minds", image: Image(systemName: "cirlce"))
     }
 }

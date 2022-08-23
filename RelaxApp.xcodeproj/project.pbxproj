@@ -37,7 +37,6 @@
 		CF612E9F28AB6AAE00AA8B9C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */; };
 		CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
-		CF644E9C28B1BF6500270901 /* Colorassets.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9B28B1BF6500270901 /* Colorassets.swift */; };
 		CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
 		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CF8105D128B482320065E13B /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
@@ -77,7 +76,6 @@
 		CF612E9E28AB6AAE00AA8B9C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF612EA028AB6C3600AA8B9C /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioHandler.swift; path = RelaxApp/Audio/AudioHandler.swift; sourceTree = SOURCE_ROOT; };
-		CF644E9B28B1BF6500270901 /* Colorassets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colorassets.swift; sourceTree = "<group>"; };
 		CF644E9D28B1BF9700270901 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		CF74D6E028ACCAB7003104FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackBar.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 			children = (
 				CF612E9A28AB692200AA8B9C /* StateManager.swift */,
 				CF612E9C28AB695300AA8B9C /* Custom Models.swift */,
-				CF644E9B28B1BF6500270901 /* Colorassets.swift */,
 				CF8105D028B482320065E13B /* GyroManager.swift */,
 			);
 			path = Model;
@@ -341,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF644E9C28B1BF6500270901 /* Colorassets.swift in Sources */,
 				CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */,
 				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
 				CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */,

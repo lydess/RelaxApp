@@ -76,7 +76,23 @@ struct DetailPage: View {
                         Text("Listen")
                             .font(.custom("VarelaRound-Regular", size: 24))
                             
-                    })
+                            .padding()
+                        .foregroundColor(Colorassets.gear)
+                        .background(content: {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 95, height: 45, alignment: .center)
+                                    .cornerRadius(40)
+                                    .foregroundColor(Colorassets.gear)
+                                Rectangle()
+                                    .frame(width: 85, height: 33, alignment: .center)
+                                    .foregroundColor(Colorassets.mainback)
+                                    .cornerRadius(40)
+                            }
+                        }
+                    )
+                
+                })
                 } else {
                     Button(action: {
                         statem.currentPlayingItem = statem.currentDisplayedItem

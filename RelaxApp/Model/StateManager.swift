@@ -8,11 +8,13 @@
 import Foundation
 import AVKit
 import MediaPlayer
+import SwiftUI
+
 class StateManager: ObservableObject {
     static let shared = StateManager()
     @Published var sharedplayer = AVAudioPlayer()
-    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug", duration: 60, id: UUID(), sound: .brown, savedtime: 0.0)
-    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debugplaying", descripton: "Descbug playing", duration: 60, id: UUID(), sound: .white, savedtime: 0.0)
+    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown")!), id: UUID(), sound: .brown)
+    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown")!), id: UUID(), sound: .brown)
     @Published var currentlist = [MenuBlocks]()
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0
@@ -22,23 +24,18 @@ class StateManager: ObservableObject {
      func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter
         let commandCenter = MPRemoteCommandCenter.shared()
-
         // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
             self.sharedplayer.play()
             self.isplaying = true
             return .success
         }
-        
-        
-
         // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { [unowned self] event in
             self.sharedplayer.pause()
             self.isplaying = false
             return .success
         }
-        
     }
     func UpdateNowPlaying(block: MenuBlocks) {
         // Define Now Playing Info
@@ -58,25 +55,20 @@ class StateManager: ObservableObject {
         switch selectedFile {
         case .brown:
             return "Brown"
-            
         case .white:
             return "White"
-        
         case .rain:
             return "Rain"
         case .fire:
             return "Fire"
         
         }
-    
     }
-    
     func defaultsConfigCheck() -> Bool {
         let testcase = UserDefaults.standard.string(forKey: "checkconfig")
         if testcase == nil {
             return false
         }
         return true
-        
     }
 }

@@ -9,6 +9,7 @@ import SwiftUI
 import AVFAudio
 
 struct PlayBackBar: View {
+    @StateObject var statem = globalstate
     let buttonheight = CGFloat(40)
     let buttonwidth = CGFloat(40)
     let buttonpadding = CGFloat(29)
@@ -16,7 +17,6 @@ struct PlayBackBar: View {
     let audiohandle = AudioHandler()
     let player: AVAudioPlayer?
     let defaults = UserDefaults.standard
-    @StateObject var statem = globalstate
     var block:MenuBlocks
     
     var body: some View {
@@ -94,6 +94,6 @@ struct PlayBackBar: View {
 
 struct PlayBackBar_Previews: PreviewProvider {
     static var previews: some View {
-        PlayBackBar(player: nil, block: MenuBlocks(backcolor: .red, noisetitle: "title", descripton: "desc", duration: 60, id: UUID(), sound: .white, savedtime: 0.0))
+        PlayBackBar(player: nil, block: MenuBlocks(backcolor: .red, noisetitle: "title", descripton: "desc",  id: UUID(), sound: .white))
     }
 }

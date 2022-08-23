@@ -34,17 +34,17 @@ struct RootView: View {
                     })
             case .DetailScreen:
                 DetailPage()
+                    .background(Colorassets.mainback)
+                    .transition(.move(edge: .bottom))
             case .Options:
                 OptionsView()
             case .testcase:
                 VStack {
                     Image(systemName: "circle.fill")
-                    Button("return"){globalstate.currentscreen = .HomeScreen}
+                    Button("return"){ globalstate.currentscreen = .HomeScreen }
                 }
             case .Debug:
                 DebugView()
-            default:
-                EmptyView()
             }
                 
                 

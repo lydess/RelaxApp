@@ -14,6 +14,7 @@ struct RelaxAppApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .background(Colorassets.mainback)
         }
     }
 }

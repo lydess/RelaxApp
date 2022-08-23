@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Dispatch
+
 
 
 struct HomeView: View {
@@ -26,10 +26,6 @@ struct HomeView: View {
         VStack {
             VStack{
             HStack {
-                Button("asdfg"){
-                    withAnimation{State.currentscreen = .testcase}
-                }.padding()
-                
                 ZStack{
                 HStack{
                     Rectangle().foregroundColor(.clear).frame(width: 300, height: 44, alignment: .center)
@@ -53,22 +49,23 @@ struct HomeView: View {
                 ForEach(State.currentlist, id: \.id){ block in
                     HStack {
                         Button(action: {
-                            State.currentDisplayedItem = MenuBlocks(backcolor: block.backcolor, noisetitle: block.noisetitle,
-                                        descripton: block.descripton, duration: 6,
-                                        image: block.image, id: UUID(),
-                                        sound: block.sound, savedtime: 0.0)
                             
+                            withAnimation{State.currentscreen = .DetailScreen}
                             
-                            State.currentscreen = .DetailScreen
+                            State.currentDisplayedItem =
+                            MenuBlocks(backcolor: block.backcolor,
+                                       noisetitle: block.noisetitle,
+                                        descripton: block.descripton,
+                                        image: block.image,
+                                        id: block.id,
+                                        sound: block.sound
+                            )
                             
-                            
-                               
                         }, label: {
                             NoiseBlock(backcolor: block.backcolor,
                                        noisetitle: block.noisetitle,
                                        textcolor: .black,
                                        descripton: block.descripton,
-                                       duration: block.duration,
                                        image: block.image!
                             )
                             block.image?
