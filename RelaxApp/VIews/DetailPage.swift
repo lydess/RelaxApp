@@ -12,20 +12,26 @@ struct DetailPage: View {
     var player: AVAudioPlayer?
     @StateObject var statem = globalstate
     @State var block:MenuBlocks
+    @State var anim = false
     var body: some View {
         ZStack{
             VStack{
+                Text(block.noisetitle)
+                    .padding()
+                    .font(.custom("VarelaRound-Regular", size: 26))
+                    .offset(x: 0, y: 10)
+                    .foregroundColor(Colorassets.gear)
+                    .padding(.bottom, 5)
+                Spacer()
                 block.image?.resizable()
-                    .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center).padding(20)
+                    .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center)
                     .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
                         .onChanged{ trans in
                             if trans.startLocation.y < trans.location.y {
-                                withAnimation{
                                     statem.currentscreen = 0
-                                }
                             }
                         })
-            ZStack {
+            VStack {
                 HStack{
                 if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
                     
@@ -39,7 +45,10 @@ struct DetailPage: View {
                         statem.sharedplayer.play()
                         statem.isplaying = true
                         statem.UpdateNowPlaying(block: block)
-                    }, label: { Text("Listen").font(.custom("VarelaRound-Regular", size: 24))
+                    }, label: {
+                        Text("Listen")
+                            .font(.custom("VarelaRound-Regular", size: 24))
+                            .animation(.interactiveSpring())
                     })
                 } else {
                     Button(action: {
@@ -52,6 +61,8 @@ struct DetailPage: View {
                     }, label: {
                             Text("Listen")
                                 .font(.custom("VarelaRound-Regular", size: 24))
+                                .animation(.interactiveSpring())
+                                .padding()
                             .foregroundColor(Colorassets.gear)
                             .background(content: {
                                 ZStack {
@@ -72,7 +83,7 @@ struct DetailPage: View {
                         Spacer()
                         Button(
                             action: {
-                                withAnimation{statem.currentscreen = 0}
+                                statem.currentscreen = 0
                         },
                             label: {
                                 Image(systemName: "chevron.down")
@@ -82,20 +93,19 @@ struct DetailPage: View {
                     }
                 }
                     VStack{
-                    Text(block.noisetitle)
-                        .padding()
-                        .font(.custom("VarelaRound-Regular", size: 26))
-                        .offset(x: 0, y: 10)
-                        .foregroundColor(Colorassets.gear)
+                    
                     
                     Text(block.descripton)
                         .padding(20)
                         .font(.custom("VarelaRound-Regular", size: 17))
                         .foregroundColor(Colorassets.black)
-                    
+                        
+                        
+                        Spacer()
                     }
                 }
         }
+        
     }
 }
 

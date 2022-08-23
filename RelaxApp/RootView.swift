@@ -48,13 +48,15 @@ struct RootView: View {
         })
             VStack{
                 Spacer()
+                
             if statem.isplaying{
                 PlayBackBar(player: nil, block: statem.currentPlayingItem)
+                    
                     
                 
             }
         }
-        }.background(Colorassets.mainback)
+        }
         
     }
 }

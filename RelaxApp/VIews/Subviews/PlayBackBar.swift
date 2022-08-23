@@ -18,7 +18,6 @@ struct PlayBackBar: View {
     let defaults = UserDefaults.standard
     @StateObject var statem = globalstate
     var block:MenuBlocks
-    var time = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
@@ -30,14 +29,18 @@ struct PlayBackBar: View {
                             statem.sharedplayer.play()
                         },
                                label: {
-                            Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
+                            Image(systemName: "play.fill")
+                                .resizable()
+                                .frame(width: buttonwidth, height: buttonheight, alignment: .center)
                         }).padding(buttonpadding)
                             .buttonStyle(.plain)
                         Button(action: {
                             statem.sharedplayer.pause()
                         },
                                label: {
-                            Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
+                            Image(systemName: "pause.fill")
+                                .resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
+                                .padding(buttonpadding)
                             
                         }).buttonStyle(.plain)
                         Button(action: {
