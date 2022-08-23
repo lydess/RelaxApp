@@ -81,7 +81,7 @@ struct PlayBackBar: View {
                     }
                 }
                 
-            }   .background(Rectangle().foregroundColor(Color(uiColor: UIColor(named: "Playbar")!)).cornerRadius(borderradius))
+            }   .background(Rectangle().foregroundColor(Colorassets.gear).cornerRadius(borderradius))
                 
                 .background(.green)
             .cornerRadius(borderradius)

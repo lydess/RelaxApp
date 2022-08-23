@@ -8,6 +8,7 @@
 import SwiftUI
 
 let globalstate = StateManager()
+let Gyrostate = GyroManager()
 
 struct RootView: View {
    
@@ -24,15 +25,25 @@ struct RootView: View {
             case 0:
                 HomeView()
                     .background(Colorassets.mainback)
-                    
+                    .onAppear(perform: {
+                        Gyrostate.activateGyro()
+                    })
+                    .onDisappear(perform: {
+                        Gyrostate.deactivateGyro()
+                    })
+                    .transition(.opacity)
+                     
             case 1:
                 DetailPage(block: statem.currentDisplayedItem)
-                    .transition(.move(edge: .bottom))
                     .background(Colorassets.mainback)
+                    
+                    
+                    
                     
                     
             case 2:
                 OptionsView()
+                    .transition(.opacity)
             case 100:
                 DebugView()
             default:

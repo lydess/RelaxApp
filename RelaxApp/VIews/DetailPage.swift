@@ -16,12 +16,33 @@ struct DetailPage: View {
     var body: some View {
         ZStack{
             VStack{
-                Text(block.noisetitle)
-                    .padding()
-                    .font(.custom("VarelaRound-Regular", size: 26))
-                    .offset(x: 0, y: 10)
-                    .foregroundColor(Colorassets.gear)
+                HStack {
+                    ZStack{
+                        HStack {
+                            Button(
+                            action: {
+                                statem.currentscreen = 0
+                        },
+                            label: {
+                                Image(systemName: "chevron.down")
+                                    .resizable()
+                                    .frame(width: 20, height: 10, alignment: .center)
+                                    .foregroundColor(Colorassets.gear)
+                                    .padding()
+                        }
+                            )
+                            Spacer()
+                        }
+                    
+                    Text(block.noisetitle)
+                        .padding()
+                        .font(.custom("VarelaRound-Regular", size: 26))
+                        .offset(x: 0, y: 10)
+                        .foregroundColor(Colorassets.gear)
                     .padding(.bottom, 5)
+                    Spacer()
+                }
+                }
                 Spacer()
                 block.image?.resizable()
                     .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center)
@@ -32,6 +53,18 @@ struct DetailPage: View {
                             }
                         })
             VStack {
+                VStack{
+                
+                
+                Text(block.descripton)
+                    .padding(20)
+                    .font(.custom("VarelaRound-Regular", size: 17))
+                    .foregroundColor(Colorassets.black)
+                    
+                    
+                    
+                }
+                
                 HStack{
                 if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
                     
@@ -77,32 +110,12 @@ struct DetailPage: View {
                                 }
                             }
                         )
+                    
                     })
                 }}
-                    HStack{
-                        Spacer()
-                        Button(
-                            action: {
-                                statem.currentscreen = 0
-                        },
-                            label: {
-                                Image(systemName: "chevron.down")
-                                    .foregroundColor(Colorassets.gear)
-                        }
-                        ).padding(.trailing, 50)
-                    }
+                Spacer()
                 }
-                    VStack{
                     
-                    
-                    Text(block.descripton)
-                        .padding(20)
-                        .font(.custom("VarelaRound-Regular", size: 17))
-                        .foregroundColor(Colorassets.black)
-                        
-                        
-                        Spacer()
-                    }
                 }
         }
         

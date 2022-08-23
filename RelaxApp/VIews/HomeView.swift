@@ -11,7 +11,7 @@ import Dispatch
 
 struct HomeView: View {
     @StateObject var State = globalstate
-    @StateObject var Gyro = GyroManager()
+    @StateObject var Gyro = Gyrostate
     @State var openinganim = false
     @State var animoffsety = CGFloat(850)
     @State var animoffsetx = CGFloat(0)
@@ -53,7 +53,10 @@ struct HomeView: View {
                                                                     descripton: block.descripton, duration: 6,
                                                                     image: block.image, id: UUID(),
                                                                     sound: block.sound, savedtime: 0.0)
-                            State.currentscreen = 1
+                            
+                            
+                            
+                            
                                
                         }, label: {
                             NoiseBlock(backcolor: block.backcolor,
@@ -74,7 +77,7 @@ struct HomeView: View {
                             
                     }.frame(width: 400, height: 125, alignment: .center)
                         .onAppear(perform: {
-                            print(UserDefaults.standard.bool(forKey: "firstlaunch"))
+                            
                             if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
                                 animoffsety = CGFloat(850)
                                 openinganim.toggle()

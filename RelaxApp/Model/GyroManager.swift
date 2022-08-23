@@ -42,6 +42,36 @@ class GyroManager: ObservableObject {
             
         }
     }
+    func activateGyro() {
+        self.motion.startGyroUpdates(to: .main) { (data, error) in
+            if self.rollx <= 0 {
+                self.rollx += (data?.rotationRate.x)! + 1 / 10
+            } else {
+                self.rollx += (data?.rotationRate.x)! - 1 / 10
+            }
+            
+            if self.rolly <= 0 {
+                self.rolly += (data?.rotationRate.y)! + 1 / 10
+            } else {
+                self.rolly += (data?.rotationRate.y)! - 1 / 10
+            }
+            
+            self.pulsex = (data?.rotationRate.x)!
+            self.pulsey = (data?.rotationRate.y)!
+            
+            
+            
+            let tup = (self.rollx,self.rolly)
+            print(tup)
+            
+        }
+        
+    }
+    
+    func deactivateGyro() {
+        self.motion.stopGyroUpdates()
+        
+    }
    
     
 }
