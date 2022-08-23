@@ -6,18 +6,24 @@
 //
 
 import SwiftUI
+import Dispatch
+
 
 struct HomeView: View {
     @StateObject var State = globalstate
-    var debug = Debug()
+    @StateObject var Gyro = GyroManager()
     @State var openinganim = false
-    @State var animoffset = CGFloat(850)
+    @State var animoffsety = CGFloat(850)
+    @State var animoffsetx = CGFloat(0)
     @State var showsheet = false
+    @State var openinganimcomplete = false
+    let debug = Debug()
     
     
     init() {
-         UIScrollView.appearance().bounces = false
+        UIScrollView.appearance().bounces = false
       }
+    
     var body: some View {
         VStack {
             VStack{
@@ -45,13 +51,8 @@ struct HomeView: View {
                         Spacer()
                     }
                 }
-                
             }.padding(.top,10)
-            
             }
-                
-            
-                    
             ScrollView{
                 ForEach(State.currentlist, id: \.id){ block in
                     HStack {
@@ -92,31 +93,27 @@ struct HomeView: View {
                                 .frame(width: 100, height: 100, alignment: .center)
                                 .cornerRadius(5)
                                 .padding()
+                                
                             
                         }).buttonStyle(.plain)
-                            //.opacity(openinganim ? 0 : 1)
-                            .offset(x: 0, y: animoffset)
+                            
                             .animation(.interactiveSpring(response: 1.0, dampingFraction: 0.55, blendDuration: 2).delay(Double.random(in: 0.1...0.3)), value: openinganim)
                             
                     }.frame(width: 400, height: 125, alignment: .center)
                         .onAppear(perform: {
                             print(UserDefaults.standard.bool(forKey: "firstlaunch"))
                             if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
-                                animoffset = CGFloat(850)
+                                animoffsety = CGFloat(850)
                                 openinganim.toggle()
-                                animoffset = 0
+                                animoffsety = 0
                                 UserDefaults.standard.set(true, forKey: "firstlaunch")
                                 print("first launch, executing")
                             } else {
-                                animoffset = CGFloat(0)
+                                animoffsety = CGFloat(0)
+                                openinganimcomplete.toggle()
                             }
                         })
-                        
-                    
-                    
                 }
-                
-                
             }
         }
     }
