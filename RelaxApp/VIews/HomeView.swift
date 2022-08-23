@@ -27,14 +27,14 @@ struct HomeView: View {
             VStack{
             HStack {
                 Button("asdfg"){
-                    withAnimation{State.currentscreen = 3}
+                    withAnimation{State.currentscreen = .testcase}
                 }.padding()
                 
                 ZStack{
                 HStack{
                     Rectangle().foregroundColor(.clear).frame(width: 300, height: 44, alignment: .center)
                     Button(action: {
-                        State.currentscreen = 2
+                        State.currentscreen = .Options
                     }, label: {Image(systemName: "gearshape")
                         .resizable()
                         .frame(width: 33, height: 33, alignment: .center)
@@ -54,18 +54,19 @@ struct HomeView: View {
                     HStack {
                         Button(action: {
                             State.currentDisplayedItem = MenuBlocks(backcolor: block.backcolor, noisetitle: block.noisetitle,
-                                                                    descripton: block.descripton, duration: 6,
-                                                                    image: block.image, id: UUID(),
-                                                                    sound: block.sound, savedtime: 0.0)
+                                        descripton: block.descripton, duration: 6,
+                                        image: block.image, id: UUID(),
+                                        sound: block.sound, savedtime: 0.0)
                             
-                            withAnimation{State.currentscreen = 1}
+                            
+                            State.currentscreen = .DetailScreen
                             
                             
                                
                         }, label: {
                             NoiseBlock(backcolor: block.backcolor,
                                        noisetitle: block.noisetitle,
-                                       textcolor: Color(.black),
+                                       textcolor: .black,
                                        descripton: block.descripton,
                                        duration: block.duration,
                                        image: block.image!

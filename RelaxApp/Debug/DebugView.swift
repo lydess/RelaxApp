@@ -18,7 +18,7 @@ struct DebugView: View {
     
     var body: some View {
        VStack {
-            Button("get me outa here!"){statem.currentscreen = 0}
+           Button("get me outa here!"){statem.currentscreen = .HomeScreen}
             Text("Bugs, Bugs everywhere!")
            Spacer()
            Button("push for anims"){

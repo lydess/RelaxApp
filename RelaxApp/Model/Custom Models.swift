@@ -29,4 +29,12 @@ enum AvailableSounds : String, CaseIterable {
    
 }
 
+enum CurrentScreen {
+    case HomeScreen
+    case DetailScreen
+    case Debug
+    case Options
+    case testcase
+}
+
 

@@ -22,7 +22,7 @@ struct RootView: View {
         ZStack {
             VStack{
             switch statem.currentscreen {
-            case 0:
+            case .HomeScreen:
                 HomeView()
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
@@ -32,20 +32,16 @@ struct RootView: View {
                         Gyrostate.deactivateGyro()
                         print("not seeing")
                     })
-                    
-                     
-            case 1:
-                
-                DetailPage(block: statem.currentDisplayedItem)
-                    
-            case 2:
+            case .DetailScreen:
+                DetailPage()
+            case .Options:
                 OptionsView()
-            case 3:
+            case .testcase:
                 VStack {
                     Image(systemName: "circle.fill")
-                    Button("return"){globalstate.currentscreen = 0}
+                    Button("return"){globalstate.currentscreen = .HomeScreen}
                 }
-            case 100:
+            case .Debug:
                 DebugView()
             default:
                 EmptyView()

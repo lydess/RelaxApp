@@ -11,7 +11,6 @@ struct DetailPage: View {
     var audiohandle = AudioHandler()
     var player: AVAudioPlayer?
     @StateObject var statem = globalstate
-    @State var block:MenuBlocks
     @State var anim = false
     var body: some View {
         ZStack{
@@ -21,7 +20,7 @@ struct DetailPage: View {
                         HStack {
                             Button(
                             action: {
-                                statem.currentscreen = 0
+                                statem.currentscreen = .HomeScreen
                         },
                             label: {
                                 Image(systemName: "chevron.down")
@@ -34,7 +33,7 @@ struct DetailPage: View {
                             Spacer()
                         }
                     
-                    Text(block.noisetitle)
+                        Text(statem.currentDisplayedItem.noisetitle)
                         .padding()
                         .font(.custom("VarelaRound-Regular", size: 26))
                         .offset(x: 0, y: -10)
@@ -44,40 +43,35 @@ struct DetailPage: View {
                 }
                 }
                 Spacer()
-                block.image?.resizable()
+                statem.currentDisplayedItem.image?.resizable()
                     .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center)
                     .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
                         .onChanged{ trans in
                             if trans.startLocation.y < trans.location.y {
-                                    statem.currentscreen = 0
+                                statem.currentscreen = .HomeScreen
                             }
                         })
             VStack {
                 VStack{
-                
-                
-                Text(block.descripton)
+                    Text(statem.currentDisplayedItem.descripton)
                     .padding(20)
                     .font(.custom("VarelaRound-Regular", size: 17))
                     .foregroundColor(Colorassets.black)
-                    
-                    
-                    
                 }
                 
                 HStack{
-                if statem.isplaying && statem.currentPlayingItem.noisetitle == block.noisetitle {
+                    if statem.isplaying && statem.currentPlayingItem.noisetitle == statem.currentDisplayedItem.noisetitle {
                     
                 } else if statem.isplaying {
                     Button(action: {
-                        statem.currentPlayingItem = block
+                        statem.currentPlayingItem = statem.currentDisplayedItem
                         statem.sharedplayer.stop()
                         statem.isplaying = false
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
                         statem.sharedplayer.numberOfLoops = 100
                         statem.sharedplayer.play()
                         statem.isplaying = true
-                        statem.UpdateNowPlaying(block: block)
+                        statem.UpdateNowPlaying(block: statem.currentDisplayedItem)
                     }, label: {
                         Text("Listen")
                             .font(.custom("VarelaRound-Regular", size: 24))
@@ -85,12 +79,12 @@ struct DetailPage: View {
                     })
                 } else {
                     Button(action: {
-                        statem.currentPlayingItem = block
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: block.sound)
+                        statem.currentPlayingItem = statem.currentDisplayedItem
+                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
                         statem.sharedplayer.numberOfLoops = 100
                         statem.sharedplayer.play()
                         statem.isplaying = true
-                        statem.UpdateNowPlaying(block: block)
+                        statem.UpdateNowPlaying(block: statem.currentDisplayedItem)
                     }, label: {
                             Text("Listen")
                                 .font(.custom("VarelaRound-Regular", size: 24))
@@ -104,9 +98,9 @@ struct DetailPage: View {
                                         .cornerRadius(40)
                                         .foregroundColor(Colorassets.gear)
                                     Rectangle()
-                                                .frame(width: 85, height: 33, alignment: .center)
-                                                .foregroundColor(Colorassets.mainback)
-                                                .cornerRadius(40)
+                                        .frame(width: 85, height: 33, alignment: .center)
+                                        .foregroundColor(Colorassets.mainback)
+                                        .cornerRadius(40)
                                 }
                             }
                         )
@@ -124,7 +118,7 @@ struct DetailPage: View {
 
 struct DetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPage(block: MenuBlocks(backcolor: .red, noisetitle: "Title", descripton: "Desc", duration: 50, id: UUID(), sound: .white, savedtime: 0.0))
+        DetailPage()
     }
 }
 

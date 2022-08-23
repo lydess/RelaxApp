@@ -14,7 +14,7 @@ class StateManager: ObservableObject {
     @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug", duration: 60, id: UUID(), sound: .brown, savedtime: 0.0)
     @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debugplaying", descripton: "Descbug playing", duration: 60, id: UUID(), sound: .white, savedtime: 0.0)
     @Published var currentlist = [MenuBlocks]()
-    @Published var currentscreen = 0
+    @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0
     @Published var isplaying = false
     @Published var showpage = 0

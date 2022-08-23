@@ -15,7 +15,7 @@ struct OptionsView: View {
         VStack{
             ZStack {
                 HStack{
-                    Button("debug"){statem.currentscreen = 100}
+                    Button("debug"){statem.currentscreen = .Debug}
                     Spacer()
                 }
                 HStack {
@@ -23,10 +23,10 @@ struct OptionsView: View {
                     Button("Save Changes"){
                         defaults.set(true, forKey: "checkconfig")
                         defaults.set(playbuttontoggle, forKey: "playpos")
-                        statem.currentscreen = 0
+                        statem.currentscreen = .HomeScreen
                     }
                     Button("Exit without saving"){
-                        statem.currentscreen = 0
+                        statem.currentscreen = .HomeScreen
                     }
                     Spacer()
                 }.padding(.bottom,40)
