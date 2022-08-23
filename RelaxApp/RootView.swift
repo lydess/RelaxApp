@@ -30,20 +30,21 @@ struct RootView: View {
                     })
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
+                        print("not seeing")
                     })
-                    .transition(.opacity)
+                    
                      
             case 1:
+                
                 DetailPage(block: statem.currentDisplayedItem)
-                    .background(Colorassets.mainback)
-                    
-                    
-                    
-                    
                     
             case 2:
                 OptionsView()
-                    .transition(.opacity)
+            case 3:
+                VStack {
+                    Image(systemName: "circle.fill")
+                    Button("return"){globalstate.currentscreen = 0}
+                }
             case 100:
                 DebugView()
             default:

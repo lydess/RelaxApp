@@ -17,7 +17,7 @@ class GyroManager: ObservableObject {
     
     
     init() {
-        self.motion.gyroUpdateInterval = 1 / 60
+        self.motion.gyroUpdateInterval = 600
         
         self.motion.startGyroUpdates(to: .main) { (data, error) in
             if self.rollx <= 0 {

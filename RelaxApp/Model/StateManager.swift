@@ -17,6 +17,7 @@ class StateManager: ObservableObject {
     @Published var currentscreen = 0
     @Published var musicstatus = 0.0
     @Published var isplaying = false
+    @Published var showpage = 0
     
      func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter

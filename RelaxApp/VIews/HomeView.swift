@@ -26,6 +26,10 @@ struct HomeView: View {
         VStack {
             VStack{
             HStack {
+                Button("asdfg"){
+                    withAnimation{State.currentscreen = 3}
+                }.padding()
+                
                 ZStack{
                 HStack{
                     Rectangle().foregroundColor(.clear).frame(width: 300, height: 44, alignment: .center)
@@ -54,7 +58,7 @@ struct HomeView: View {
                                                                     image: block.image, id: UUID(),
                                                                     sound: block.sound, savedtime: 0.0)
                             
-                            
+                            withAnimation{State.currentscreen = 1}
                             
                             
                                

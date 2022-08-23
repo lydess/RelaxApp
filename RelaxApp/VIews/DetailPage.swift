@@ -37,7 +37,7 @@ struct DetailPage: View {
                     Text(block.noisetitle)
                         .padding()
                         .font(.custom("VarelaRound-Regular", size: 26))
-                        .offset(x: 0, y: 10)
+                        .offset(x: 0, y: -10)
                         .foregroundColor(Colorassets.gear)
                     .padding(.bottom, 5)
                     Spacer()
@@ -81,7 +81,7 @@ struct DetailPage: View {
                     }, label: {
                         Text("Listen")
                             .font(.custom("VarelaRound-Regular", size: 24))
-                            .animation(.interactiveSpring())
+                            
                     })
                 } else {
                     Button(action: {
@@ -94,7 +94,7 @@ struct DetailPage: View {
                     }, label: {
                             Text("Listen")
                                 .font(.custom("VarelaRound-Regular", size: 24))
-                                .animation(.interactiveSpring())
+                                
                                 .padding()
                             .foregroundColor(Colorassets.gear)
                             .background(content: {
