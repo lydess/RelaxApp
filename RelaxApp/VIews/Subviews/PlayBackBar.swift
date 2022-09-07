@@ -45,6 +45,7 @@ struct PlayBackBar: View {
                                 .frame(width: buttonwidth, height: buttonheight, alignment: .center)
                         }).padding([.leading,.bottom,.trailing], buttonpadding)
                             .buttonStyle(.plain)
+                            .accessibilityLabel("Play")
                         Button(action: {
                             statem.sharedplayer.pause()
                         },
@@ -55,6 +56,7 @@ struct PlayBackBar: View {
                                 
                             
                         }).buttonStyle(.plain)
+                            .accessibilityLabel("Pause")
                         Button(action: {
                             statem.sharedplayer.stop()
                             statem.isplaying = false
@@ -62,6 +64,7 @@ struct PlayBackBar: View {
                                label: {
                             Image(systemName: "stop.fill")
                                 .resizable()
+                                .accessibilityLabel("Stop")
                                 .frame(width: buttonwidth, height: buttonheight, alignment: .center)
                                 .padding([.leading,.bottom,.trailing], buttonpadding)
                             
@@ -78,6 +81,7 @@ struct PlayBackBar: View {
                             Image(systemName: "stop.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
                             
                         }).buttonStyle(.plain)
+                            .accessibilityLabel("Play")
                         Button(action: {
                             statem.sharedplayer.pause()
                         },
@@ -85,6 +89,7 @@ struct PlayBackBar: View {
                             Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
                             
                         }).buttonStyle(.plain)
+                            .accessibilityLabel("Pause")
                         Button(action: {
                             statem.sharedplayer.play()
                         },
@@ -92,6 +97,7 @@ struct PlayBackBar: View {
                             Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
                         }).padding(buttonpadding)
                             .buttonStyle(.plain)
+                            .accessibilityLabel("Stop")
                         
                     }
                 }

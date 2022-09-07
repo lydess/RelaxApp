@@ -7,6 +7,7 @@
 
 import XCTest
 import SwiftUI
+import AVFoundation
 
 class RelaxAppUITests: XCTestCase {
     @StateObject var statem = globalstate
@@ -30,6 +31,23 @@ class RelaxAppUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    func testPlayer() throws
+    {
+        let app = XCUIApplication()
+        app.launchArguments = ["AUTOTEST"]
+        app.launch()
+        let button = app.buttons["Brown Noise"]
+        let listen = app.buttons["Listen"]
+        let stop = app.buttons["Stop"]
+        XCTAssert(button.exists)
+        button.tap()
+        XCTAssert(listen.exists)
+        listen.tap()
+        XCTAssert(stop.exists)
+        stop.tap()
+        
+        
     }
     func testMenuNav() throws
     {
