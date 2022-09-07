@@ -16,9 +16,12 @@ struct OptionsView: View {
         VStack{
             ZStack {
                 #if DEBUG
+                VStack{
+                    Text("").frame(width: 10, height: 100, alignment: .center)
                 HStack{
                     Button("debug"){statem.currentscreen = .Debug}
                     Spacer()
+                }
                 }
                 #endif
             }
@@ -26,16 +29,17 @@ struct OptionsView: View {
                 HStack {
                     Button(action: {statem.currentscreen = .HomeScreen}, label: {Image(systemName: "chevron.left")})
                         .padding()
+                        .foregroundColor(Colorassets.gear)
                     Spacer()
                     Text("Settings")
                         .font(.custom("VarelaRound-Regular.ttf", size: 21))
                         .offset(x: -20, y: 0)
                     .foregroundColor(Colorassets.gear)
                     Spacer()
-                }
+                }.padding(.top, 20)
                    
                 HStack{
-                    Text("move the Play Button to be on the right side of the screen").padding()
+                    Text("Move the Play Button to be on the right side of the screen")
                     Spacer()
                     Toggle(isOn: $playbuttontoggle, label: {})
                         .padding(.trailing,50)
@@ -46,7 +50,7 @@ struct OptionsView: View {
 
                 }
                 HStack{
-                    Text("Pause Sounds when the app is hidden").padding()
+                    Text("Pause Sounds when the app is hidden")
                     Spacer()
                     Toggle(isOn: $stoponhide, label: {})
                         .padding(.trailing,50)

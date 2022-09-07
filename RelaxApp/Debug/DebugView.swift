@@ -27,10 +27,9 @@ struct DebugView: View {
            }
            Spacer()
            
-           Rectangle().frame(width: 100, height: 100, alignment: .center)
-               .offset(x: boxW, y: boxH)
-               .foregroundColor(.red)
-               .animation(.interactiveSpring(response: 1.25, dampingFraction: 0.25, blendDuration: 0), value: anim)
+           Rectangle()
+               .frame(width: 100, height: 100 , alignment: .center).foregroundColor(.green)
+               .padding(.leading, 300)
                
                
                

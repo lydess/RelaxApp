@@ -38,15 +38,16 @@ struct HomeView: View {
                         .foregroundColor(Colorassets.gear)
                     }).buttonStyle(.plain)
                         .foregroundColor(Colorassets.silver)
+                        .padding(.trailing, 50)
                         .accessibilityLabel("Settings")
                 }
                 Text("Tracks")
-                        .font(.custom("VarelaRound-Regular", size: 24))
+                        .font(.custom("VarelaRound-Regular", size: 26))
                         .onAppear(perform: {State.currentlist = debug.setuplist()})
                         .foregroundColor(Colorassets.gear)
-                        .padding(.trailing, 90)
+                        .padding(.trailing, 30)
                     }
-            }.padding(.top,10)
+            }.padding(.top,30)
                
             }
             
@@ -106,6 +107,7 @@ struct HomeView: View {
                     idealHeight: 400,
                     maxHeight: UIScreen.main.bounds.height,
                     alignment: .center)
+            .padding(.top,15)
             Spacer()
            
         }

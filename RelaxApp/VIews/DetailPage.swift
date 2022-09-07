@@ -27,7 +27,8 @@ struct DetailPage: View {
                                     .resizable()
                                     .frame(width: 20, height: 10, alignment: .center)
                                     .foregroundColor(Colorassets.gear)
-                                    .padding()
+                                    .padding(20)
+                                    .padding(.top, 30)
                         }
                             )
                             .accessibilityLabel("BackButton")
@@ -35,9 +36,8 @@ struct DetailPage: View {
                         }
                     
                         Text(statem.currentDisplayedItem.noisetitle)
-                        .padding()
+                            .padding(.top, 30)
                         .font(.custom("VarelaRound-Regular", size: 26))
-                        .offset(x: 0, y: -10)
                         .foregroundColor(Colorassets.gear)
                     .padding(.bottom, 5)
                     Spacer()

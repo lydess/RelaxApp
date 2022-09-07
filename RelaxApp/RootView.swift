@@ -17,6 +17,7 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
+            
             VStack{
             switch statem.currentscreen {
             case .HomeScreen:
@@ -33,7 +34,7 @@ struct RootView: View {
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
-                }.background(Colorassets.mainback)
+                }
             case .DetailScreen:
                 VStack{
                 DetailPage()
@@ -44,7 +45,7 @@ struct RootView: View {
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
                 
-                }.background(Colorassets.mainback)
+                }
             case .Options:
                 OptionsView()
             case .testcase:
@@ -60,12 +61,18 @@ struct RootView: View {
             }
             )
             
+            
         }.onChange(of: scenePhase) { newphase in
             if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
                 statem.sharedplayer.stop()
             }
             
         }
+        .padding()
+        .ignoresSafeArea()
+        .background(Colorassets.mainback)
+        
+        
         
     }
 }
