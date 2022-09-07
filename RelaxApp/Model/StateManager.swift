@@ -13,8 +13,8 @@ import SwiftUI
 class StateManager: ObservableObject {
     static let shared = StateManager()
     @Published var sharedplayer = AVAudioPlayer()
-    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown")!), id: UUID(), sound: .brown)
-    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown")!), id: UUID(), sound: .brown)
+    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
+    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
     @Published var currentlist = [MenuBlocks]()
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0

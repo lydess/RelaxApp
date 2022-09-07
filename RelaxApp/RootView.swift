@@ -29,9 +29,9 @@ struct RootView: View {
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
                     })
-                    if statem.isplaying{
-                        PlayBackBar(block: statem.currentPlayingItem)
-                    }
+                    //if statem.isplaying{
+                    //    PlayBackBar(block: statem.currentPlayingItem)
+                    //}
                 }
             case .DetailScreen:
                 VStack{

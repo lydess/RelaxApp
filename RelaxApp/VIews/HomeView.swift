@@ -37,6 +37,7 @@ struct HomeView: View {
                         .foregroundColor(Colorassets.gear)
                     }).buttonStyle(.plain)
                         .foregroundColor(Colorassets.silver)
+                        .accessibilityLabel("Settings")
                 }
                 Text("Tracks")
                         .font(.custom("VarelaRound-Regular", size: 24))

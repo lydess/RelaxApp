@@ -30,6 +30,7 @@ struct DetailPage: View {
                                     .padding()
                         }
                             )
+                            .accessibilityLabel("BackButton")
                             Spacer()
                         }
                     

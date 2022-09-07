@@ -2,12 +2,14 @@
 //  RelaxAppUITests.swift
 //  RelaxAppUITests
 //
-//  Created by william Vise on 19/8/2022.
+//  Created by william Vise on 7/9/2022.
 //
 
 import XCTest
+import SwiftUI
 
 class RelaxAppUITests: XCTestCase {
+    @StateObject var statem = globalstate
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -28,6 +30,30 @@ class RelaxAppUITests: XCTestCase {
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    func testMenuNav() throws
+    {
+       
+        let app = XCUIApplication()
+        let button = app.buttons["Brown Noise"]
+        let settings = app.buttons["Settings"]
+        
+        app.launchArguments = ["AUTOTEST"]
+        app.launch()
+        XCTAssert(button.exists)
+        XCTAssert(settings.exists)
+        button.tap()
+        let backbutton = app.buttons["BackButton"]
+        XCTAssert(backbutton.exists)
+        backbutton.tap()
+        settings.tap()
+        let settingslabel = app.staticTexts["Settings"]
+        XCTAssert(settingslabel.exists)
+        
+        
+        continueAfterFailure = false
+        
+        
     }
 
     func testLaunchPerformance() throws {
