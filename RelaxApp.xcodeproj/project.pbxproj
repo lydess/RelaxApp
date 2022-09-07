@@ -65,6 +65,9 @@
 		CFBD198428C8583800F8C6A3 /* Mayor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE728AF511500026B70 /* Mayor.ttf */; };
 		CFBD198528C85BC900F8C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
 		CFBD198628C85BC900F8C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
+		CFBD198828C86CC600F8C6A3 /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
+		CFBD198928C86CCD00F8C6A3 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
+		CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
 		CFFBD76F28ABB7420067B67E /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFBD76E28ABB7420067B67E /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
@@ -456,12 +459,15 @@
 				CF391D3E28AF85A100026B70 /* PlayBackBar.swift in Sources */,
 				CF391D4428AF85A100026B70 /* Debug.swift in Sources */,
 				CF391D4628AF85A100026B70 /* DetailPage.swift in Sources */,
+				CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */,
 				CF391D4028AF85A100026B70 /* RootView.swift in Sources */,
+				CFBD198828C86CC600F8C6A3 /* GyroManager.swift in Sources */,
 				CF391D4328AF85A100026B70 /* Custom Models.swift in Sources */,
 				CF391D4128AF85A100026B70 /* StateManager.swift in Sources */,
 				CF391D3F28AF85A100026B70 /* AudioHandler.swift in Sources */,
 				CF391D4228AF85A100026B70 /* HomeView.swift in Sources */,
 				CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */,
+				CFBD198928C86CCD00F8C6A3 /* DebugView.swift in Sources */,
 				CF391D4728AF85A100026B70 /* RelaxAppApp.swift in Sources */,
 				CF391D3628AF852500026B70 /* UnitTests.swift in Sources */,
 			);
