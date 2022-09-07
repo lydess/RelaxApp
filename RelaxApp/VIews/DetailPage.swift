@@ -43,9 +43,15 @@ struct DetailPage: View {
                     Spacer()
                 }
                 }
-                Spacer()
+                
                 statem.currentDisplayedItem.image?.resizable()
-                    .frame(width: UIScreen.main.bounds.width , height: 400, alignment: .center)
+                    .frame(minWidth: UIScreen.main.bounds.width,
+                           idealWidth: UIScreen.main.bounds.width,
+                           maxWidth: UIScreen.main.bounds.width,
+                           minHeight: 300,
+                           idealHeight: 400,
+                           maxHeight: 400,
+                           alignment: .center)
                     .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
                         .onChanged{ trans in
                             if trans.startLocation.y < trans.location.y {
@@ -123,7 +129,7 @@ struct DetailPage: View {
                     
                     })
                 }}
-                Spacer()
+                
                 }
                     
                 }

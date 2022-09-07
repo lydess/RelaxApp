@@ -29,20 +29,22 @@ struct RootView: View {
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
                     })
-                    //if statem.isplaying{
-                    //    PlayBackBar(block: statem.currentPlayingItem)
-                    //}
-                }
+                    
+                    if statem.isplaying{
+                        PlayBackBar(block: statem.currentPlayingItem)
+                    }
+                }.background(Colorassets.mainback)
             case .DetailScreen:
                 VStack{
                 DetailPage()
                     .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))
-                    
+                    Spacer()
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
-                }
+                
+                }.background(Colorassets.mainback)
             case .Options:
                 OptionsView()
             case .testcase:

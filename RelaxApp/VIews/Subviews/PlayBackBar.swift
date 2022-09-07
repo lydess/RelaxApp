@@ -12,8 +12,9 @@ struct PlayBackBar: View {
     @StateObject var statem = globalstate
     let buttonheight = CGFloat(40)
     let buttonwidth = CGFloat(40)
-    let buttonpadding = CGFloat(10)
+    let buttonpadding = CGFloat(15)
     let borderradius = CGFloat(25)
+    let buttonoffset = CGFloat(65)
     let audiohandle = AudioHandler()
     let defaults = UserDefaults.standard
     var block:MenuBlocks
@@ -27,10 +28,11 @@ struct PlayBackBar: View {
                     .resizable()
                     .frame(width: 70, height: 70, alignment: .center)
                     .padding(.leading,15)
+                    .offset(x: 17, y: 0)
                 Text(statem.currentPlayingItem.noisetitle)
                     .multilineTextAlignment(.leading)
                     .padding(.bottom, buttonheight + 35)
-                    .padding(.leading, 10)
+                    .offset(x: 48, y: 0)
                     Spacer()
                     
                 }
@@ -71,6 +73,7 @@ struct PlayBackBar: View {
                         }).buttonStyle(.plain)
                         
                     }
+                    .padding(.leading, buttonoffset)
                 } else {
                     HStack{
                         Button(action: {
@@ -100,6 +103,7 @@ struct PlayBackBar: View {
                             .accessibilityLabel("Stop")
                         
                     }
+                    .padding(.leading, buttonoffset)
                 }
                 
             }

@@ -20,6 +20,7 @@ struct HomeView: View {
     
     init() {
         UIScrollView.appearance().bounces = false
+        
       }
     
     var body: some View {
@@ -45,8 +46,13 @@ struct HomeView: View {
                         .foregroundColor(Colorassets.gear)
                         .padding(.trailing, 90)
                     }
-            }.padding(.top,10) }
+            }.padding(.top,10)
+               
+            }
+            
+            
             ScrollView{
+                
                 ForEach(State.currentlist, id: \.id){ block in
                     HStack {
                         Button(action: {
@@ -93,7 +99,14 @@ struct HomeView: View {
                             }
                         })
                 }
-            }
+            }.frame(minWidth: UIScreen.main.bounds.width,
+                    idealWidth: UIScreen.main.bounds.width,
+                    maxWidth: UIScreen.main.bounds.width,
+                    minHeight: 100,
+                    idealHeight: 400,
+                    maxHeight: UIScreen.main.bounds.height,
+                    alignment: .center)
+            Spacer()
            
         }
         
