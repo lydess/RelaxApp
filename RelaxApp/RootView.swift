@@ -11,18 +11,15 @@ let globalstate = StateManager()
 let Gyrostate = GyroManager()
 
 struct RootView: View {
-   
-    
-    
     @StateObject var statem = globalstate
     var debug = Debug()
-    
     
     var body: some View {
         ZStack {
             VStack{
             switch statem.currentscreen {
             case .HomeScreen:
+                VStack{
                 HomeView()
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
@@ -30,12 +27,21 @@ struct RootView: View {
                     })
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
-                        print("not seeing")
                     })
+                    if statem.isplaying{
+                        PlayBackBar(block: statem.currentPlayingItem)
+                    }
+                }
             case .DetailScreen:
+                VStack{
                 DetailPage()
                     .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))
+                    
+                    if statem.isplaying{
+                        PlayBackBar(block: statem.currentPlayingItem)
+                    }
+                }
             case .Options:
                 OptionsView()
             case .testcase:
@@ -46,26 +52,17 @@ struct RootView: View {
             case .Debug:
                 DebugView()
             }
-                
-                
-            
             }.onAppear(perform: {
-                
                 statem.setupRemoteTransportControls()
-                
         })
             VStack{
-                Spacer()
-                
-            if statem.isplaying{
-                PlayBackBar(player: nil, block: statem.currentPlayingItem)
-                    
-                    
-                
-            }
+            //    Spacer()
+            //
+            //if statem.isplaying{
+            //    PlayBackBar(block: statem.currentPlayingItem)
+            //}
         }
         }
-        
     }
 }
 

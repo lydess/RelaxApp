@@ -22,26 +22,18 @@ struct NoiseBlock: View {
                     .font(.custom("VarelaRound-Regular", size: 28))
                     .padding()
                     .foregroundColor(textcolor)
-                
-                
             }
                 VStack {
                     Spacer()
                     HStack{
                     Spacer()
-        
-                        
                     }
                     Spacer()
                 }
-                
             }
-            
         }.background(backcolor)
             .cornerRadius(10)
             .padding()
-        
-            
     }
 }
 

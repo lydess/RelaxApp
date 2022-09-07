@@ -21,10 +21,6 @@ struct DebugView: View {
            Button("get me outa here!"){statem.currentscreen = .HomeScreen}
             Text("Bugs, Bugs everywhere!")
            Spacer()
-           Button("push for anims"){
-               
-               
-           }
            Button("push to reset defaults"){
                defaults.set(false, forKey: "firstlaunch")
                print(defaults.bool(forKey: "firstlaunch"))

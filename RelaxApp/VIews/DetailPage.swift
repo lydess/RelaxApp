@@ -58,7 +58,6 @@ struct DetailPage: View {
                     .font(.custom("VarelaRound-Regular", size: 17))
                     .foregroundColor(Colorassets.black)
                 }
-                
                 HStack{
                     if statem.isplaying && statem.currentPlayingItem.noisetitle == statem.currentDisplayedItem.noisetitle {
                     
