@@ -15,6 +15,7 @@ struct RelaxAppApp: App {
         WindowGroup {
             RootView()
                 .background(Colorassets.mainback)
+                
         }
     }
 }

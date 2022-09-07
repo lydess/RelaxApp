@@ -11,6 +11,7 @@ let globalstate = StateManager()
 let Gyrostate = GyroManager()
 
 struct RootView: View {
+    @Environment(\.scenePhase) var scenePhase
     @StateObject var statem = globalstate
     var debug = Debug()
     
@@ -54,15 +55,16 @@ struct RootView: View {
             }
             }.onAppear(perform: {
                 statem.setupRemoteTransportControls()
-        })
-            VStack{
-            //    Spacer()
-            //
-            //if statem.isplaying{
-            //    PlayBackBar(block: statem.currentPlayingItem)
-            //}
+            }
+            )
+            
+        }.onChange(of: scenePhase) { newphase in
+            if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
+                statem.sharedplayer.stop()
+            }
+            
         }
-        }
+        
     }
 }
 

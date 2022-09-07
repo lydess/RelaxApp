@@ -20,20 +20,18 @@ struct PlayBackBar: View {
     
     var body: some View {
         VStack {
-            VStack{
+            ZStack{
                 HStack{
                     
                 statem.currentPlayingItem.image!
                     .resizable()
-                    .frame(width: 50, height: 50, alignment: .center)
-                    .padding(.leading, 30)
-                Spacer()
+                    .frame(width: 70, height: 70, alignment: .center)
+                    .padding(.leading,15)
                 Text(statem.currentPlayingItem.noisetitle)
-                    .background(content: {
-                        Rectangle().frame(width: 100, height: 30, alignment: .center)
-                            .foregroundColor(.green)
-                            .cornerRadius(12)
-                    })
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom, buttonheight + 35)
+                    .padding(.leading, 10)
+                    Spacer()
                     
                 }
                 if defaults.bool(forKey: "playpos") {
