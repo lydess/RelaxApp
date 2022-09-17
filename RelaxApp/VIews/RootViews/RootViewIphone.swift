@@ -10,14 +10,13 @@ import SwiftUI
 let globalstate = StateManager()
 let Gyrostate = GyroManager()
 
-struct RootView: View {
+struct RootViewIphone: View {
     @Environment(\.scenePhase) var scenePhase
     @StateObject var statem = globalstate
     var debug = Debug()
     
     var body: some View {
         ZStack {
-            
             VStack{
             switch statem.currentscreen {
             case .HomeScreen:
@@ -79,7 +78,7 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootViewIphone()
     }
 }
 
