@@ -15,11 +15,13 @@ class StateManager: ObservableObject {
     @Published var sharedplayer = AVAudioPlayer()
     @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
     @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
-    @Published var currentlist = [MenuBlocks]()
+    @Published var currentlist = Debug.shared.setuplist()
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0
     @Published var isplaying = false
     @Published var showpage = 0
+    @Published var cellcount = 0
+    
     
      func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter

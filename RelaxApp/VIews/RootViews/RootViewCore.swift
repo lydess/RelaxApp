@@ -6,10 +6,18 @@
 //
 
 import SwiftUI
+let globalstate = StateManager()
+let Gyrostate = GyroManager()
+
 
 struct RootViewCore: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @Environment(\.verticalSizeClass) var verticalSizeClass
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button("printclass"){
+            print("Horizontal \(horizontalSizeClass)")
+            print("Vertical\(verticalSizeClass)")
+        }
     }
 }
 

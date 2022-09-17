@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct RelaxAppApp: App {
     @StateObject var statem = globalstate
+    
     var debug = Debug()
     var body: some Scene {
         WindowGroup {

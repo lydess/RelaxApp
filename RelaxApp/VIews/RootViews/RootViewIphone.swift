@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-let globalstate = StateManager()
-let Gyrostate = GyroManager()
+
 
 struct RootViewIphone: View {
     @Environment(\.scenePhase) var scenePhase
@@ -21,10 +20,11 @@ struct RootViewIphone: View {
             switch statem.currentscreen {
             case .HomeScreen:
                 VStack{
-                HomeView()
+                TrackListView()
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
                         Gyrostate.activateGyro()
+                        globalstate.currentlist = debug.setuplist()
                     })
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()

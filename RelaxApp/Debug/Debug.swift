@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class Debug{
+    static var shared = Debug()
 func setuplist() -> [MenuBlocks] {
         var corelist = [MenuBlocks]()
     corelist.append(MenuBlocks(     backcolor: Colorassets.platinum,
