@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
-		CF08D2D828AA62EC002F30CE /* RootViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */; };
+		CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
 		CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
 		CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */; };
 		CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
@@ -24,7 +24,7 @@
 		CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
 		CF391D3E28AF85A100026B70 /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CF391D3F28AF85A100026B70 /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
-		CF391D4028AF85A100026B70 /* RootViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */; };
+		CF391D4028AF85A100026B70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
 		CF391D4128AF85A100026B70 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF391D4228AF85A100026B70 /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */; };
 		CF391D4328AF85A100026B70 /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
@@ -39,13 +39,11 @@
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
 		CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
 		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
-		CF7A07C928D54A2F0048B5D1 /* RootViewCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07C828D54A2F0048B5D1 /* RootViewCore.swift */; };
-		CF7A07CB28D54A440048B5D1 /* RootViewIpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CA28D54A440048B5D1 /* RootViewIpad.swift */; };
 		CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF8105D128B482320065E13B /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
 		CFBD196928C8580D00F8C6A3 /* RelaxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD196828C8580D00F8C6A3 /* RelaxAppUITests.swift */; };
 		CFBD196B28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD196A28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift */; };
-		CFBD197128C8582A00F8C6A3 /* RootViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */; };
+		CFBD197128C8582A00F8C6A3 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
 		CFBD197228C8582A00F8C6A3 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
 		CFBD197328C8582A00F8C6A3 /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
 		CFBD197428C8582A00F8C6A3 /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
@@ -92,7 +90,7 @@
 /* Begin PBXFileReference section */
 		CF08D2D228AA62EC002F30CE /* RelaxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RelaxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppApp.swift; sourceTree = "<group>"; };
-		CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewIphone.swift; sourceTree = "<group>"; };
+		CF08D2D728AA62EC002F30CE /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		CF08D2D928AA62EC002F30CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF08D30328AA63C2002F30CE /* NoiseBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseBlock.swift; sourceTree = "<group>"; };
@@ -115,8 +113,6 @@
 		CF644E9D28B1BF9700270901 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		CF74D6E028ACCAB7003104FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackBar.swift; sourceTree = "<group>"; };
-		CF7A07C828D54A2F0048B5D1 /* RootViewCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCore.swift; sourceTree = "<group>"; };
-		CF7A07CA28D54A440048B5D1 /* RootViewIpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewIpad.swift; sourceTree = "<group>"; };
 		CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListScrollView.swift; sourceTree = "<group>"; };
 		CF8105D028B482320065E13B /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
 		CFBD196628C8580D00F8C6A3 /* RelaxAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +198,7 @@
 				CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */,
 				CF612EA028AB6C3600AA8B9C /* DetailPage.swift */,
 				CF391D4A28B0892600026B70 /* OptionsView.swift */,
+				CF08D2D728AA62EC002F30CE /* RootView.swift */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -275,9 +272,6 @@
 		CF7A07CC28D54A4E0048B5D1 /* RootViews */ = {
 			isa = PBXGroup;
 			children = (
-				CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */,
-				CF7A07CA28D54A440048B5D1 /* RootViewIpad.swift */,
-				CF7A07C828D54A2F0048B5D1 /* RootViewCore.swift */,
 			);
 			path = RootViews;
 			sourceTree = "<group>";
@@ -438,19 +432,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */,
-				CF08D2D828AA62EC002F30CE /* RootViewIphone.swift in Sources */,
+				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
 				CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */,
 				CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */,
 				CF612E9F28AB6AAE00AA8B9C /* TrackListView.swift in Sources */,
 				CF8105D128B482320065E13B /* GyroManager.swift in Sources */,
 				CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */,
-				CF7A07C928D54A2F0048B5D1 /* RootViewCore.swift in Sources */,
 				CF08D34428AA887C002F30CE /* Debug.swift in Sources */,
 				CF391D4B28B0892600026B70 /* OptionsView.swift in Sources */,
 				CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */,
 				CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */,
 				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,
-				CF7A07CB28D54A440048B5D1 /* RootViewIpad.swift in Sources */,
 				CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */,
 				CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */,
 			);
@@ -464,7 +456,7 @@
 				CF391D4428AF85A100026B70 /* Debug.swift in Sources */,
 				CF391D4628AF85A100026B70 /* DetailPage.swift in Sources */,
 				CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */,
-				CF391D4028AF85A100026B70 /* RootViewIphone.swift in Sources */,
+				CF391D4028AF85A100026B70 /* RootView.swift in Sources */,
 				CFBD198828C86CC600F8C6A3 /* GyroManager.swift in Sources */,
 				CF391D4328AF85A100026B70 /* Custom Models.swift in Sources */,
 				CF391D4128AF85A100026B70 /* StateManager.swift in Sources */,
@@ -490,7 +482,7 @@
 				CFBD197628C8582A00F8C6A3 /* RelaxAppApp.swift in Sources */,
 				CFBD197D28C8583200F8C6A3 /* AudioHandler.swift in Sources */,
 				CFBD197428C8582A00F8C6A3 /* PlayBackBar.swift in Sources */,
-				CFBD197128C8582A00F8C6A3 /* RootViewIphone.swift in Sources */,
+				CFBD197128C8582A00F8C6A3 /* RootView.swift in Sources */,
 				CFBD197228C8582A00F8C6A3 /* OptionsView.swift in Sources */,
 				CFBD197328C8582A00F8C6A3 /* NoiseBlock.swift in Sources */,
 				CFBD197A28C8582F00F8C6A3 /* Custom Models.swift in Sources */,

@@ -14,7 +14,7 @@ struct RelaxAppApp: App {
     var debug = Debug()
     var body: some Scene {
         WindowGroup {
-            RootViewIphone()
+            RootView()
                 .background(Colorassets.mainback)
                 
         }

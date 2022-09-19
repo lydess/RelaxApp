@@ -1,15 +1,20 @@
 //
-//  RootViewIpad.swift
+//  ContentView.swift
 //  RelaxApp
 //
-//  Created by william Vise on 17/9/2022.
+//  Created by william Vise on 15/8/2022.
 //
 
 import SwiftUI
 
-struct RootViewIpad: View {
+let globalstate = StateManager()
+let Gyrostate = GyroManager()
+
+struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
     @StateObject var statem = globalstate
+    var debug = Debug()
+    
     var body: some View {
         ZStack {
             VStack{
@@ -20,6 +25,7 @@ struct RootViewIpad: View {
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
                         Gyrostate.activateGyro()
+                        globalstate.currentlist = debug.setuplist()
                     })
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
@@ -71,8 +77,9 @@ struct RootViewIpad: View {
     }
 }
 
-struct RootViewIpad_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootViewIpad()
+        RootView()
     }
 }
+
