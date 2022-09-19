@@ -16,7 +16,7 @@ struct TrackListScrollView: View {
     @State var animoffsety = CGFloat(850)
     @State var animoffsetx = CGFloat(0)
     @State var openinganimcomplete = false
-    
+    private var gridconfig = GridItem(.adaptive(minimum: 150), spacing: 100, alignment: .center)
     var body: some View {
         VStack {
             if horizontalSizeClass == .compact {
@@ -79,92 +79,47 @@ struct TrackListScrollView: View {
         .padding(.top,15)
                 
 } else {
-    Grid{
-        
-            GridRow(content: {
-                ForEach(0...2, id:\.self){ i in
-                    let block = State.currentlist[i]
-                    
-                Button(action: {
-                    
-                    withAnimation{State.currentscreen = .DetailScreen}
-                    
-                    State.currentDisplayedItem =
-                    MenuBlocks(backcolor: block.backcolor,
-                               noisetitle: block.noisetitle,
-                               descripton: block.descripton,
-                               image: block.image,
-                               id: block.id,
-                               sound: block.sound
-                    )
-                    
-                }, label: {
-                    VStack{
-                        NoiseBlock(backcolor: block.backcolor,
-                                   noisetitle: block.noisetitle,
-                                   textcolor: .black,
-                                   descripton: block.descripton,
-                                   image: block.image!,
-                                   fontsize: 18
-                        ).frame(width: 180, height: 100, alignment: .center)
-                        block.image?
-                            .resizable()
-                            .frame(width: 180, height: 150, alignment: .center)
-                            .cornerRadius(5)
-                            
-                    }
-                }).buttonStyle(.plain)
-                        .task {
-                            State.cellcount += 1
-                            print(State.cellcount)
-                        }
-                    
-                }
-            })
-        GridRow(content: {
-                ForEach(3...State.currentlist.count - 1, id:\.self){ i in
-                    let block = State.currentlist[i]
-                    
-                Button(action: {
-                    
-                    withAnimation{State.currentscreen = .DetailScreen}
-                    
-                    State.currentDisplayedItem =
-                    MenuBlocks(backcolor: block.backcolor,
-                               noisetitle: block.noisetitle,
-                               descripton: block.descripton,
-                               image: block.image,
-                               id: block.id,
-                               sound: block.sound
-                    )
-                    
-                }, label: {
-                    VStack{
-                        NoiseBlock(backcolor: block.backcolor,
-                                   noisetitle: block.noisetitle,
-                                   textcolor: .black,
-                                   descripton: block.descripton,
-                                   image: block.image!,
-                                   fontsize: 18
-                        ).frame(width: 180, height: 100, alignment: .center)
-                        block.image?
-                            .resizable()
-                            .frame(width: 180, height: 150, alignment: .center)
-                            .cornerRadius(5)
-                            
-                    }
-                }).buttonStyle(.plain)
-                        .task {
-                            State.cellcount += 1
-                            print(State.cellcount)
-                        }
-                    
-                }
-        })
+    LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 150, content: {
+        ForEach(0...3, id:\.self){ i in
+                let block = State.currentlist[i]
                 
-            
-        
-    }
+            Button(action: {
+                
+                withAnimation{State.currentscreen = .DetailScreen}
+                
+                State.currentDisplayedItem =
+                MenuBlocks(backcolor: block.backcolor,
+                            noisetitle: block.noisetitle,
+                            descripton: block.descripton,
+                            image: block.image,
+                            id: block.id,
+                            sound: block.sound
+                )
+                
+            }, label: {
+                VStack{
+                    NoiseBlock(backcolor: block.backcolor,
+                                noisetitle: block.noisetitle,
+                                textcolor: .black,
+                                descripton: block.descripton,
+                                image: block.image!,
+                                fontsize: 18
+                    ).frame(width: 180, height: 100, alignment: .center)
+                    block.image?
+                        .resizable()
+                        .frame(width: 180, height: 150, alignment: .center)
+                        .cornerRadius(5)
+                        
+                }
+            }).buttonStyle(.plain)
+                    .task {
+                        State.cellcount += 1
+                        print(State.cellcount)
+                    }
+                
+            }
+    })
+    
             }
         }
     }
