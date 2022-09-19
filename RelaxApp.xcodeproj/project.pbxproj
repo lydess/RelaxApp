@@ -43,7 +43,6 @@
 		CF7A07CB28D54A440048B5D1 /* RootViewIpad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CA28D54A440048B5D1 /* RootViewIpad.swift */; };
 		CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF8105D128B482320065E13B /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
-		CFBD196128C84AED00F8C6A3 /* Attributions.rtf in Resources */ = {isa = PBXBuildFile; fileRef = CFBD196028C84AED00F8C6A3 /* Attributions.rtf */; };
 		CFBD196928C8580D00F8C6A3 /* RelaxAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD196828C8580D00F8C6A3 /* RelaxAppUITests.swift */; };
 		CFBD196B28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBD196A28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift */; };
 		CFBD197128C8582A00F8C6A3 /* RootViewIphone.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootViewIphone.swift */; };
@@ -120,7 +119,6 @@
 		CF7A07CA28D54A440048B5D1 /* RootViewIpad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewIpad.swift; sourceTree = "<group>"; };
 		CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListScrollView.swift; sourceTree = "<group>"; };
 		CF8105D028B482320065E13B /* GyroManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
-		CFBD196028C84AED00F8C6A3 /* Attributions.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Attributions.rtf; sourceTree = "<group>"; };
 		CFBD196628C8580D00F8C6A3 /* RelaxAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RelaxAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBD196828C8580D00F8C6A3 /* RelaxAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITests.swift; sourceTree = "<group>"; };
 		CFBD196A28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelaxAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		CF08D2C928AA62EC002F30CE = {
 			isa = PBXGroup;
 			children = (
-				CFBD196028C84AED00F8C6A3 /* Attributions.rtf */,
 				CF391CE228AF4FE700026B70 /* Fonts */,
 				CF74D6DF28ACB3B5003104FF /* Built-in audio */,
 				CF08D2D428AA62EC002F30CE /* RelaxApp */,
@@ -402,7 +399,6 @@
 				CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */,
 				CF391CE628AF4FF000026B70 /* OFL.txt in Resources */,
 				CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */,
-				CFBD196128C84AED00F8C6A3 /* Attributions.rtf in Resources */,
 				CF391CE828AF513800026B70 /* Mayor.ttf in Resources */,
 				CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */,
 				CF391CE928AF557400026B70 /* White.mp3 in Resources */,
