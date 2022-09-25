@@ -19,7 +19,7 @@ struct OptionsView: View {
                 VStack{
                     Text("").frame(width: 10, height: 100, alignment: .center)
                 HStack{
-                    Button("debug"){statem.currentscreen = .Debug}
+                    Button("debug"){statem.currentscreen = .BuilltinSounds}
                     Spacer()
                 }
                 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct RelaxAppApp: App {
     @StateObject var statem = globalstate
     
-    var debug = Debug()
+    var debug = BuiltinSounds()
     var body: some Scene {
         WindowGroup {
             RootView()

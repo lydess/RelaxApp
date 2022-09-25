@@ -11,11 +11,11 @@ import MediaPlayer
 import SwiftUI
 
 class StateManager: ObservableObject {
-    static let shared = StateManager()
-    @Published var sharedplayer = AVAudioPlayer()
-    @Published var currentDisplayedItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
-    @Published var currentPlayingItem = MenuBlocks(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown)
-    @Published var currentlist = Debug.shared.setuplist()
+    @Published var PrimaryPlayer = AVAudioPlayer()
+    @Published var BackgroundPlayers = [Layeredsound]()
+    @Published var currentDisplayedItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown, islayeredsound: false)
+    @Published var currentPlayingItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown, islayeredsound: false)
+    @Published var currentlist = BuiltinSounds.shared.setuplist()
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0
     @Published var isplaying = false
@@ -23,23 +23,21 @@ class StateManager: ObservableObject {
     @Published var cellcount = 0
     
     
+    
      func setupRemoteTransportControls() {
-        // Get the shared MPRemoteCommandCenter
         let commandCenter = MPRemoteCommandCenter.shared()
-        // Add handler for Play Command
         commandCenter.playCommand.addTarget { [unowned self] event in
-            self.sharedplayer.play()
+            self.PrimaryPlayer.play()
             self.isplaying = true
             return .success
         }
-        // Add handler for Pause Command
         commandCenter.pauseCommand.addTarget { [unowned self] event in
-            self.sharedplayer.pause()
+            self.PrimaryPlayer.pause()
             self.isplaying = false
             return .success
         }
     }
-    func UpdateNowPlaying(block: MenuBlocks) {
+    func UpdateNowPlaying(block: SoundItem) {
         // Define Now Playing Info
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = globalstate.currentPlayingItem.noisetitle
@@ -53,24 +51,27 @@ class StateManager: ObservableObject {
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
     }
     
-    func setString(selectedFile: AvailableSounds) -> String {
-        switch selectedFile {
-        case .brown:
-            return "Brown"
-        case .white:
-            return "White"
-        case .rain:
-            return "Rain"
-        case .fire:
-            return "Fire"
-        
-        }
-    }
+    
     func defaultsConfigCheck() -> Bool {
         let testcase = UserDefaults.standard.string(forKey: "checkconfig")
         if testcase == nil {
             return false
         }
         return true
+    }
+}
+func setString(selectedFile: AvailableSounds) -> String {
+    switch selectedFile {
+    case .brown:
+        return "Brown"
+    case .white:
+        return "White"
+    case .rain:
+        return "Rain"
+    case .fire:
+        return "Fire"
+    case .debug:
+        return "Debug"
+    
     }
 }

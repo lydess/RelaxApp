@@ -17,7 +17,7 @@ struct PlayBackBar: View {
     let buttonoffset = CGFloat(65)
     let audiohandle = AudioHandler()
     let defaults = UserDefaults.standard
-    var block:MenuBlocks
+    var block:SoundItem
     
     var body: some View {
         VStack {
@@ -39,7 +39,10 @@ struct PlayBackBar: View {
                 if defaults.bool(forKey: "playpos") {
                     HStack{
                         Button(action: {
-                            statem.sharedplayer.play()
+                            for i in statem.BackgroundPlayers {
+                                i.player.play()
+                            }
+                            statem.PrimaryPlayer.play()
                         },
                                label: {
                             Image(systemName: "play.fill")
@@ -49,7 +52,10 @@ struct PlayBackBar: View {
                             .buttonStyle(.plain)
                             .accessibilityLabel("Play")
                         Button(action: {
-                            statem.sharedplayer.pause()
+                            for i in statem.BackgroundPlayers {
+                                i.player.pause()
+                            }
+                            statem.PrimaryPlayer.pause()
                         },
                                label: {
                             Image(systemName: "pause.fill")
@@ -60,7 +66,10 @@ struct PlayBackBar: View {
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
                         Button(action: {
-                            statem.sharedplayer.stop()
+                            statem.PrimaryPlayer.stop()
+                            for i in statem.BackgroundPlayers {
+                                i.player.stop()
+                            }
                             statem.isplaying = false
                         },
                                label: {
@@ -77,7 +86,10 @@ struct PlayBackBar: View {
                 } else {
                     HStack{
                         Button(action: {
-                            statem.sharedplayer.stop()
+                            for i in statem.BackgroundPlayers {
+                                i.player.stop()
+                            }
+                            statem.PrimaryPlayer.stop()
                             statem.isplaying = false
                         },
                                label: {
@@ -86,7 +98,10 @@ struct PlayBackBar: View {
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Play")
                         Button(action: {
-                            statem.sharedplayer.pause()
+                            for i in statem.BackgroundPlayers {
+                                i.player.pause()
+                            }
+                            statem.PrimaryPlayer.pause()
                         },
                                label: {
                             Image(systemName: "pause.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center).padding(buttonpadding)
@@ -94,7 +109,10 @@ struct PlayBackBar: View {
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
                         Button(action: {
-                            statem.sharedplayer.play()
+                            for i in statem.BackgroundPlayers {
+                                i.player.play()
+                            }
+                            statem.PrimaryPlayer.play()
                         },
                                label: {
                             Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
@@ -114,6 +132,6 @@ struct PlayBackBar: View {
 
 struct PlayBackBar_Previews: PreviewProvider {
     static var previews: some View {
-        PlayBackBar(block: MenuBlocks(backcolor: .red, noisetitle: "title", descripton: "desc",  id: UUID(), sound: .white))
+        PlayBackBar(block: SoundItem(backcolor: .red, noisetitle: "title", descripton: "desc",  id: UUID(), sound: .white, islayeredsound: false))
     }
 }

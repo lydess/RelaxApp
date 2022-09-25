@@ -7,14 +7,18 @@
 
 import Foundation
 import SwiftUI
-
-struct MenuBlocks {
+import AVKit
+struct SoundItem {
     var backcolor: Color
     var noisetitle:String
     var descripton:String
     var image:Image?
     var id: UUID
     var sound: AvailableSounds
+    var islayeredsound: Bool
+    var layeredsounds = [Layeredsound]()
+    
+    
 }
 
 enum AvailableSounds : String, CaseIterable {
@@ -22,14 +26,20 @@ enum AvailableSounds : String, CaseIterable {
     case white
     case rain
     case fire
+    case debug
+}
+
+enum AvailableBackgroundSounds : String, CaseIterable {
+    case car
 }
 
 enum CurrentScreen {
     case HomeScreen
     case DetailScreen
-    case Debug
+    case BuilltinSounds
     case Options
     case testcase
+    case Layerdsound
 }
 
 class Colorassets {
@@ -43,3 +53,23 @@ class Colorassets {
     static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .gray)
     static let black = Color(uiColor: UIColor(named: "Black") ?? .brown)
 }
+
+struct Layeredsound: Equatable, Hashable {
+    var id = UUID()
+    var sound: AvailableSounds
+    var image: Image
+    var player: AVAudioPlayer
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    
+    
+}
+
+
+    
+    
+    
+

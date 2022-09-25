@@ -7,8 +7,8 @@
 
 import SwiftUI
 import AVKit
-struct DetailPage: View {
-    var audiohandle = AudioHandler()
+struct SoundDetailView: View {
+    
     var player: AVAudioPlayer?
     @StateObject var statem = globalstate
     @State var anim = false
@@ -66,16 +66,20 @@ struct DetailPage: View {
                     .foregroundColor(Colorassets.black)
                 }
                 HStack{
+                    
                     if statem.isplaying && statem.currentPlayingItem.noisetitle == statem.currentDisplayedItem.noisetitle {
                     
                 } else if statem.isplaying {
                     Button(action: {
                         statem.currentPlayingItem = statem.currentDisplayedItem
-                        statem.sharedplayer.stop()
+                        statem.PrimaryPlayer.stop()
                         statem.isplaying = false
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
-                        statem.sharedplayer.numberOfLoops = 100
-                        statem.sharedplayer.play()
+                        for i in statem.BackgroundPlayers {
+                            i.player.stop()
+                        }
+                        statem.PrimaryPlayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
+                        statem.PrimaryPlayer.numberOfLoops = 100
+                        statem.PrimaryPlayer.play()
                         statem.isplaying = true
                         statem.UpdateNowPlaying(block: statem.currentDisplayedItem)
                     }, label: {
@@ -102,9 +106,12 @@ struct DetailPage: View {
                 } else {
                     Button(action: {
                         statem.currentPlayingItem = statem.currentDisplayedItem
-                        statem.sharedplayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
-                        statem.sharedplayer.numberOfLoops = 100
-                        statem.sharedplayer.play()
+                        statem.PrimaryPlayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
+                        for i in statem.BackgroundPlayers {
+                            i.player.stop()
+                        }
+                        statem.PrimaryPlayer.numberOfLoops = 100
+                        statem.PrimaryPlayer.play()
                         statem.isplaying = true
                         statem.UpdateNowPlaying(block: statem.currentDisplayedItem)
                     }, label: {
@@ -124,11 +131,22 @@ struct DetailPage: View {
                                         .foregroundColor(Colorassets.mainback)
                                         .cornerRadius(40)
                                 }
-                            }
-                        )
-                    
+                            })
                     })
-                }}
+                }
+                    
+                    Button(action: {
+                        statem.BackgroundPlayers = statem.currentDisplayedItem.layeredsounds
+                        statem.currentscreen = .Layerdsound}, label: {
+                        Image(systemName: "dial.medium")
+                            .resizable()
+                            .frame(width: 44, height: 44, alignment: .center)
+                            .foregroundColor(.pink)
+                            
+                    })
+                    
+                    
+                }
                 
                 }
                     
@@ -140,7 +158,7 @@ struct DetailPage: View {
 
 struct DetailPage_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPage()
+        SoundDetailView()
     }
 }
 

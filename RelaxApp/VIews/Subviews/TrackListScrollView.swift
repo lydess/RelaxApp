@@ -25,16 +25,20 @@ struct TrackListScrollView: View {
                     HStack {
                         Button(action: {
                             
-                            withAnimation{State.currentscreen = .DetailScreen}
-                            
                             State.currentDisplayedItem =
-                            MenuBlocks(backcolor: block.backcolor,
+                            SoundItem(
+                                       backcolor: block.backcolor,
                                        noisetitle: block.noisetitle,
                                        descripton: block.descripton,
                                        image: block.image,
                                        id: block.id,
-                                       sound: block.sound
+                                       sound: block.sound,
+                                       islayeredsound: block.islayeredsound,
+                                       layeredsounds: block.layeredsounds
+                                    
                             )
+                            Task(priority: .background, operation: {withAnimation{State.currentscreen = .DetailScreen}})
+                            
                             
                         }, label: {
                             NoiseBlock(backcolor: block.backcolor,
@@ -88,12 +92,12 @@ struct TrackListScrollView: View {
                 withAnimation{State.currentscreen = .DetailScreen}
                 
                 State.currentDisplayedItem =
-                MenuBlocks(backcolor: block.backcolor,
+                SoundItem(backcolor: block.backcolor,
                             noisetitle: block.noisetitle,
                             descripton: block.descripton,
                             image: block.image,
                             id: block.id,
-                            sound: block.sound
+                          sound: block.sound, islayeredsound: block.islayeredsound
                 )
                 
             }, label: {

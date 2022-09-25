@@ -7,13 +7,14 @@
 
 import SwiftUI
 
-let globalstate = StateManager()
-let Gyrostate = GyroManager()
 
+let Gyrostate = GyroManager()
+let audiohandle = AudioHandler()
+let globalstate = StateManager()
 struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
     @StateObject var statem = globalstate
-    var debug = Debug()
+    var debug = BuiltinSounds()
     
     var body: some View {
         ZStack {
@@ -37,7 +38,7 @@ struct RootView: View {
                 }
             case .DetailScreen:
                 VStack{
-                DetailPage()
+                SoundDetailView()
                     .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))
                     Spacer()
@@ -53,8 +54,11 @@ struct RootView: View {
                     Image(systemName: "circle.fill")
                     Button("return"){ globalstate.currentscreen = .HomeScreen }
                 }
-            case .Debug:
+            case .BuilltinSounds:
                 DebugView()
+            case .Layerdsound:
+                LayeredSoundView()
+                
             }
             }.onAppear(perform: {
                 statem.setupRemoteTransportControls()
@@ -64,7 +68,7 @@ struct RootView: View {
             
         }.onChange(of: scenePhase) { newphase in
             if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
-                statem.sharedplayer.stop()
+                statem.PrimaryPlayer.stop()
             }
             
         }

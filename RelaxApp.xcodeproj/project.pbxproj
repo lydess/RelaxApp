@@ -12,7 +12,7 @@
 		CF08D2DA28AA62EC002F30CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
 		CF08D2DD28AA62EC002F30CE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */; };
 		CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
-		CF08D34428AA887C002F30CE /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
+		CF08D34428AA887C002F30CE /* BuiltinSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* BuiltinSounds.swift */; };
 		CF391CE528AF4FF000026B70 /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE328AF4FF000026B70 /* VarelaRound-Regular.ttf */; };
 		CF391CE628AF4FF000026B70 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE428AF4FF000026B70 /* OFL.txt */; };
 		CF391CE828AF513800026B70 /* Mayor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE728AF511500026B70 /* Mayor.ttf */; };
@@ -28,18 +28,23 @@
 		CF391D4128AF85A100026B70 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF391D4228AF85A100026B70 /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */; };
 		CF391D4328AF85A100026B70 /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
-		CF391D4428AF85A100026B70 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
-		CF391D4628AF85A100026B70 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
+		CF391D4428AF85A100026B70 /* BuiltinSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* BuiltinSounds.swift */; };
+		CF391D4628AF85A100026B70 /* SoundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */; };
 		CF391D4728AF85A100026B70 /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
 		CF391D4B28B0892600026B70 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
+		CF49E23E28DAB9370073D201 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = CF49E23D28DAB9370073D201 /* Popovers */; };
 		CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
 		CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
 		CF612E9F28AB6AAE00AA8B9C /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */; };
-		CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
+		CF612EA128AB6C3600AA8B9C /* SoundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */; };
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
 		CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
 		CF66A6CF28D82E6A001C379B /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF66A6D028D82E6A001C379B /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
+		CF66A6EC28D95F96001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
+		CF66A6ED28D95FBA001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
+		CF66A6EE28D95FBA001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
+		CF66A6F028D97F62001C379B /* MixerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EF28D97F62001C379B /* MixerButton.swift */; };
 		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF8105D128B482320065E13B /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
@@ -49,10 +54,10 @@
 		CFBD197228C8582A00F8C6A3 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
 		CFBD197328C8582A00F8C6A3 /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
 		CFBD197428C8582A00F8C6A3 /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
-		CFBD197528C8582A00F8C6A3 /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* DetailPage.swift */; };
+		CFBD197528C8582A00F8C6A3 /* SoundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */; };
 		CFBD197628C8582A00F8C6A3 /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
 		CFBD197728C8582A00F8C6A3 /* TrackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */; };
-		CFBD197828C8582C00F8C6A3 /* Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* Debug.swift */; };
+		CFBD197828C8582C00F8C6A3 /* BuiltinSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* BuiltinSounds.swift */; };
 		CFBD197928C8582C00F8C6A3 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
 		CFBD197A28C8582F00F8C6A3 /* Custom Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Models.swift */; };
 		CFBD197B28C8582F00F8C6A3 /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
@@ -96,7 +101,7 @@
 		CF08D2D928AA62EC002F30CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF08D2DC28AA62EC002F30CE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CF08D30328AA63C2002F30CE /* NoiseBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoiseBlock.swift; sourceTree = "<group>"; };
-		CF08D34328AA887C002F30CE /* Debug.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debug.swift; sourceTree = "<group>"; };
+		CF08D34328AA887C002F30CE /* BuiltinSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuiltinSounds.swift; sourceTree = "<group>"; };
 		CF391CDB28AF3BE800026B70 /* Brown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Brown.mp3; sourceTree = "<group>"; };
 		CF391CDD28AF3F0C00026B70 /* White.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = White.mp3; sourceTree = "<group>"; };
 		CF391CE328AF4FF000026B70 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VarelaRound-Regular.ttf"; sourceTree = "<group>"; };
@@ -110,9 +115,11 @@
 		CF612E9A28AB692200AA8B9C /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		CF612E9C28AB695300AA8B9C /* Custom Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom Models.swift"; sourceTree = "<group>"; };
 		CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListView.swift; sourceTree = "<group>"; };
-		CF612EA028AB6C3600AA8B9C /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
+		CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundDetailView.swift; sourceTree = "<group>"; };
 		CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AudioHandler.swift; path = RelaxApp/Audio/AudioHandler.swift; sourceTree = SOURCE_ROOT; };
 		CF644E9D28B1BF9700270901 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
+		CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayeredSoundView.swift; sourceTree = "<group>"; };
+		CF66A6EF28D97F62001C379B /* MixerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerButton.swift; sourceTree = "<group>"; };
 		CF74D6E028ACCAB7003104FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackBar.swift; sourceTree = "<group>"; };
 		CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListScrollView.swift; sourceTree = "<group>"; };
@@ -127,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF49E23E28DAB9370073D201 /* Popovers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +206,8 @@
 				CF7A07CC28D54A4E0048B5D1 /* RootViews */,
 				CF08D30228AA63B4002F30CE /* Subviews */,
 				CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */,
-				CF612EA028AB6C3600AA8B9C /* DetailPage.swift */,
+				CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */,
+				CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */,
 				CF391D4A28B0892600026B70 /* OptionsView.swift */,
 				CF08D2D728AA62EC002F30CE /* RootView.swift */,
 			);
@@ -211,6 +220,7 @@
 				CF08D30328AA63C2002F30CE /* NoiseBlock.swift */,
 				CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */,
 				CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */,
+				CF66A6EF28D97F62001C379B /* MixerButton.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -218,7 +228,6 @@
 		CF08D30828AA835F002F30CE /* Debug */ = {
 			isa = PBXGroup;
 			children = (
-				CF08D34328AA887C002F30CE /* Debug.swift */,
 				CF644E9D28B1BF9700270901 /* DebugView.swift */,
 			);
 			path = Debug;
@@ -248,6 +257,7 @@
 				CF612E9A28AB692200AA8B9C /* StateManager.swift */,
 				CF612E9C28AB695300AA8B9C /* Custom Models.swift */,
 				CF8105D028B482320065E13B /* GyroManager.swift */,
+				CF08D34328AA887C002F30CE /* BuiltinSounds.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -303,6 +313,9 @@
 			dependencies = (
 			);
 			name = RelaxApp;
+			packageProductDependencies = (
+				CF49E23D28DAB9370073D201 /* Popovers */,
+			);
 			productName = RelaxApp;
 			productReference = CF08D2D228AA62EC002F30CE /* RelaxApp.app */;
 			productType = "com.apple.product-type.application";
@@ -375,6 +388,9 @@
 				Base,
 			);
 			mainGroup = CF08D2C928AA62EC002F30CE;
+			packageReferences = (
+				CF49E23C28DAB9370073D201 /* XCRemoteSwiftPackageReference "Popovers" */,
+			);
 			productRefGroup = CF08D2D328AA62EC002F30CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -436,15 +452,17 @@
 				CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */,
 				CF08D2D828AA62EC002F30CE /* RootView.swift in Sources */,
 				CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */,
-				CF612EA128AB6C3600AA8B9C /* DetailPage.swift in Sources */,
+				CF612EA128AB6C3600AA8B9C /* SoundDetailView.swift in Sources */,
 				CF612E9F28AB6AAE00AA8B9C /* TrackListView.swift in Sources */,
 				CF8105D128B482320065E13B /* GyroManager.swift in Sources */,
 				CF612E9D28AB695300AA8B9C /* Custom Models.swift in Sources */,
-				CF08D34428AA887C002F30CE /* Debug.swift in Sources */,
+				CF08D34428AA887C002F30CE /* BuiltinSounds.swift in Sources */,
 				CF391D4B28B0892600026B70 /* OptionsView.swift in Sources */,
+				CF66A6EC28D95F96001C379B /* LayeredSoundView.swift in Sources */,
 				CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */,
 				CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */,
 				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,
+				CF66A6F028D97F62001C379B /* MixerButton.swift in Sources */,
 				CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */,
 				CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */,
 			);
@@ -455,8 +473,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF391D3E28AF85A100026B70 /* PlayBackBar.swift in Sources */,
-				CF391D4428AF85A100026B70 /* Debug.swift in Sources */,
-				CF391D4628AF85A100026B70 /* DetailPage.swift in Sources */,
+				CF391D4428AF85A100026B70 /* BuiltinSounds.swift in Sources */,
+				CF391D4628AF85A100026B70 /* SoundDetailView.swift in Sources */,
 				CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */,
 				CF66A6CF28D82E6A001C379B /* TrackListScrollView.swift in Sources */,
 				CF391D4028AF85A100026B70 /* RootView.swift in Sources */,
@@ -465,6 +483,7 @@
 				CF391D4128AF85A100026B70 /* StateManager.swift in Sources */,
 				CF391D3F28AF85A100026B70 /* AudioHandler.swift in Sources */,
 				CF391D4228AF85A100026B70 /* TrackListView.swift in Sources */,
+				CF66A6ED28D95FBA001C379B /* LayeredSoundView.swift in Sources */,
 				CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */,
 				CFBD198928C86CCD00F8C6A3 /* DebugView.swift in Sources */,
 				CF391D4728AF85A100026B70 /* RelaxAppApp.swift in Sources */,
@@ -477,7 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBD197728C8582A00F8C6A3 /* TrackListView.swift in Sources */,
-				CFBD197828C8582C00F8C6A3 /* Debug.swift in Sources */,
+				CFBD197828C8582C00F8C6A3 /* BuiltinSounds.swift in Sources */,
 				CFBD196B28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift in Sources */,
 				CFBD197C28C8582F00F8C6A3 /* StateManager.swift in Sources */,
 				CFBD196928C8580D00F8C6A3 /* RelaxAppUITests.swift in Sources */,
@@ -488,8 +507,9 @@
 				CFBD197128C8582A00F8C6A3 /* RootView.swift in Sources */,
 				CFBD197228C8582A00F8C6A3 /* OptionsView.swift in Sources */,
 				CFBD197328C8582A00F8C6A3 /* NoiseBlock.swift in Sources */,
+				CF66A6EE28D95FBA001C379B /* LayeredSoundView.swift in Sources */,
 				CFBD197A28C8582F00F8C6A3 /* Custom Models.swift in Sources */,
-				CFBD197528C8582A00F8C6A3 /* DetailPage.swift in Sources */,
+				CFBD197528C8582A00F8C6A3 /* SoundDetailView.swift in Sources */,
 				CFBD197928C8582C00F8C6A3 /* DebugView.swift in Sources */,
 				CF66A6D028D82E6A001C379B /* TrackListScrollView.swift in Sources */,
 			);
@@ -805,6 +825,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF49E23C28DAB9370073D201 /* XCRemoteSwiftPackageReference "Popovers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aheze/Popovers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF49E23D28DAB9370073D201 /* Popovers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF49E23C28DAB9370073D201 /* XCRemoteSwiftPackageReference "Popovers" */;
+			productName = Popovers;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF08D2CA28AA62EC002F30CE /* Project object */;
 }

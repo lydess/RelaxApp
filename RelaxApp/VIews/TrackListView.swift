@@ -16,7 +16,7 @@ struct TrackListView: View {
     @StateObject var Gyro = Gyrostate
    
     
-    let debug = Debug()
+    let debug = BuiltinSounds()
     
     
     init() {
