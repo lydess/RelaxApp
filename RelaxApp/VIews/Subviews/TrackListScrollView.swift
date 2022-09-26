@@ -38,7 +38,8 @@ struct TrackListScrollView: View {
                                     
                             )
                             Task(priority: .background, operation: {withAnimation{
-                                if block.islayeredsound = true {
+                                if block.islayeredsound == true {
+                                    State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
                                     State.currentscreen = .Layerdsound
                                 }else {
                                     State.currentscreen = .DetailScreen

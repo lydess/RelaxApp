@@ -26,7 +26,7 @@ struct LayeredSoundView: View {
                 .frame(width: 300, height: 300, alignment: .center)
                 
                 Spacer()
-            LazyHGrid(rows: [gridconfig]){
+            VStack{
                 ForEach(statem.BackgroundPlayers, id: \.self){ block in
                     VStack {
                         MixerButton(attachedplayer: block.player, icon:block.image)
