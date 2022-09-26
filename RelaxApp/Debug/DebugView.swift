@@ -17,9 +17,10 @@ struct DebugView: View {
     
     var body: some View {
        VStack {
-           EmptyView()
-           
+           Text("eg")
+           Spacer()
         }
+        
         
     }
 }

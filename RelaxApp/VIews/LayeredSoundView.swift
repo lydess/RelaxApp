@@ -9,31 +9,35 @@ import SwiftUI
 
 struct LayeredSoundView: View {
     @StateObject var statem = globalstate
-    @State var showpopover = false
+    @State var showHelpSheet = false
+    
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         VStack {
-            HStack{
-                Button(action: {statem.currentscreen = .DetailScreen}, label: {
-                    Image(systemName: "chevron.down")
-                    
-                }).padding(.top, 100)
-                
-            }
+           
+              
             statem.currentDisplayedItem.image?
                 .resizable()
-                .frame(width: 300, height: 300, alignment: .center)
+                .frame(width: horizontalSizeClass == .compact ? 300 : UIScreen.main.bounds.width - 200, height: 300, alignment: .center)
+                .padding(.top, horizontalSizeClass == .compact ? 0 : 10)
+            
+            
                 
+            HStack {
+                Text("sounds")
+                    .font(.custom("VarelaRound-Regular", size: 20))
+                    .foregroundColor(Colorassets.gear)
+                    .padding(.leading , horizontalSizeClass == .compact ? 10 : 50)
+                    .offset(x: 20, y: 0)
                 Spacer()
-            Text("sounds")
-                .font(.custom("VarelaRound-Regular", size: 20))
-                .padding(.trailing, 100)
+            }
             VStack{
                 ForEach(statem.BackgroundPlayers, id: \.self){ block in
                     VStack {
                         HStack {
-                            MixerButton(attachedplayer: block.player, icon:block.image)
-                                .padding(.leading, 50)
+                            MixerButton(attachedplayer: block.player, icon:block.image, name: block.name)
+                                .padding(.leading, horizontalSizeClass == .compact ? 10: 50)
                             Spacer()
                         }
                     }
@@ -41,6 +45,9 @@ struct LayeredSoundView: View {
                         
                 }
             }
+            
+                Spacer()
+            
         }
     }
 }

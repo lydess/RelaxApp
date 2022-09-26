@@ -16,32 +16,7 @@ struct SoundDetailView: View {
         ZStack{
             VStack{
                 HStack {
-                    ZStack{
-                        HStack {
-                            Button(
-                            action: {
-                                statem.currentscreen = .HomeScreen
-                        },
-                            label: {
-                                Image(systemName: "chevron.down")
-                                    .resizable()
-                                    .frame(width: 20, height: 10, alignment: .center)
-                                    .foregroundColor(Colorassets.gear)
-                                    .padding(20)
-                                    .padding(.top, 30)
-                        }
-                            )
-                            .accessibilityLabel("BackButton")
-                            Spacer()
-                        }
                     
-                        Text(statem.currentDisplayedItem.noisetitle)
-                            .padding(.top, 30)
-                        .font(.custom("VarelaRound-Regular", size: 26))
-                        .foregroundColor(Colorassets.gear)
-                    .padding(.bottom, 5)
-                    Spacer()
-                }
                 }
                 
                 statem.currentDisplayedItem.image?.resizable()

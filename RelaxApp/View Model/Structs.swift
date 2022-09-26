@@ -62,6 +62,7 @@ struct Layeredsound: Equatable, Hashable {
     var sound: AvailableSounds
     var image: Image
     var player: AVAudioPlayer
+    var name: String
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
@@ -69,6 +70,18 @@ struct Layeredsound: Equatable, Hashable {
     
     
     
+}
+
+struct CurrentHeader {
+    var title: String
+    var leftbuttitle: String
+    var rightbuttitle: String
+    
+    init(title: String, leftbut: String, rightbut: String) {
+        self.title = title
+        self.leftbuttitle = leftbut
+        self.rightbuttitle = rightbut
+    }
 }
 
 

@@ -40,9 +40,11 @@ struct TrackListScrollView: View {
                             Task(priority: .background, operation: {withAnimation{
                                 if block.islayeredsound == true {
                                     State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
-                                    State.currentscreen = .Layerdsound
+                                    withAnimation(Animation.spring()){State.currentscreen = .Layerdsound}
+                                        
                                 }else {
-                                    State.currentscreen = .DetailScreen
+                                    withAnimation(Animation.spring()){State.currentscreen = .DetailScreen}
+                                    
                                 }
                             }})
                             
@@ -91,12 +93,10 @@ struct TrackListScrollView: View {
                 
 } else {
     LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 150, content: {
-        ForEach(0...3, id:\.self){ i in
+        ForEach(0...4, id:\.self){ i in
                 let block = State.currentlist[i]
                 
             Button(action: {
-                
-                withAnimation{State.currentscreen = .DetailScreen}
                 
                 State.currentDisplayedItem =
                 SoundItem(backcolor: block.backcolor,
@@ -106,8 +106,20 @@ struct TrackListScrollView: View {
                             id: block.id,
                             fontsize: block.fontsize,
                             sound: block.sound,
-                            islayeredsound: block.islayeredsound
+                            islayeredsound: block.islayeredsound,
+                            layeredsounds: block.layeredsounds
                 )
+                
+                if block.islayeredsound == true {
+                    State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
+                    State.currentscreen = .Layerdsound
+                  
+                }else {
+                    State.currentscreen = .DetailScreen
+                }
+            
+                
+                
                 
             }, label: {
                 

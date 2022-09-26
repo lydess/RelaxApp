@@ -26,34 +26,9 @@ struct TrackListView: View {
     
     var body: some View {
         VStack {
-                HStack{
-                    Spacer()
-                    Text("Tracks")
-                            .font(.custom("VarelaRound-Regular", size: 26))
-                            .onAppear(perform: {State.currentlist = debug.setuplist()})
-                            .foregroundColor(Colorassets.gear)
-                    Spacer()
-                    Button(action: {
-                        State.currentscreen = .Options
-                    }, label: {Image(systemName: "gearshape")
-                        .resizable()
-                        .frame(width: 33, height: 33, alignment: .center)
-                        .foregroundColor(Colorassets.gear)
-                    }).buttonStyle(.plain)
-                        .foregroundColor(Colorassets.silver)
-                        .accessibilityLabel("Settings")
-                        .padding(.trailing, 50)
-                }
-                .frame(width: UIScreen.main
-                    .bounds.width, height: 50)
-                .padding(.top, 30)
-                .padding(.bottom, 20)
-                .background(Colorassets.header)
-            
-         
                 TrackListScrollView()
            
-            Spacer()
+            
            
         }
         

@@ -24,6 +24,7 @@ class StateManager: ObservableObject {
     
     
     
+    
      func setupRemoteTransportControls() {
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.addTarget { [unowned self] event in

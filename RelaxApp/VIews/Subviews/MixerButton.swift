@@ -11,6 +11,7 @@ import AVKit
 struct MixerButton: View {
     var attachedplayer: AVAudioPlayer
     var icon:Image
+    var name: String
     @State private var offsetval = 0
     @State private var opacval = 0.0
     @State private var Active = false
@@ -21,38 +22,51 @@ struct MixerButton: View {
         HStack {
             
             
-            Button(action: {
-                if Active {
-                    Active.toggle()
-                    attachedplayer.pause()
-                    withAnimation{offsetval = 0 }
-                    withAnimation{opacval = 0.0}
-                } else {
-                    Active.toggle()
-                    withAnimation{offsetval = -50 }
-                    withAnimation{opacval = 1.0}
-                    attachedplayer.play()
-                }
-                
-            }, label: {
-                ZStack{
+            VStack {
+                Button(action: {
+                    if Active {
+                        Active.toggle()
+                        attachedplayer.pause()
+                        withAnimation{offsetval = 0 }
+                        withAnimation{opacval = 0.0}
+                    } else {
+                        Active.toggle()
+                        withAnimation{offsetval = -50 }
+                        withAnimation{opacval = 1.0}
+                        attachedplayer.play()
+                    }
                     
-                        icon.resizable()
-                            .frame(width: 55, height: 55, alignment: .center)
-                    
-                    
-                   
-                        Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
-                          
-                            .offset(x: CGFloat(offsetval))
-                            .opacity(opacval)
-                    
+                }, label: {
+                    ZStack{
                         
-                }
-                    
-                    
-            })
-            .padding(.bottom, 30)
+                        VStack {
+                            icon.resizable()
+                                .frame(width: 55, height: 55, alignment: .center)
+                                
+                            Text(name)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.leading)
+                                .offset(x: 0, y: -10)
+                                
+                        }
+                        .frame(width: 100, height: 55, alignment: .center)
+                        
+                        
+                       
+                            Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
+                              
+                                .offset(x: CGFloat(offsetval))
+                                .opacity(opacval)
+                        
+                            
+                    }
+                    .padding(.bottom, 30)
+                        
+                        
+                })
+                
+                
+            }
             if Active {
                
                     Slider(

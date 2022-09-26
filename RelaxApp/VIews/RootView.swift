@@ -17,12 +17,13 @@ struct RootView: View {
     var debug = BuiltinSounds()
     
     var body: some View {
-        ZStack {
             VStack{
             switch statem.currentscreen {
             case .HomeScreen:
                 VStack{
-                TrackListView()
+                    Header(title: "Tracks", backbuttonshown: false, settingsbuttonshown: true, helpbuttonshown: false)
+                        .offset(x: 0, y: -40)
+                    TrackListScrollView()
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
                         Gyrostate.activateGyro()
@@ -32,22 +33,30 @@ struct RootView: View {
                         Gyrostate.deactivateGyro()
                     })
                     
+                    .transition(.move(edge: .bottom))
+                    
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
                 }
             case .DetailScreen:
                 VStack{
+                    Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+                        .offset(x: 0, y: -40)
                 SoundDetailView()
-                    .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))
+                    .background(Colorassets.mainback)
+                    
                     Spacer()
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
+                    
                 
                 }
             case .Options:
+                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+                    .offset(x: 0, y: -40)
                 OptionsView()
             case .testcase:
                 VStack {
@@ -55,30 +64,41 @@ struct RootView: View {
                     Button("return"){ globalstate.currentscreen = .HomeScreen }
                 }
             case .BuilltinSounds:
+                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+                    .offset(x: 0, y: -40)
                 DebugView()
+                
             case .Layerdsound:
+                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: true)
+                    .offset(x: 0, y: -40)
                 LayeredSoundView()
+                    .background(Colorassets.mainback)
+                    .transition(.move(edge: .bottom))
+                if statem.isplaying{
+                    PlayBackBar(block: statem.currentPlayingItem)
+                }
                 
             }
             }.onAppear(perform: {
                 statem.setupRemoteTransportControls()
             }
             )
+            .onChange(of: scenePhase) { newphase in
+                if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
+                    statem.PrimaryPlayer.stop()
+                }
             
             
-        }.onChange(of: scenePhase) { newphase in
-            if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
-                statem.PrimaryPlayer.stop()
-            }
+        }.padding()
+            .onAppear(perform: {statem.currentlist = debug.setuplist()})
+            .background(Colorassets.mainback)
             
         }
-        .padding()
-        .ignoresSafeArea()
-        .background(Colorassets.mainback)
         
         
         
-    }
+        
+    
 }
 
 struct RootView_Previews: PreviewProvider {

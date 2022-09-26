@@ -60,10 +60,10 @@ func setuplist() -> [SoundItem] {
                                     sound: .fire,
                                     islayeredsound: true,
                                 layeredsounds: [
-                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain)),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown)),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white)),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire))]
+                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain), name: "Rain"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown), name: "Brown Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white), name: "White Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire), name: "Fire")]
                                    ))
 
 
