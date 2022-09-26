@@ -11,35 +11,50 @@ import AVKit
 struct MixerButton: View {
     var attachedplayer: AVAudioPlayer
     var icon:Image
-    @State private var showvol = false
+    @State private var offsetval = 0
+    @State private var opacval = 0.0
+    @State private var Active = false
     @State private var slider = 1.0
     @State private var isedditng = false
     
     var body: some View {
-        VStack {
+        HStack {
             
             
             Button(action: {
-                if showvol {
-                    showvol.toggle()
+                if Active {
+                    Active.toggle()
                     attachedplayer.pause()
+                    withAnimation{offsetval = 0 }
+                    withAnimation{opacval = 0.0}
                 } else {
-                    showvol.toggle()
+                    Active.toggle()
+                    withAnimation{offsetval = -50 }
+                    withAnimation{opacval = 1.0}
                     attachedplayer.play()
                 }
                 
             }, label: {
                 ZStack{
-                    icon.resizable()
-                        .frame(width: 55, height: 55, alignment: .center)
-                    Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(showvol ? .green:.gray).padding(.bottom,10)
+                    
+                        icon.resizable()
+                            .frame(width: 55, height: 55, alignment: .center)
+                    
+                    
+                   
+                        Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
+                          
+                            .offset(x: CGFloat(offsetval))
+                            .opacity(opacval)
+                    
+                        
                 }
                     
                     
             })
             .padding(.bottom, 30)
-            if showvol {
-                ZStack {
+            if Active {
+               
                     Slider(
                                 value: $slider,
                                 in: 0...1,
@@ -51,19 +66,11 @@ struct MixerButton: View {
                         attachedplayer.volume = Float(slider)
                         print("vol adjusted to \(slider)")
                     }
+                    .frame(width: 100, height: 55)
                     
-                    
-                    .rotationEffect(Angle(degrees: -90))
-                    .frame(width: 100, height: 30, alignment: .center)
-                    
-                    Text("\(Int(slider * 100))")
-                        .padding(.leading,50)
-                }
                 
-            } else {
-                Rectangle().frame(width: 150, height: 90, alignment: .center)
-                    .foregroundColor(.clear)
-                    .background(.clear)
+                
+                
             }
         }
     }

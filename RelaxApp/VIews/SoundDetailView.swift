@@ -135,15 +135,7 @@ struct SoundDetailView: View {
                     })
                 }
                     
-                    Button(action: {
-                        statem.BackgroundPlayers = statem.currentDisplayedItem.layeredsounds
-                        statem.currentscreen = .Layerdsound}, label: {
-                        Image(systemName: "dial.medium")
-                            .resizable()
-                            .frame(width: 44, height: 44, alignment: .center)
-                            .foregroundColor(.pink)
-                            
-                    })
+                    
                     
                     
                 }

@@ -42,6 +42,6 @@ struct NoiseBlock: View {
 
 struct NoiseBlock_Previews: PreviewProvider {
     static var previews: some View {
-        NoiseBlock(backcolor: .red,noisetitle: "Brown noise", textcolor: Colorassets.gear,descripton: "Great for people with ADHD and Autism for quieting loud and chattering minds", image: Image(systemName: "cirlce"), fontsize: 28)
+        NoiseBlock(backcolor: .red,noisetitle: "Brown noise", textcolor: Colorassets.gear,descripton: "Great for people with ADHD and Autism for quieting loud and chattering minds", image: Image(systemName: "cirlce"), fontsize: 18)
     }
 }

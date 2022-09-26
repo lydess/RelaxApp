@@ -13,8 +13,8 @@ import SwiftUI
 class StateManager: ObservableObject {
     @Published var PrimaryPlayer = AVAudioPlayer()
     @Published var BackgroundPlayers = [Layeredsound]()
-    @Published var currentDisplayedItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown, islayeredsound: false)
-    @Published var currentPlayingItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), sound: .brown, islayeredsound: false)
+    @Published var currentDisplayedItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), fontsize: 18, sound: .brown, islayeredsound: false)
+    @Published var currentPlayingItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), fontsize: 18, sound: .brown, islayeredsound: false)
     @Published var currentlist = BuiltinSounds.shared.setuplist()
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0

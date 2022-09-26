@@ -132,6 +132,6 @@ struct PlayBackBar: View {
 
 struct PlayBackBar_Previews: PreviewProvider {
     static var previews: some View {
-        PlayBackBar(block: SoundItem(backcolor: .red, noisetitle: "title", descripton: "desc",  id: UUID(), sound: .white, islayeredsound: false))
+        PlayBackBar(block: SoundItem(backcolor: .red, noisetitle: "title", descripton: "desc",  id: UUID(), fontsize: 18, sound: .white, islayeredsound: false))
     }
 }

@@ -12,11 +12,13 @@ class BuiltinSounds{
     static var shared = BuiltinSounds()
 func setuplist() -> [SoundItem] {
         var corelist = [SoundItem]()
+
     corelist.append(SoundItem(     backcolor: Colorassets.platinum,
                                     noisetitle: "Brown Noise",
                                     descripton: "Deeper form of white noise, known to be helpful for people with ADD or Autism in assisting focus",
                                     image: Image(uiImage: UIImage(named: "Brown")!),
                                     id: UUID(),
+                                    fontsize: 18,
                                     sound: .brown,
                                     islayeredsound: false
                                     
@@ -26,6 +28,7 @@ func setuplist() -> [SoundItem] {
                                     descripton: "Static sound which can neutralise intrusive thoughts",
                                     image: Image(uiImage: UIImage(named: "White")!),
                                     id: UUID(),
+                                    fontsize: 18,
                                     sound: .white,
                                     islayeredsound: false
                                    ))
@@ -34,6 +37,7 @@ func setuplist() -> [SoundItem] {
                                     descripton: "Sounds of rain falling in an open field, calming sense of renewal",
                                     image: Image(uiImage: UIImage(named: "Rain")!),
                                     id: UUID(),
+                                    fontsize: 18,
                                     sound: .rain,
                                     islayeredsound: false
                                     ))
@@ -42,20 +46,24 @@ func setuplist() -> [SoundItem] {
                                     descripton: "Sound of a campfire crackling in the night",
                                     image: Image(uiImage: UIImage(named: "Fire")!),
                                     id: UUID(),
+                                    fontsize: 18,
                                     sound: .fire,
                                     islayeredsound: false
                                    ))
    
-    corelist.append(SoundItem(backcolor: Colorassets.red,
+    corelist.append(SoundItem(backcolor: Colorassets.silver,
                                     noisetitle: "Make Your Own",
                                     descripton: "Use the buttons to build your own sound",
-                                    image: Image(uiImage: UIImage(named: "Debug")!),
+                                    image: Image(uiImage: UIImage(named: "Custom")!),
                                     id: UUID(),
+                                    fontsize: 18,
                                     sound: .fire,
                                     islayeredsound: true,
                                 layeredsounds: [
                                     Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain)),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .rain))]
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown)),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white)),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire))]
                                    ))
 
 

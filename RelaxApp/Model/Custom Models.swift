@@ -14,9 +14,11 @@ struct SoundItem {
     var descripton:String
     var image:Image?
     var id: UUID
+    var fontsize: Int
     var sound: AvailableSounds
     var islayeredsound: Bool
     var layeredsounds = [Layeredsound]()
+    
     
     
 }

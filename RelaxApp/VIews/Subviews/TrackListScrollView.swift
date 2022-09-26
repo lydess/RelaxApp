@@ -31,7 +31,7 @@ struct TrackListScrollView: View {
                                        noisetitle: block.noisetitle,
                                        descripton: block.descripton,
                                        image: block.image,
-                                       id: block.id,
+                                       id: block.id, fontsize: block.fontsize,
                                        sound: block.sound,
                                        islayeredsound: block.islayeredsound,
                                        layeredsounds: block.layeredsounds
@@ -53,7 +53,7 @@ struct TrackListScrollView: View {
                                        textcolor: .black,
                                        descripton: block.descripton,
                                        image: block.image!,
-                                       fontsize: 28
+                                       fontsize: CGFloat(block.fontsize)
                             )
                             block.image?
                                 .resizable()
@@ -64,7 +64,7 @@ struct TrackListScrollView: View {
                             .offset(x: Gyro.rolly / 7, y: animoffsety + Gyro.rollx / 11)
                             .animation(.interactiveSpring(response: 1.0, dampingFraction: 0.55, blendDuration: 2).delay(Double.random(in: 0.1...0.3)), value: openinganim)
                         
-                    }.frame(width: 400, height: 125, alignment: .center)
+                    }.frame(width: 400, height: 100, alignment: .center)
                         .onAppear(perform: {
                             
                             if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
@@ -104,17 +104,21 @@ struct TrackListScrollView: View {
                             descripton: block.descripton,
                             image: block.image,
                             id: block.id,
-                          sound: block.sound, islayeredsound: block.islayeredsound
+                            fontsize: block.fontsize,
+                            sound: block.sound,
+                            islayeredsound: block.islayeredsound
                 )
                 
             }, label: {
+                
                 VStack{
                     NoiseBlock(backcolor: block.backcolor,
                                 noisetitle: block.noisetitle,
                                 textcolor: .black,
                                 descripton: block.descripton,
                                 image: block.image!,
-                                fontsize: 18
+                                fontsize: CGFloat(block.fontsize)
+                               
                     ).frame(width: 180, height: 100, alignment: .center)
                     block.image?
                         .resizable()

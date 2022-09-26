@@ -11,7 +11,6 @@ struct LayeredSoundView: View {
     @StateObject var statem = globalstate
     @State var showpopover = false
     
-    private var gridconfig = GridItem(.fixed(100), spacing: 10, alignment: .center)
     var body: some View {
         VStack {
             HStack{
@@ -26,10 +25,17 @@ struct LayeredSoundView: View {
                 .frame(width: 300, height: 300, alignment: .center)
                 
                 Spacer()
+            Text("sounds")
+                .font(.custom("VarelaRound-Regular", size: 20))
+                .padding(.trailing, 100)
             VStack{
                 ForEach(statem.BackgroundPlayers, id: \.self){ block in
                     VStack {
-                        MixerButton(attachedplayer: block.player, icon:block.image)
+                        HStack {
+                            MixerButton(attachedplayer: block.player, icon:block.image)
+                                .padding(.leading, 50)
+                            Spacer()
+                        }
                     }
                     //TODO remove the force unwrap above
                         
