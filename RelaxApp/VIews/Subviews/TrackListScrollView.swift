@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFAudio
 
 struct TrackListScrollView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -40,6 +41,14 @@ struct TrackListScrollView: View {
                             Task(priority: .background, operation: {withAnimation{
                                 if block.islayeredsound == true {
                                     State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
+                                    State.activemixers = {
+                                        var final = [MixerButton]()
+                                        for x in State.BackgroundPlayers {
+                                            final.append(MixerButton(attachedplayer: x.player, icon: x.image, name: x.name, id: x.id))
+                                        }
+                                        return final
+                                    }()
+                                    print(State.activemixers)
                                     withAnimation(Animation.spring()){State.currentscreen = .Layerdsound}
                                         
                                 }else {
@@ -92,60 +101,72 @@ struct TrackListScrollView: View {
         .padding(.top,15)
                 
 } else {
-    LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 150, content: {
-        ForEach(0...4, id:\.self){ i in
-                let block = State.currentlist[i]
-                
-            Button(action: {
-                
-                State.currentDisplayedItem =
-                SoundItem(backcolor: block.backcolor,
-                            noisetitle: block.noisetitle,
-                            descripton: block.descripton,
-                            image: block.image,
-                            id: block.id,
-                            fontsize: block.fontsize,
-                            sound: block.sound,
-                            islayeredsound: block.islayeredsound,
-                            layeredsounds: block.layeredsounds
-                )
-                
-                if block.islayeredsound == true {
-                    State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
-                    State.currentscreen = .Layerdsound
-                  
-                }else {
-                    State.currentscreen = .DetailScreen
-                }
-            
-                
-                
-                
-            }, label: {
-                
-                VStack{
-                    NoiseBlock(backcolor: block.backcolor,
+    VStack {
+        LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 150, content: {
+            ForEach(0...4, id:\.self){ i in
+                    let block = State.currentlist[i]
+                    
+                Button(action: {
+                    
+                    State.currentDisplayedItem =
+                    SoundItem(backcolor: block.backcolor,
                                 noisetitle: block.noisetitle,
-                                textcolor: .black,
                                 descripton: block.descripton,
-                                image: block.image!,
-                                fontsize: CGFloat(block.fontsize)
-                               
-                    ).frame(width: 180, height: 100, alignment: .center)
-                    block.image?
-                        .resizable()
-                        .frame(width: 180, height: 150, alignment: .center)
-                        .cornerRadius(5)
-                        
-                }
-            }).buttonStyle(.plain)
-                    .task {
-                        State.cellcount += 1
-                        print(State.cellcount)
+                                image: block.image,
+                                id: block.id,
+                                fontsize: block.fontsize,
+                                sound: block.sound,
+                                islayeredsound: block.islayeredsound,
+                                layeredsounds: block.layeredsounds
+                    )
+                    
+                    if block.islayeredsound == true {
+                        State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
+                        State.activemixers = {
+                            var final = [MixerButton]()
+                            for x in State.BackgroundPlayers {
+                                final.append(MixerButton(attachedplayer: x.player, icon: x.image, name: x.name, id: x.id))
+                            }
+                            return final
+                        }()
+                        State.currentscreen = .Layerdsound
+                        print(State.activemixers)
+                      
+                    }else {
+                        State.currentscreen = .DetailScreen
                     }
                 
-            }
-    })
+                    
+                    
+                    
+                }, label: {
+                    
+                    VStack{
+                        NoiseBlock(backcolor: block.backcolor,
+                                    noisetitle: block.noisetitle,
+                                    textcolor: .black,
+                                    descripton: block.descripton,
+                                    image: block.image!,
+                                    fontsize: CGFloat(block.fontsize)
+                                   
+                        ).frame(width: 180, height: 100, alignment: .center)
+                        block.image?
+                            .resizable()
+                            .frame(width: 180, height: 150, alignment: .center)
+                            .cornerRadius(5)
+                            
+                    }
+                    
+                }).buttonStyle(.plain)
+                        .task {
+                            State.cellcount += 1
+                            print(State.cellcount)
+                        }
+                    
+                }
+        })
+        Spacer()
+    }
     
             }
         }

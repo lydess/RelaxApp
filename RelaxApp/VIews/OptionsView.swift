@@ -26,20 +26,10 @@ struct OptionsView: View {
                 #endif
             }
             VStack {
-                HStack {
-                    Button(action: {statem.currentscreen = .HomeScreen}, label: {Image(systemName: "chevron.left")})
-                        .padding()
-                        .foregroundColor(Colorassets.gear)
-                    Spacer()
-                    Text("Settings")
-                        .font(.custom("VarelaRound-Regular.ttf", size: 21))
-                        .offset(x: -20, y: 0)
-                    .foregroundColor(Colorassets.gear)
-                    Spacer()
-                }.padding(.top, 20)
-                   
                 HStack{
                     Text("Move the Play Button to be on the right side of the screen")
+                        .font(.custom("VarelaRound-Regular", size: 20))
+                        .foregroundColor(Colorassets.gear)
                     Spacer()
                     Toggle(isOn: $playbuttontoggle, label: {})
                         .padding(.trailing,50)
@@ -51,6 +41,8 @@ struct OptionsView: View {
                 }
                 HStack{
                     Text("Pause Sounds when the app is hidden")
+                        .font(.custom("VarelaRound-Regular", size: 20))
+                        .foregroundColor(Colorassets.gear)
                     Spacer()
                     Toggle(isOn: $stoponhide, label: {})
                         .padding(.trailing,50)
@@ -60,6 +52,7 @@ struct OptionsView: View {
                             }
 
                 }
+                Spacer()
             }
             Spacer()
         }

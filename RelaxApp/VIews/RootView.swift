@@ -55,7 +55,7 @@ struct RootView: View {
                 
                 }
             case .Options:
-                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+                Header(title: "Options" , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
                     .offset(x: 0, y: -40)
                 OptionsView()
             case .testcase:
@@ -70,7 +70,10 @@ struct RootView: View {
                 
             case .Layerdsound:
                 Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: true)
-                    .offset(x: 0, y: -40)
+                    .ignoresSafeArea()
+                    
+                
+                    
                 LayeredSoundView()
                     .background(Colorassets.mainback)
                     .transition(.move(edge: .bottom))

@@ -17,6 +17,11 @@ struct Header: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
+        VStack{
+            if horizontalSizeClass == .compact && State.currentscreen == .Layerdsound{
+                    Spacer()
+                
+            }
         HStack{
             
             if backbuttonshown == true {
@@ -34,9 +39,13 @@ struct Header: View {
                     .foregroundColor(Colorassets.header)
             }
             Spacer()
-            Text(title)
-                .font(.custom("VarelaRound-Regular", size: 28))
-                .foregroundColor(Colorassets.gear)
+            VStack{
+                
+                Text(title)
+                    .font(.custom("VarelaRound-Regular", size: 28))
+                    .foregroundColor(Colorassets.gear)
+                
+            }
             Spacer()
             if settingsbuttonshown == true {
                 Button(action: {State.currentscreen = .Options}, label: {
@@ -86,6 +95,8 @@ struct Header: View {
         .padding(.top, 30)
         .padding(.bottom, 20)
         .background(Colorassets.header)
+    }
+       Spacer()
     
     }
 }

@@ -8,20 +8,29 @@
 import SwiftUI
 import AVKit
 
-struct MixerButton: View {
-    var attachedplayer: AVAudioPlayer
+struct MixerButton: View, Hashable, Equatable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func ==(lhs: MixerButton, rhs: MixerButton) -> Bool {
+        return lhs.name == rhs.name && lhs.id == rhs.id
+    }
+    
+    @State var attachedplayer: AVAudioPlayer
     var icon:Image
     var name: String
+    var id: UUID
     @State private var offsetval = 0
     @State private var opacval = 0.0
-    @State private var Active = false
+    @State var Active = false
     @State private var slider = 1.0
-    @State private var isedditng = false
+    @State private var isedditng:Bool? = false
+    @State private var statem = globalstate
+    
     
     var body: some View {
         HStack {
-            
-            
             VStack {
                 Button(action: {
                     if Active {
@@ -29,11 +38,15 @@ struct MixerButton: View {
                         attachedplayer.pause()
                         withAnimation{offsetval = 0 }
                         withAnimation{opacval = 0.0}
+                       
+                        
                     } else {
                         Active.toggle()
                         withAnimation{offsetval = -50 }
                         withAnimation{opacval = 1.0}
                         attachedplayer.play()
+                        
+                       
                     }
                     
                 }, label: {
@@ -53,7 +66,7 @@ struct MixerButton: View {
                         
                         
                        
-                            Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
+                        Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
                               
                                 .offset(x: CGFloat(offsetval))
                                 .opacity(opacval)
@@ -88,7 +101,9 @@ struct MixerButton: View {
             }
         }
     }
-    
+    func turnoff() {
+        self.Active = false
+    }
 }
 
 

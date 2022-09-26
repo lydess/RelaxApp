@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+var gsd = globalstate
 struct LayeredSoundView: View {
     @StateObject var statem = globalstate
     @State var showHelpSheet = false
@@ -15,16 +15,18 @@ struct LayeredSoundView: View {
     
     var body: some View {
         VStack {
-           
-              
             statem.currentDisplayedItem.image?
                 .resizable()
                 .frame(width: horizontalSizeClass == .compact ? 300 : UIScreen.main.bounds.width - 200, height: 300, alignment: .center)
                 .padding(.top, horizontalSizeClass == .compact ? 0 : 10)
+                .offset(x: 0, y: horizontalSizeClass == .regular ?  -300 : 0)
             
-            
-                
             HStack {
+                Button("Stop Sounds"){
+                    for x in statem.activemixers {
+                        x.Active = false
+                    }
+                }
                 Text("sounds")
                     .font(.custom("VarelaRound-Regular", size: 20))
                     .foregroundColor(Colorassets.gear)
@@ -33,21 +35,17 @@ struct LayeredSoundView: View {
                 Spacer()
             }
             VStack{
-                ForEach(statem.BackgroundPlayers, id: \.self){ block in
+                ForEach(statem.activemixers, id: \.self){ block in
                     VStack {
                         HStack {
-                            MixerButton(attachedplayer: block.player, icon:block.image, name: block.name)
-                                .padding(.leading, horizontalSizeClass == .compact ? 10: 50)
+                            block
                             Spacer()
                         }
                     }
-                    //TODO remove the force unwrap above
-                        
                 }
+                
             }
-            
-                Spacer()
-            
+            Spacer()
         }
     }
 }

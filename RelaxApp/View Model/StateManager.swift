@@ -21,6 +21,7 @@ class StateManager: ObservableObject {
     @Published var isplaying = false
     @Published var showpage = 0
     @Published var cellcount = 0
+    @Published var activemixers = [MixerButton]()
     
     
     
