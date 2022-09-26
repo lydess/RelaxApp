@@ -55,7 +55,7 @@ func setuplist() -> [SoundItem] {
                                     islayeredsound: true,
                                 layeredsounds: [
                                     Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain)),
-                                Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .rain))]
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .rain))]
                                    ))
 
 
