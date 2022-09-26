@@ -37,7 +37,13 @@ struct TrackListScrollView: View {
                                        layeredsounds: block.layeredsounds
                                     
                             )
-                            Task(priority: .background, operation: {withAnimation{State.currentscreen = .DetailScreen}})
+                            Task(priority: .background, operation: {withAnimation{
+                                if block.islayeredsound = true {
+                                    State.currentscreen = .Layerdsound
+                                }else {
+                                    State.currentscreen = .DetailScreen
+                                }
+                            }})
                             
                             
                         }, label: {
