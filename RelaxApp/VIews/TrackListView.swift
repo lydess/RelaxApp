@@ -43,7 +43,12 @@ struct TrackListView: View {
                         .foregroundColor(Colorassets.silver)
                         .accessibilityLabel("Settings")
                         .padding(.trailing, 50)
-                }.padding(.top, 50)
+                }
+                .frame(width: UIScreen.main
+                    .bounds.width, height: 50)
+                .padding(.top, 30)
+                .padding(.bottom, 20)
+                .background(Colorassets.header)
             
          
                 TrackListScrollView()
