@@ -49,6 +49,10 @@ class RelaxAppUITests: XCTestCase {
         
         
     }
+    
+    func testimage() throws {
+        
+    }
     func testMenuNav() throws
     {
        

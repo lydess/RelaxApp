@@ -65,6 +65,21 @@ func setuplist() -> [SoundItem] {
                                     Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white), name: "White Noise"),
                                     Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire), name: "Fire")]
                                    ))
+    
+    corelist.append(SoundItem(backcolor: Colorassets.silver,
+                                    noisetitle: "Advanced",
+                                    descripton: "lets get weird",
+                                    image: Image(uiImage: UIImage(named: "Debug")!),
+                                    id: UUID(),
+                                    fontsize: 18,
+                                    sound: .fire,
+                                    islayeredsound: true,
+                                layeredsounds: [
+                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain), name: "Rain"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown), name: "Brown Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white), name: "White Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire), name: "Fire")]
+                                   ))
 
 
         return corelist
