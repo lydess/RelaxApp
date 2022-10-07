@@ -208,7 +208,6 @@
 		CF08D30128AA63AB002F30CE /* VIews */ = {
 			isa = PBXGroup;
 			children = (
-				CF7A07CC28D54A4E0048B5D1 /* RootViews */,
 				CF08D30228AA63B4002F30CE /* Subviews */,
 				CF612E9E28AB6AAE00AA8B9C /* TrackListView.swift */,
 				CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */,
@@ -286,13 +285,6 @@
 				CF391CDB28AF3BE800026B70 /* Brown.mp3 */,
 			);
 			path = "Built-in audio";
-			sourceTree = "<group>";
-		};
-		CF7A07CC28D54A4E0048B5D1 /* RootViews */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RootViews;
 			sourceTree = "<group>";
 		};
 		CFBD196728C8580D00F8C6A3 /* RelaxAppUITests */ = {
