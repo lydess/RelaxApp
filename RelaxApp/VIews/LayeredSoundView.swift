@@ -10,44 +10,97 @@ var gsd = globalstate
 struct LayeredSoundView: View {
     @StateObject var statem = globalstate
     @State var showHelpSheet = false
+    @State var swap = false
+    @State var active = false
     
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     var body: some View {
         VStack {
-            statem.currentDisplayedItem.image?
-                .resizable()
-                .frame(width: horizontalSizeClass == .compact ? 300 : UIScreen.main.bounds.width - 200, height: 300, alignment: .center)
-                .padding(.top, horizontalSizeClass == .compact ? 0 : 10)
-                .offset(x: 0, y: horizontalSizeClass == .regular ?  -300 : 0)
+            if horizontalSizeClass == .compact {
+                statem.currentDisplayedItem.image?
+                    .resizable()
+                    //.frame(width: 300, height: 300, alignment: .center)
+                    .frame(minWidth: 300, idealWidth: 300, maxWidth: 300, minHeight: 200, idealHeight: 300, maxHeight: 300, alignment: .center)
+                   
+            } else {
+                statem.currentDisplayedItem.image?
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.width - 200, height: 600, alignment: .center)
+                    .padding(.top, 10)
+            }
+            
+              
             
             HStack {
-                Button("Stop Sounds"){
-                    for x in statem.activemixers {
-                        x.Active = false
-                    }
-                }
                 Text("sounds")
                     .font(.custom("VarelaRound-Regular", size: 20))
                     .foregroundColor(Colorassets.gear)
                     .padding(.leading , horizontalSizeClass == .compact ? 10 : 50)
                     .offset(x: 20, y: 0)
                 Spacer()
-            }
-            VStack{
-                ForEach(statem.activemixers, id: \.self){ block in
-                    VStack {
-                        HStack {
-                            block
-                            Spacer()
+                
+                Button(action: {for x in statem.BackgroundPlayers {
+                    x.player.pause()
+                    
+                }
+                swap.toggle()}, label: {
+                    Text("Stop Playing")
+                        .font(.custom("VarelaRound-Regular", size: 20))
+                        
+                        .padding()
+                    .foregroundColor(Colorassets.gear)
+                    .background(content: {
+                        ZStack {
+                            Rectangle()
+                                .frame(width: 200, height: 45, alignment: .center)
+                                .cornerRadius(40)
+                                .foregroundColor(Colorassets.gear)
+                            Rectangle()
+                                .frame(width: 185, height: 33, alignment: .center)
+                                .foregroundColor(Colorassets.mainback)
+                                .cornerRadius(40)
                         }
                     }
-                }
-                
+                )
+            
+                })
+                Spacer()
             }
-            Spacer()
+            
+                VStack{
+                    if swap {
+                        
+                        ForEach(statem.BackgroundPlayers, id: \.self){ block in
+                            VStack {
+                                HStack {
+                                    MixerButton(attachedplayer: block.player, icon: block.image, name: block.name, id: block.id)
+                                    Spacer()
+                                }
+                            }
+                        }
+                        
+                    } else
+                    {
+                        ForEach(statem.BackgroundPlayers, id: \.self){ block in
+                            VStack {
+                                HStack {
+                                    MixerButton(attachedplayer: block.player, icon: block.image, name: block.name, id: block.id)
+                                    Spacer()
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                .padding(.leading, horizontalSizeClass == .compact ? 10 : 50)
+            
+            //Spacer()
         }
+       
+            
     }
+    
 }
 
 struct LayeredSoundView_Previews: PreviewProvider {

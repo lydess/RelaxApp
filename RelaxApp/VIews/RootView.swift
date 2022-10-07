@@ -13,6 +13,7 @@ let audiohandle = AudioHandler()
 let globalstate = StateManager()
 struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @StateObject var statem = globalstate
     var debug = BuiltinSounds()
     
@@ -22,7 +23,6 @@ struct RootView: View {
             case .HomeScreen:
                 VStack{
                     Header(title: "Tracks", backbuttonshown: false, settingsbuttonshown: true, helpbuttonshown: false)
-                        .offset(x: 0, y: -40)
                     TrackListScrollView()
                     .background(Colorassets.mainback)
                     .onAppear(perform: {
@@ -38,11 +38,11 @@ struct RootView: View {
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
+                    Spacer()
                 }
             case .DetailScreen:
                 VStack{
-                    Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
-                        .offset(x: 0, y: -40)
+                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
                 SoundDetailView()
                     .transition(.move(edge: .bottom))
                     .background(Colorassets.mainback)
@@ -56,8 +56,8 @@ struct RootView: View {
                 }
             case .Options:
                 Header(title: "Options" , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
-                    .offset(x: 0, y: -40)
                 OptionsView()
+                Spacer()
             case .testcase:
                 VStack {
                     Image(systemName: "circle.fill")
@@ -70,7 +70,7 @@ struct RootView: View {
                 
             case .Layerdsound:
                 Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: true)
-                    .ignoresSafeArea()
+                    
                     
                 
                     
@@ -79,7 +79,12 @@ struct RootView: View {
                     .transition(.move(edge: .bottom))
                 if statem.isplaying{
                     PlayBackBar(block: statem.currentPlayingItem)
+                        .background(Colorassets.mainback)
                 }
+                if horizontalSizeClass == .compact {Rectangle().frame(width: UIScreen.main.bounds.width, height: 50)
+                    .foregroundColor(Colorassets.mainback)}
+                
+                
                 
             }
             }.onAppear(perform: {

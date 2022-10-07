@@ -18,10 +18,7 @@ struct Header: View {
     
     var body: some View {
         VStack{
-            if horizontalSizeClass == .compact && State.currentscreen == .Layerdsound{
-                    Spacer()
-                
-            }
+            
         HStack{
             
             if backbuttonshown == true {
@@ -95,10 +92,12 @@ struct Header: View {
         .padding(.top, 30)
         .padding(.bottom, 20)
         .background(Colorassets.header)
+            
     }
-       Spacer()
+       
     
     }
+    
 }
 
 struct Header_Previews: PreviewProvider {

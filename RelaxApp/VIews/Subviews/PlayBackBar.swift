@@ -9,6 +9,7 @@ import SwiftUI
 import AVFAudio
 
 struct PlayBackBar: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @StateObject var statem = globalstate
     let buttonheight = CGFloat(40)
     let buttonwidth = CGFloat(40)
@@ -18,7 +19,7 @@ struct PlayBackBar: View {
     let audiohandle = AudioHandler()
     let defaults = UserDefaults.standard
     var block:SoundItem
-    
+    @State var localplaying = false
     var body: some View {
         VStack {
             ZStack{
@@ -32,17 +33,23 @@ struct PlayBackBar: View {
                 Text(statem.currentPlayingItem.noisetitle)
                     .multilineTextAlignment(.leading)
                     .padding(.bottom, buttonheight + 35)
-                    .offset(x: 48, y: 0)
+                    .offset(x: 48, y: horizontalSizeClass == .compact ? 0 : 40)
+                    
                     Spacer()
                     
                 }
                 if defaults.bool(forKey: "playpos") {
                     HStack{
+                        
                         Button(action: {
+                            print(statem.PrimaryPlayer.isPlaying)
+                            statem.ispaused = false
+                            statem.PrimaryPlayer.play()
                             for i in statem.BackgroundPlayers {
                                 i.player.play()
                             }
-                            statem.PrimaryPlayer.play()
+                            
+                            if statem.PrimaryPlayer.isPlaying == true { localplaying = true } else { localplaying = false}
                         },
                                label: {
                             Image(systemName: "play.fill")
@@ -51,11 +58,16 @@ struct PlayBackBar: View {
                         }).padding([.leading,.bottom,.trailing], buttonpadding)
                             .buttonStyle(.plain)
                             .accessibilityLabel("Play")
+                            .foregroundColor( statem.ispaused ? Colorassets.gear : Colorassets.green)
                         Button(action: {
+                            statem.ispaused = true
                             for i in statem.BackgroundPlayers {
                                 i.player.pause()
                             }
                             statem.PrimaryPlayer.pause()
+                            print(statem.PrimaryPlayer.isPlaying)
+                            if statem.PrimaryPlayer.isPlaying == true { localplaying = true } else { localplaying = false}
+                           
                         },
                                label: {
                             Image(systemName: "pause.fill")
@@ -65,12 +77,16 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
+                            .foregroundColor( statem.ispaused ? Colorassets.green : Colorassets.gear)
                         Button(action: {
+                            statem.isplaying = false
+                            print(statem.isplaying)
                             statem.PrimaryPlayer.stop()
+                            
                             for i in statem.BackgroundPlayers {
                                 i.player.stop()
                             }
-                            statem.isplaying = false
+                            
                         },
                                label: {
                             Image(systemName: "stop.fill")
@@ -78,6 +94,7 @@ struct PlayBackBar: View {
                                 .accessibilityLabel("Stop")
                                 .frame(width: buttonwidth, height: buttonheight, alignment: .center)
                                 .padding([.leading,.bottom,.trailing], buttonpadding)
+                                .foregroundColor(Colorassets.gear)
                             
                         }).buttonStyle(.plain)
                         
@@ -97,7 +114,9 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Play")
+                            .foregroundColor(Colorassets.gear)
                         Button(action: {
+                            statem.ispaused = true
                             for i in statem.BackgroundPlayers {
                                 i.player.pause()
                             }
@@ -108,7 +127,9 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
+                            .foregroundColor( statem.ispaused ? Colorassets.green : Colorassets.gear)
                         Button(action: {
+                            statem.ispaused = false
                             for i in statem.BackgroundPlayers {
                                 i.player.play()
                             }
@@ -118,7 +139,8 @@ struct PlayBackBar: View {
                             Image(systemName: "play.fill").resizable().frame(width: buttonwidth, height: buttonheight, alignment: .center)
                         }).padding(buttonpadding)
                             .buttonStyle(.plain)
-                            .accessibilityLabel("Stop")
+                            .accessibilityLabel("Play")
+                            .foregroundColor( statem.ispaused ? Colorassets.gear : Colorassets.green)
                         
                     }
                     .padding(.leading, buttonoffset)

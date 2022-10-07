@@ -55,6 +55,7 @@ class Colorassets {
     static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .gray)
     static let black = Color(uiColor: UIColor(named: "Black") ?? .brown)
     static let header = Color(uiColor: UIColor(named: "Header") ?? .blue)
+    static let green = Color(uiColor: UIColor(named: "green") ?? .green)
 }
 
 struct Layeredsound: Equatable, Hashable {

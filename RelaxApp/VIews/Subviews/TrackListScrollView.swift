@@ -17,7 +17,7 @@ struct TrackListScrollView: View {
     @State var animoffsety = CGFloat(850)
     @State var animoffsetx = CGFloat(0)
     @State var openinganimcomplete = false
-    private var gridconfig = GridItem(.adaptive(minimum: 150), spacing: 100, alignment: .center)
+    private var gridconfig = GridItem(.adaptive(minimum: 100), spacing: 75, alignment: .center)
     var body: some View {
         VStack {
             if horizontalSizeClass == .compact {
@@ -38,8 +38,12 @@ struct TrackListScrollView: View {
                                        layeredsounds: block.layeredsounds
                                     
                             )
+                            
                             Task(priority: .background, operation: {withAnimation{
                                 if block.islayeredsound == true {
+                                    
+                                    State.PrimaryPlayer.stop()
+                                    State.isplaying = false
                                     State.BackgroundPlayers = State.currentDisplayedItem.layeredsounds
                                     State.activemixers = {
                                         var final = [MixerButton]()
@@ -49,6 +53,9 @@ struct TrackListScrollView: View {
                                         return final
                                     }()
                                     print(State.activemixers)
+                                    State.currentPlayingItem = block
+                                    State.UpdateNowPlaying(block: State.currentDisplayedItem)
+                                    
                                     withAnimation(Animation.spring()){State.currentscreen = .Layerdsound}
                                         
                                 }else {
@@ -107,7 +114,8 @@ struct TrackListScrollView: View {
                     let block = State.currentlist[i]
                     
                 Button(action: {
-                    
+                    State.PrimaryPlayer.stop()
+                    State.isplaying = false
                     State.currentDisplayedItem =
                     SoundItem(backcolor: block.backcolor,
                                 noisetitle: block.noisetitle,
@@ -149,7 +157,7 @@ struct TrackListScrollView: View {
                                     image: block.image!,
                                     fontsize: CGFloat(block.fontsize)
                                    
-                        ).frame(width: 180, height: 100, alignment: .center)
+                        ).frame(width: 200, height: 100, alignment: .center)
                         block.image?
                             .resizable()
                             .frame(width: 180, height: 150, alignment: .center)

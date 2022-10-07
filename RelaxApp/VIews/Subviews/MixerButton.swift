@@ -41,6 +41,7 @@ struct MixerButton: View, Hashable, Equatable {
                        
                         
                     } else {
+                        print(statem.currentDisplayedItem)
                         Active.toggle()
                         withAnimation{offsetval = -50 }
                         withAnimation{opacval = 1.0}
@@ -55,21 +56,21 @@ struct MixerButton: View, Hashable, Equatable {
                         VStack {
                             icon.resizable()
                                 .frame(width: 55, height: 55, alignment: .center)
+                                .foregroundColor(Active ? Colorassets.green : Colorassets.gear)
                                 
                             Text(name)
                                 .lineLimit(2)
                                 .multilineTextAlignment(.leading)
                                 .offset(x: 0, y: -10)
+                                .font(.custom("VarelaRound-Regular", size: 16))
+                                .foregroundColor(.black)
                                 
                         }
                         .frame(width: 100, height: 55, alignment: .center)
                         
                         
                        
-                        Image(systemName: "playpause.fill").resizable().frame(width: 11, height: 11, alignment: .center).foregroundColor(Active ? .green:.gray).padding(.bottom,10)
-                              
-                                .offset(x: CGFloat(offsetval))
-                                .opacity(opacval)
+                        
                         
                             
                     }

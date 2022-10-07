@@ -87,8 +87,10 @@ struct SoundDetailView: View {
                         }
                         statem.PrimaryPlayer.numberOfLoops = 100
                         statem.PrimaryPlayer.play()
-                        statem.isplaying = true
+                        
                         statem.UpdateNowPlaying(block: statem.currentDisplayedItem)
+                        statem.isplaying = true
+                        
                     }, label: {
                             Text("Listen")
                                 .font(.custom("VarelaRound-Regular", size: 24))

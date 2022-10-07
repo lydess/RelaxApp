@@ -19,6 +19,7 @@ class StateManager: ObservableObject {
     @Published var currentscreen = CurrentScreen.HomeScreen
     @Published var musicstatus = 0.0
     @Published var isplaying = false
+    @Published var ispaused = false
     @Published var showpage = 0
     @Published var cellcount = 0
     @Published var activemixers = [MixerButton]()
@@ -42,7 +43,12 @@ class StateManager: ObservableObject {
     func UpdateNowPlaying(block: SoundItem) {
         // Define Now Playing Info
         var nowPlayingInfo = [String : Any]()
-        nowPlayingInfo[MPMediaItemPropertyTitle] = globalstate.currentPlayingItem.noisetitle
+        if globalstate.currentPlayingItem.noisetitle == "Make Your Own" {
+            nowPlayingInfo[MPMediaItemPropertyTitle] = "Your sound"
+        } else {
+            nowPlayingInfo[MPMediaItemPropertyTitle] = globalstate.currentPlayingItem.noisetitle
+        }
+        
 
         if let image = UIImage(named: setString(selectedFile: globalstate.currentDisplayedItem.sound)) {
             nowPlayingInfo[MPMediaItemPropertyArtwork] =

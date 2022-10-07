@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct OptionsView: View {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    
     @State var playbuttontoggle = UserDefaults.standard.bool(forKey: "playpos")
     @State var stoponhide = UserDefaults.standard.bool(forKey: "stoponhide")
     @StateObject var statem = globalstate
@@ -17,7 +19,7 @@ struct OptionsView: View {
             ZStack {
                 #if DEBUG
                 VStack{
-                    Text("").frame(width: 10, height: 100, alignment: .center)
+                    Text("").frame(width: 10, height: 20, alignment: .center)
                 HStack{
                     Button("debug"){statem.currentscreen = .BuilltinSounds}
                     Spacer()
@@ -30,32 +32,39 @@ struct OptionsView: View {
                     Text("Move the Play Button to be on the right side of the screen")
                         .font(.custom("VarelaRound-Regular", size: 20))
                         .foregroundColor(Colorassets.gear)
-                    Spacer()
+                    
                     Toggle(isOn: $playbuttontoggle, label: {})
                         .padding(.trailing,50)
                         .onChange(of: playbuttontoggle) { value in
                             defaults.set(true, forKey: "checkconfig")
                             defaults.set(value, forKey: "playpos")
                             }
-
+                        .offset(x: horizontalSizeClass == .compact ? -0 : -200, y: 0)
+                    
+                    
                 }
                 HStack{
                     Text("Pause Sounds when the app is hidden")
                         .font(.custom("VarelaRound-Regular", size: 20))
+                        
                         .foregroundColor(Colorassets.gear)
-                    Spacer()
+                        
+                    
                     Toggle(isOn: $stoponhide, label: {})
                         .padding(.trailing,50)
                         .onChange(of: stoponhide) { value in
                             defaults.set(true, forKey: "checkconfig")
                             defaults.set(value, forKey: "stoponhide")
                             }
+                        .offset(x: horizontalSizeClass == .compact ? -0 : -200, y: 0)
+                    
 
                 }
-                Spacer()
+                
             }
-            Spacer()
+            
         }
+        Spacer()
     }
 }
 
