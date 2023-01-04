@@ -11,12 +11,12 @@ import AVFAudio
 struct TrackListScrollView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
-    @StateObject var State = globalstate
-    @StateObject var Gyro = Gyrostate
-    @State var openinganim = false
-    @State var animoffsety = CGFloat(850)
-    @State var animoffsetx = CGFloat(0)
-    @State var openinganimcomplete = false
+    @StateObject private var State = globalstate
+    @StateObject private var Gyro = Gyrostate
+    @State private var openinganim = false
+    @State private var animoffsety = CGFloat(850)
+    @State private var animoffsetx = CGFloat(0)
+    @State private var openinganimcomplete = false
     private var gridconfig = GridItem(.adaptive(minimum: 100), spacing: 75, alignment: .center)
     var body: some View {
         VStack {

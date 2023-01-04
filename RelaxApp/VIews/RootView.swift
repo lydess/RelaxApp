@@ -32,9 +32,7 @@ struct RootView: View {
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
                     })
-                    
                     .transition(.move(edge: .bottom))
-                    
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }

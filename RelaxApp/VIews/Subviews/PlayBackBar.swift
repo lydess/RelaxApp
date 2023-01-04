@@ -11,13 +11,13 @@ import AVFAudio
 struct PlayBackBar: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @StateObject var statem = globalstate
-    let buttonheight = CGFloat(40)
-    let buttonwidth = CGFloat(40)
-    let buttonpadding = CGFloat(15)
-    let borderradius = CGFloat(25)
-    let buttonoffset = CGFloat(65)
-    let audiohandle = AudioHandler()
-    let defaults = UserDefaults.standard
+    private let buttonheight = CGFloat(40)
+    private let buttonwidth = CGFloat(40)
+    private let buttonpadding = CGFloat(15)
+    private let borderradius = CGFloat(25)
+    private let buttonoffset = CGFloat(65)
+    private let audiohandle = AudioHandler()
+    private let defaults = UserDefaults.standard
     var block:SoundItem
     @State var localplaying = false
     var body: some View {

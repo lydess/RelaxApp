@@ -12,12 +12,11 @@ struct DebugView: View {
     @State var anim = false
     @State var slide = 0.0
     
- 
     let defaults = UserDefaults.standard
     
     var body: some View {
        VStack {
-           Text("eg")
+           HeaderButton(image: "chevron.left", action: {}, buttonsize: 44, StateContext: statem, NewScreen: .HomeScreen)
            Spacer()
         }
         

@@ -9,13 +9,14 @@ import SwiftUI
 
 struct Header: View {
     @StateObject var State = globalstate
+    
     var title: String
     var backbuttonshown: Bool
     var settingsbuttonshown: Bool
     var helpbuttonshown: Bool
     @State var showsheet = false
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
+    @State var buttonlist = builtinStructs(Statecontext: globalstate)
     var body: some View {
         VStack{
             

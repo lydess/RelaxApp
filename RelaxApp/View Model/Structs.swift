@@ -18,9 +18,6 @@ struct SoundItem {
     var sound: AvailableSounds
     var islayeredsound: Bool
     var layeredsounds = [Layeredsound]()
-    
-    
-    
 }
 
 enum AvailableSounds : String, CaseIterable {
@@ -73,18 +70,61 @@ struct Layeredsound: Equatable, Hashable {
     
 }
 
-struct CurrentHeader {
-    var title: String
-    var leftbuttitle: String
-    var rightbuttitle: String
-    
-    init(title: String, leftbut: String, rightbut: String) {
-        self.title = title
-        self.leftbuttitle = leftbut
-        self.rightbuttitle = rightbut
+class builtinStructs {
+    public var buttons:[HeaderButton]
+    init(Statecontext:StateManager) {
+        var buttonlist = [HeaderButton]()
+        let BacktoHomebutton = HeaderButton(image: Image(systemName: "chevron.left"), buttonsize: 44, StateContext: Statecontext, NewScreen: .HomeScreen, action: nil)
+        let Settings = HeaderButton(image: Image(systemName: "gearshape.circle"), buttonsize: 44, StateContext: Statecontext, NewScreen: .Options, action: nil)
+        let Slider = HeaderButton(image: Image(systemName: ""), action: {}, buttonsize: 44)
+        
     }
 }
 
+struct HeaderButton:View {
+    private var image:Image
+    private var action:() -> Void?
+    private var buttonsize:CGFloat
+    private var StateContext:StateManager?
+    private var NewScreen:CurrentScreen?
+    var me = ["1"]
+    
+    var body: some View {
+        
+        Button(action: {action()}, label: {image})
+            .frame(width: buttonsize, height: buttonsize, alignment: .center)
+    }
+    /// non-transition button
+    init(image: Image, action: @escaping () -> Void, buttonsize: CGFloat) {
+        me.last
+        self.image = image
+        self.action = action
+        self.buttonsize = buttonsize
+    }
+    /// button that provides a transition between views without an action
+    init(image: Image, buttonsize: CGFloat, StateContext:StateManager, NewScreen:CurrentScreen) {
+        self.image = image
+        self.buttonsize = buttonsize
+        self.StateContext = StateContext
+        self.NewScreen = NewScreen
+        self.action = {
+            StateContext.currentscreen = NewScreen }
+        
+    }
+    /// button that provides a transition between views with an action
+    init(image: Image, buttonsize: CGFloat, StateContext:StateManager, NewScreen:CurrentScreen, action: Void? ) {
+        self.image = image
+        self.buttonsize = buttonsize
+        self.StateContext = StateContext
+        self.NewScreen = NewScreen
+        self.action = {
+            action
+            StateContext.currentscreen = NewScreen }
+        
+    }
+    
+    
+}
 
     
     

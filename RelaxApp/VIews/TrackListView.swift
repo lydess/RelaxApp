@@ -14,9 +14,6 @@ struct TrackListView: View {
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @StateObject var State = globalstate
     @StateObject var Gyro = Gyrostate
-   
-    
-    let debug = BuiltinSounds()
     
     
     init() {
@@ -26,10 +23,7 @@ struct TrackListView: View {
     
     var body: some View {
         VStack {
-                TrackListScrollView()
-           
-            
-           
+            TrackListScrollView()
         }
         
     }
