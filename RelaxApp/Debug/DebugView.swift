@@ -16,7 +16,7 @@ struct DebugView: View {
     
     var body: some View {
        VStack {
-           HeaderButton(image: "chevron.left", action: {}, buttonsize: 44, StateContext: statem, NewScreen: .HomeScreen)
+
            Spacer()
         }
         

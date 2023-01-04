@@ -19,12 +19,16 @@ struct RootView: View {
     
     var body: some View {
             VStack{
+                Header()
+                    .frame(width: UIScreen.main.bounds.width, height: 100, alignment: .bottom)
+                    .background(.red)
+                    
             switch statem.currentscreen {
             case .HomeScreen:
                 VStack{
-                    Header(title: "Tracks", backbuttonshown: false, settingsbuttonshown: true, helpbuttonshown: false)
+                    
                     TrackListScrollView()
-                    .background(Colorassets.mainback)
+                    
                     .onAppear(perform: {
                         Gyrostate.activateGyro()
                         globalstate.currentlist = debug.setuplist()
@@ -36,11 +40,11 @@ struct RootView: View {
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
-                    Spacer()
+                    
                 }
             case .DetailScreen:
                 VStack{
-                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+
                 SoundDetailView()
                     .transition(.move(edge: .bottom))
                     .background(Colorassets.mainback)
@@ -53,21 +57,21 @@ struct RootView: View {
                 
                 }
             case .Options:
-                Header(title: "Options" , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
+
                 OptionsView()
-                Spacer()
+                
             case .testcase:
                 VStack {
                     Image(systemName: "circle.fill")
                     Button("return"){ globalstate.currentscreen = .HomeScreen }
                 }
             case .BuilltinSounds:
-                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: false)
-                    .offset(x: 0, y: -40)
+
+                
                 DebugView()
                 
             case .Layerdsound:
-                Header(title: statem.currentDisplayedItem.noisetitle , backbuttonshown: true, settingsbuttonshown: false, helpbuttonshown: true)
+
                     
                     
                 

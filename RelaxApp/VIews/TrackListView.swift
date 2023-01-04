@@ -17,7 +17,7 @@ struct TrackListView: View {
     
     
     init() {
-        UIScrollView.appearance().bounces = false
+        // UIScrollView.appearance().bounces = false
     
       }
     

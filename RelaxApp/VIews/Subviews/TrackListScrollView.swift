@@ -17,7 +17,7 @@ struct TrackListScrollView: View {
     @State private var animoffsety = CGFloat(850)
     @State private var animoffsetx = CGFloat(0)
     @State private var openinganimcomplete = false
-    private var gridconfig = GridItem(.adaptive(minimum: 100), spacing: 75, alignment: .center)
+    private var gridconfig = GridItem(.adaptive(minimum: 100), spacing: 75, alignment: .top)
     var body: some View {
         VStack {
             if horizontalSizeClass == .compact {
@@ -77,7 +77,7 @@ struct TrackListScrollView: View {
                                 .resizable()
                                 .frame(width: 100, height: 100, alignment: .center)
                                 .cornerRadius(5)
-                                .padding()
+                                
                         }).buttonStyle(.plain)
                             .offset(x: Gyro.rolly / 7, y: animoffsety + Gyro.rollx / 11)
                             .animation(.interactiveSpring(response: 1.0, dampingFraction: 0.55, blendDuration: 2).delay(Double.random(in: 0.1...0.3)), value: openinganim)
@@ -105,7 +105,7 @@ struct TrackListScrollView: View {
                     idealHeight: 400,
                     maxHeight: UIScreen.main.bounds.height,
                     alignment: .center)
-        .padding(.top,15)
+        
                 
 } else {
     VStack {
@@ -173,7 +173,7 @@ struct TrackListScrollView: View {
                     
                 }
         })
-        Spacer()
+        
     }
     
             }

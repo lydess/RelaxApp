@@ -74,54 +74,83 @@ class builtinStructs {
     public var buttons:[HeaderButton]
     init(Statecontext:StateManager) {
         var buttonlist = [HeaderButton]()
-        let BacktoHomebutton = HeaderButton(image: Image(systemName: "chevron.left"), buttonsize: 44, StateContext: Statecontext, NewScreen: .HomeScreen, action: nil)
-        let Settings = HeaderButton(image: Image(systemName: "gearshape.circle"), buttonsize: 44, StateContext: Statecontext, NewScreen: .Options, action: nil)
-        let Slider = HeaderButton(image: Image(systemName: ""), action: {}, buttonsize: 44)
-        
+        let BacktoHomebutton = HeaderButton(image: Image(systemName: "gearshape.circle"), StateContext: Statecontext, NewScreen: .HomeScreen, action: nil)
+        let Settings = HeaderButton(image: Image(systemName: "gearshape.circle"), StateContext: Statecontext, NewScreen: .Options, action: nil)
+        let Slider = HeaderButton(image: Image(systemName: "gearshape.circle"), action: {})
+        let Title = HeaderButton(primarycolor: Colorassets.gear, secondarycolor: Colorassets.bleu, title: "mainbar!")
+        buttonlist.append(BacktoHomebutton)
+        buttonlist.append(Title)
+        buttonlist.append(Settings)
+        self.buttons = buttonlist
     }
 }
 
-struct HeaderButton:View {
+struct HeaderButton:View , Identifiable{
+    var id = UUID()
     private var image:Image
     private var action:() -> Void?
-    private var buttonsize:CGFloat
     private var StateContext:StateManager?
     private var NewScreen:CurrentScreen?
-    var me = ["1"]
+    private var isPushable:Bool
+    private var maincolor:Color?
+    private var secondarycolor:Color?
+    private var title:String?
     
     var body: some View {
+        if isPushable {
+            Button(action: {action()}, label: {image.resizable()})
+                .frame(width: 55, height: 55, alignment: .center)
+                //.padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
+        } else {
+            Text(title ?? "")
+                .font(.custom("VarelaRound-Regular", size: 22))
+                //.padding(EdgeInsets(top: 0, leading: 30, bottom: 0, trailing: 30))
+        }
         
-        Button(action: {action()}, label: {image})
-            .frame(width: buttonsize, height: buttonsize, alignment: .center)
     }
-    /// non-transition button
-    init(image: Image, action: @escaping () -> Void, buttonsize: CGFloat) {
-        me.last
+    /// button that performans an action without any transition
+    init(image: Image, action: @escaping () -> Void) {
+
         self.image = image
         self.action = action
-        self.buttonsize = buttonsize
+        self.isPushable = true
+
     }
     /// button that provides a transition between views without an action
-    init(image: Image, buttonsize: CGFloat, StateContext:StateManager, NewScreen:CurrentScreen) {
+    init(image: Image, StateContext:StateManager, NewScreen:CurrentScreen) {
         self.image = image
-        self.buttonsize = buttonsize
         self.StateContext = StateContext
         self.NewScreen = NewScreen
         self.action = {
             StateContext.currentscreen = NewScreen }
+        self.isPushable = true
         
     }
     /// button that provides a transition between views with an action
-    init(image: Image, buttonsize: CGFloat, StateContext:StateManager, NewScreen:CurrentScreen, action: Void? ) {
+    init(image: Image, StateContext:StateManager, NewScreen:CurrentScreen, action: Void? ) {
         self.image = image
-        self.buttonsize = buttonsize
         self.StateContext = StateContext
         self.NewScreen = NewScreen
         self.action = {
             action
             StateContext.currentscreen = NewScreen }
+        self.isPushable = true
         
     }
+    /// a button thats not a button, just text
+    init(primarycolor:Color, secondarycolor:Color, title:String) {
+        self.image = Image(systemName: "")
+        self.StateContext = globalstate
+        self.NewScreen = .HomeScreen
+        self.action = {}
+        self.isPushable = false
+        self.maincolor = primarycolor
+        self.secondarycolor = secondarycolor
+        self.title = title
+        
+    }
+    
+    
     
     
 }
