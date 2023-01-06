@@ -20,10 +20,7 @@ struct OptionsView: View {
                 #if DEBUG
                 VStack{
                     Text("").frame(width: 10, height: 20, alignment: .center)
-                HStack{
-                    Button("debug"){statem.currentscreen = .BuilltinSounds}
-                    Spacer()
-                }
+
                 }
                 #endif
             }
@@ -31,7 +28,7 @@ struct OptionsView: View {
                 HStack{
                     Text("Move the Play Button to be on the right side of the screen")
                         .font(.custom("VarelaRound-Regular", size: 20))
-                        .foregroundColor(Colorassets.gear)
+                        .foregroundColor(ColorAssets.gear)
                     
                     Toggle(isOn: $playbuttontoggle, label: {})
                         .padding(.trailing,50)
@@ -47,7 +44,7 @@ struct OptionsView: View {
                     Text("Pause Sounds when the app is hidden")
                         .font(.custom("VarelaRound-Regular", size: 20))
                         
-                        .foregroundColor(Colorassets.gear)
+                        .foregroundColor(ColorAssets.gear)
                         
                     
                     Toggle(isOn: $stoponhide, label: {})

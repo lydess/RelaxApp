@@ -13,20 +13,40 @@ import SwiftUI
 class StateManager: ObservableObject {
     @Published var PrimaryPlayer = AVAudioPlayer()
     @Published var BackgroundPlayers = [Layeredsound]()
-    @Published var currentDisplayedItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), fontsize: 18, sound: .brown, islayeredsound: false)
-    @Published var currentPlayingItem = SoundItem(backcolor: .red, noisetitle: "Debug", descripton: "Descbug",image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!), id: UUID(), fontsize: 18, sound: .brown, islayeredsound: false)
+    @Published var currentDisplayedItem = SoundItem(backcolor: .red,
+                                                    noisetitle: "Debug",
+                                                    descripton: "Descbug",
+                                                    image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!),
+                                                    id: UUID(), fontsize: 18,
+                                                    sound: .brown,
+                                                    islayeredsound: false)
+    @Published var currentPlayingItem = SoundItem(backcolor: .red,
+                                                  noisetitle: "Debug",
+                                                  descripton: "Descbug",
+                                                  image: Image(uiImage: UIImage(named: "Brown") ?? UIImage(systemName: "circle")!),
+                                                  id: UUID(),
+                                                  fontsize: 18,
+                                                  sound: .brown, islayeredsound: false)
+    
     @Published var currentlist = BuiltinSounds.shared.setuplist()
-    @Published var currentscreen = CurrentScreen.HomeScreen
+    @Published var currentHeader = ScreenPage(ScreenType: .HomeScreen, HeaderDetails: [HeaderItem]())
     @Published var musicstatus = 0.0
     @Published var isplaying = false
     @Published var ispaused = false
     @Published var showpage = 0
     @Published var cellcount = 0
     @Published var activemixers = [MixerButton]()
+    private var IsStartup = true
     
     
-    
-    
+    func handleInitialLaunch() {
+        if IsStartup {
+            ScreenPages.AttachScreensToButtons()
+            self.currentHeader = ScreenPages.HomeView
+            IsStartup = false
+        }
+        
+    }
      func setupRemoteTransportControls() {
         let commandCenter = MPRemoteCommandCenter.shared()
         commandCenter.playCommand.addTarget { [unowned self] event in

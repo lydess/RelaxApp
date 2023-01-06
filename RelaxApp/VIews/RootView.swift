@@ -10,6 +10,7 @@ import SwiftUI
 
 let Gyrostate = GyroManager()
 let audiohandle = AudioHandler()
+
 let globalstate = StateManager()
 struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
@@ -18,17 +19,17 @@ struct RootView: View {
     var debug = BuiltinSounds()
     
     var body: some View {
-            VStack{
+        VStack(spacing: 0){
                 Header()
-                    .frame(width: UIScreen.main.bounds.width, height: 100, alignment: .bottom)
-                    .background(.red)
+                    .frame(width: UIScreen.main.bounds.width, height: 75, alignment: .center)
                     
-            switch statem.currentscreen {
+                    Spacer()
+            switch statem.currentHeader.ScreenType {
             case .HomeScreen:
                 VStack{
                     
                     TrackListScrollView()
-                    
+                        .transition(.move(edge: .leading))
                     .onAppear(perform: {
                         Gyrostate.activateGyro()
                         globalstate.currentlist = debug.setuplist()
@@ -36,7 +37,7 @@ struct RootView: View {
                     .onDisappear(perform: {
                         Gyrostate.deactivateGyro()
                     })
-                    .transition(.move(edge: .bottom))
+                    .transition(.move(edge: .leading))
                     if statem.isplaying{
                         PlayBackBar(block: statem.currentPlayingItem)
                     }
@@ -46,8 +47,8 @@ struct RootView: View {
                 VStack{
 
                 SoundDetailView()
-                    .transition(.move(edge: .bottom))
-                    .background(Colorassets.mainback)
+                    .transition(.move(edge: .leading))
+                    .background(ColorAssets.mainback)
                     
                     Spacer()
                     if statem.isplaying{
@@ -59,11 +60,12 @@ struct RootView: View {
             case .Options:
 
                 OptionsView()
+                    .transition(.move(edge: .leading))
                 
             case .testcase:
                 VStack {
                     Image(systemName: "circle.fill")
-                    Button("return"){ globalstate.currentscreen = .HomeScreen }
+                   
                 }
             case .BuilltinSounds:
 
@@ -71,20 +73,15 @@ struct RootView: View {
                 DebugView()
                 
             case .Layerdsound:
-
-                    
-                    
-                
-                    
                 LayeredSoundView()
-                    .background(Colorassets.mainback)
-                    .transition(.move(edge: .bottom))
+                    .background(ColorAssets.mainback)
+                    .transition(.move(edge: .leading))
                 if statem.isplaying{
                     PlayBackBar(block: statem.currentPlayingItem)
-                        .background(Colorassets.mainback)
+                        .background(ColorAssets.mainback)
                 }
                 if horizontalSizeClass == .compact {Rectangle().frame(width: UIScreen.main.bounds.width, height: 50)
-                    .foregroundColor(Colorassets.mainback)}
+                    .foregroundColor(ColorAssets.mainback)}
                 
                 
                 
@@ -95,15 +92,18 @@ struct RootView: View {
             )
             .onChange(of: scenePhase) { newphase in
                 if newphase == .background && UserDefaults.standard.bool(forKey: "stoponhide") == true {
-                    statem.PrimaryPlayer.stop()
+                    statem.PrimaryPlayer.pause()
                 }
             
             
-        }.padding()
-            .onAppear(perform: {statem.currentlist = debug.setuplist()})
-            .background(Colorassets.mainback)
-            
         }
+            .onAppear(perform: {
+                statem.currentlist = debug.setuplist()
+                globalstate.handleInitialLaunch()
+            })
+            .background(ColorAssets.mainback)
+            
+    }
         
         
         

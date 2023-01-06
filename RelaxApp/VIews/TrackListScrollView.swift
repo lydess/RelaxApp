@@ -19,7 +19,7 @@ struct TrackListScrollView: View {
     @State private var openinganimcomplete = false
     private var gridconfig = GridItem(.adaptive(minimum: 100), spacing: 75, alignment: .top)
     var body: some View {
-        VStack {
+        VStack() {
             if horizontalSizeClass == .compact {
                 ScrollView{
                 ForEach(State.currentlist, id: \.id){ block in
@@ -56,10 +56,10 @@ struct TrackListScrollView: View {
                                     State.currentPlayingItem = block
                                     State.UpdateNowPlaying(block: State.currentDisplayedItem)
                                     
-                                    withAnimation(Animation.spring()){State.currentscreen = .Layerdsound}
+                                    withAnimation(Animation.spring()){State.currentHeader = ScreenPages.LayeredSoundView}
                                         
                                 }else {
-                                    withAnimation(Animation.spring()){State.currentscreen = .DetailScreen}
+                                    withAnimation(Animation.spring()){State.currentHeader = ScreenPages.DetailView}
                                     
                                 }
                             }})
@@ -75,14 +75,15 @@ struct TrackListScrollView: View {
                             )
                             block.image?
                                 .resizable()
-                                .frame(width: 100, height: 100, alignment: .center)
+                                .frame(width: 100, height: 75, alignment: .center)
                                 .cornerRadius(5)
+                                .padding(.trailing, 20)
                                 
                         }).buttonStyle(.plain)
                             .offset(x: Gyro.rolly / 7, y: animoffsety + Gyro.rollx / 11)
                             .animation(.interactiveSpring(response: 1.0, dampingFraction: 0.55, blendDuration: 2).delay(Double.random(in: 0.1...0.3)), value: openinganim)
                         
-                    }.frame(width: 400, height: 100, alignment: .center)
+                    }.frame(width: 400, height: 100, alignment: .top)
                         .onAppear(perform: {
                             
                             if UserDefaults.standard.bool(forKey: "firstlaunch") == false {
@@ -98,13 +99,7 @@ struct TrackListScrollView: View {
                         })
                 }
                     
-            }.frame(minWidth: UIScreen.main.bounds.width,
-                    idealWidth: UIScreen.main.bounds.width,
-                    maxWidth: UIScreen.main.bounds.width,
-                    minHeight: 100,
-                    idealHeight: 400,
-                    maxHeight: UIScreen.main.bounds.height,
-                    alignment: .center)
+            }
         
                 
 } else {
@@ -137,11 +132,11 @@ struct TrackListScrollView: View {
                             }
                             return final
                         }()
-                        State.currentscreen = .Layerdsound
+                        //State.currentscreen = .Layerdsound
                         print(State.activemixers)
                       
                     }else {
-                        State.currentscreen = .DetailScreen
+                        //State.currentscreen = .DetailScreen
                     }
                 
                     

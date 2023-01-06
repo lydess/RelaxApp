@@ -56,7 +56,7 @@ struct MixerButton: View, Hashable, Equatable {
                         VStack {
                             icon.resizable()
                                 .frame(width: 55, height: 55, alignment: .center)
-                                .foregroundColor(Active ? Colorassets.green : Colorassets.gear)
+                                .foregroundColor(Active ? ColorAssets.green : ColorAssets.gear)
                                 
                             Text(name)
                                 .lineLimit(2)

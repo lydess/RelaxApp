@@ -58,7 +58,7 @@ struct PlayBackBar: View {
                         }).padding([.leading,.bottom,.trailing], buttonpadding)
                             .buttonStyle(.plain)
                             .accessibilityLabel("Play")
-                            .foregroundColor( statem.ispaused ? Colorassets.gear : Colorassets.green)
+                            .foregroundColor( statem.ispaused ? ColorAssets.gear : ColorAssets.green)
                         Button(action: {
                             statem.ispaused = true
                             for i in statem.BackgroundPlayers {
@@ -77,7 +77,7 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
-                            .foregroundColor( statem.ispaused ? Colorassets.green : Colorassets.gear)
+                            .foregroundColor( statem.ispaused ? ColorAssets.green : ColorAssets.gear)
                         Button(action: {
                             statem.isplaying = false
                             print(statem.isplaying)
@@ -94,7 +94,7 @@ struct PlayBackBar: View {
                                 .accessibilityLabel("Stop")
                                 .frame(width: buttonwidth, height: buttonheight, alignment: .center)
                                 .padding([.leading,.bottom,.trailing], buttonpadding)
-                                .foregroundColor(Colorassets.gear)
+                                .foregroundColor(ColorAssets.gear)
                             
                         }).buttonStyle(.plain)
                         
@@ -114,7 +114,7 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Play")
-                            .foregroundColor(Colorassets.gear)
+                            .foregroundColor(ColorAssets.gear)
                         Button(action: {
                             statem.ispaused = true
                             for i in statem.BackgroundPlayers {
@@ -127,7 +127,7 @@ struct PlayBackBar: View {
                             
                         }).buttonStyle(.plain)
                             .accessibilityLabel("Pause")
-                            .foregroundColor( statem.ispaused ? Colorassets.green : Colorassets.gear)
+                            .foregroundColor( statem.ispaused ? ColorAssets.green : ColorAssets.gear)
                         Button(action: {
                             statem.ispaused = false
                             for i in statem.BackgroundPlayers {
@@ -140,7 +140,7 @@ struct PlayBackBar: View {
                         }).padding(buttonpadding)
                             .buttonStyle(.plain)
                             .accessibilityLabel("Play")
-                            .foregroundColor( statem.ispaused ? Colorassets.gear : Colorassets.green)
+                            .foregroundColor( statem.ispaused ? ColorAssets.gear : ColorAssets.green)
                         
                     }
                     .padding(.leading, buttonoffset)

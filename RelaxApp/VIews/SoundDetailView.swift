@@ -30,7 +30,7 @@ struct SoundDetailView: View {
                     .gesture(DragGesture(minimumDistance: 100, coordinateSpace: .local)
                         .onChanged{ trans in
                             if trans.startLocation.y < trans.location.y {
-                                statem.currentscreen = .HomeScreen
+                                statem.currentHeader = ScreenPages.HomeView
                             }
                         })
             VStack {
@@ -38,7 +38,7 @@ struct SoundDetailView: View {
                     Text(statem.currentDisplayedItem.descripton)
                     .padding(20)
                     .font(.custom("VarelaRound-Regular", size: 17))
-                    .foregroundColor(Colorassets.black)
+                    .foregroundColor(ColorAssets.black)
                 }
                 HStack{
                     
@@ -62,16 +62,16 @@ struct SoundDetailView: View {
                             .font(.custom("VarelaRound-Regular", size: 24))
                             
                             .padding()
-                        .foregroundColor(Colorassets.gear)
+                        .foregroundColor(ColorAssets.gear)
                         .background(content: {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 95, height: 45, alignment: .center)
                                     .cornerRadius(40)
-                                    .foregroundColor(Colorassets.gear)
+                                    .foregroundColor(ColorAssets.gear)
                                 Rectangle()
                                     .frame(width: 85, height: 33, alignment: .center)
-                                    .foregroundColor(Colorassets.mainback)
+                                    .foregroundColor(ColorAssets.mainback)
                                     .cornerRadius(40)
                             }
                         }
@@ -96,16 +96,16 @@ struct SoundDetailView: View {
                                 .font(.custom("VarelaRound-Regular", size: 24))
                                 
                                 .padding()
-                            .foregroundColor(Colorassets.gear)
+                            .foregroundColor(ColorAssets.gear)
                             .background(content: {
                                 ZStack {
                                     Rectangle()
                                         .frame(width: 95, height: 45, alignment: .center)
                                         .cornerRadius(40)
-                                        .foregroundColor(Colorassets.gear)
+                                        .foregroundColor(ColorAssets.gear)
                                     Rectangle()
                                         .frame(width: 85, height: 33, alignment: .center)
-                                        .foregroundColor(Colorassets.mainback)
+                                        .foregroundColor(ColorAssets.mainback)
                                         .cornerRadius(40)
                                 }
                             })

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-var gsd = globalstate
 struct LayeredSoundView: View {
     @StateObject var statem = globalstate
     @State var showHelpSheet = false
@@ -35,7 +34,7 @@ struct LayeredSoundView: View {
             HStack {
                 Text("sounds")
                     .font(.custom("VarelaRound-Regular", size: 20))
-                    .foregroundColor(Colorassets.gear)
+                    .foregroundColor(ColorAssets.gear)
                     .padding(.leading , horizontalSizeClass == .compact ? 10 : 50)
                     .offset(x: 20, y: 0)
                 Spacer()
@@ -49,16 +48,17 @@ struct LayeredSoundView: View {
                         .font(.custom("VarelaRound-Regular", size: 20))
                         
                         .padding()
-                    .foregroundColor(Colorassets.gear)
+                    .foregroundColor(ColorAssets.gear)
+                    
                     .background(content: {
                         ZStack {
                             Rectangle()
                                 .frame(width: 200, height: 45, alignment: .center)
                                 .cornerRadius(40)
-                                .foregroundColor(Colorassets.gear)
+                                .foregroundColor(ColorAssets.gear)
                             Rectangle()
                                 .frame(width: 185, height: 33, alignment: .center)
-                                .foregroundColor(Colorassets.mainback)
+                                .foregroundColor(ColorAssets.mainback)
                                 .cornerRadius(40)
                         }
                     }
