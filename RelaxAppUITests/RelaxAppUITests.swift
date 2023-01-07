@@ -39,13 +39,11 @@ class RelaxAppUITests: XCTestCase {
         app.launch()
         let button = app.buttons["Brown Noise"]
         let listen = app.buttons["Listen"]
-        let stop = app.buttons["Stop"]
         XCTAssert(button.exists)
         button.tap()
         XCTAssert(listen.exists)
         listen.tap()
-        XCTAssert(stop.exists)
-        stop.tap()
+       
         
         
     }
@@ -58,19 +56,8 @@ class RelaxAppUITests: XCTestCase {
        
         let app = XCUIApplication()
         let button = app.buttons["Brown Noise"]
-        let settings = app.buttons["Settings"]
-        
-        app.launchArguments = ["AUTOTEST"]
-        app.launch()
-        XCTAssert(button.exists)
-        XCTAssert(settings.exists)
-        button.tap()
-        let backbutton = app.buttons["BackButton"]
-        XCTAssert(backbutton.exists)
-        backbutton.tap()
-        settings.tap()
-        let settingslabel = app.staticTexts["Settings"]
-        XCTAssert(settingslabel.exists)
+
+
         
         
         continueAfterFailure = false

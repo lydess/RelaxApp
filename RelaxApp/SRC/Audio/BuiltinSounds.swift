@@ -10,7 +10,7 @@ import SwiftUI
 
 class BuiltinSounds{
     static var shared = BuiltinSounds()
-func setuplist() -> [SoundItem] {
+    func setuplist() -> [SoundItem] {
         var corelist = [SoundItem]()
 
     corelist.append(SoundItem(     backcolor: ColorAssets.platinum,

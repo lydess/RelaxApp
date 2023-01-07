@@ -18,6 +18,8 @@ struct Header: View {
             ForEach(globalstate.currentHeader.HeaderDetails ?? [HeaderItem]()) { currentbutton in
                 Spacer()
                 HeaderButton(HeaderData: currentbutton)
+                    
+                    .offset(x: currentbutton.HeaderType == .StaticTitle ? 35: 0)
                 Spacer()
             }
         }
@@ -38,17 +40,26 @@ struct HeaderButton:View, Identifiable {
     var HeaderData:HeaderItem
     
     var body: some View {
-        if HeaderData.isButton {
-            Button(action: {
-                HeaderData.transitionAction()
-                
-            }, label: {HeaderData.image.resizable()})
+        switch HeaderData.HeaderType {
+        case .Filler:
+            Rectangle().frame(width: 44, height: 44, alignment: .center)
+                .foregroundColor(.red)
+        case .StaticTitle:
+            Text(HeaderData.text ?? "Relax")
+                .font(.custom("VarelaRound-Regular.ttf", size: 29))
+                .foregroundColor(ColorAssets.textbleu)
+        case .Button:
+            Button(action: HeaderData.transitionAction, label: {
+                HeaderData.image
+                .resizable()
+                .foregroundColor(ColorAssets.textbleu)
                 .frame(width: ButtonSize, height: ButtonSize, alignment: .center)
-                //.padding(EdgeInsets(top: 0, leading: 17, bottom: 0, trailing: 17))
-        } else {
-            Text(HeaderData.text)
-                .font(.custom("VarelaRound-Regular", size: textSize))
-                .foregroundColor(ColorAssets.gear)
+            })
+                .offset(x: HeaderData.HeaderPosition == .Right ? 18:0)
+        case .TrackTitle:
+            Text(HeaderData.text ?? "Relax")
+                .font(.custom("VarelaRound-Regular.ttf", size: 29))
+                .foregroundColor(ColorAssets.textbleu)
         }
         
     }

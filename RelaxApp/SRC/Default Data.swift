@@ -19,6 +19,7 @@ class ColorAssets {
     static let black = Color(uiColor: UIColor(named: "Black") ?? .systemPink)
     static let header = Color(uiColor: UIColor(named: "Header") ?? .systemPink)
     static let green = Color(uiColor: UIColor(named: "green") ?? .systemPink)
+    static let textbleu = Color(uiColor: UIColor(named: "TextBleu") ?? .systemPink)
 }
 
 
@@ -32,77 +33,87 @@ class ScreenPages {
 
     static func AttachScreensToButtons() {
         for x in CurrentScreen.allCases {
-
-            let Transition_Home = HeaderItem(Type: .Button, Position: .Right, image: Image(systemName: "chevron.left"), transition: { globalstate.currentHeader = HomeView} )
-            let Transition_Options = HeaderItem(Type: .Button, Position: .Left, image: Image(systemName: "gearshape.fill"), transition: { globalstate.currentHeader = OptionsView} )
-            var Title = HeaderItem(Type: .Title, Position: .Middle)
+            
+            let Transition_Home = HeaderItem(Type: .Button, Position: .Left, image: Image(systemName: "chevron.left"), transition: { globalstate.currentHeader = HomeView} )
+            let Transition_Options = HeaderItem(Type: .Button, Position: .Right, image: Image(systemName: "gearshape.fill"), transition: { globalstate.currentHeader = OptionsView} )
+            var PageTitle = HeaderItem(Type: .StaticTitle, Position: .Middle)
+            var TrackTitle = HeaderItem(Type: .TrackTitle, Position: .Middle)
+            
             
             var HeadersToAdd = [HeaderItem]()
-            switch x {
-            
-            case .HomeScreen:
-                Title.text = "Tracks"
-                HeadersToAdd.append(contentsOf: [
-                Title,
-                Transition_Options
-                ])
-                HomeView.HeaderDetails = HeadersToAdd
-            case .DetailScreen:
-                Title.text = "TrackName"
-                HeadersToAdd.append(contentsOf: [
-                Title,
-                Transition_Home,
-                ])
-                DetailView.HeaderDetails = HeadersToAdd
-            case .BuilltinSounds:
-                break
-            case .Options:
-                Title.text = "Options"
-                HeadersToAdd.append(contentsOf: [
-                Transition_Home,
-                Title,
-                ])
-                OptionsView.HeaderDetails = HeadersToAdd
-            case .testcase:
-                break
-            case .Layerdsound:
-                Title.text = "Sound"
-                HeadersToAdd.append(contentsOf: [
-                Title,
-                Transition_Home
-                ])
-                LayeredSoundView.HeaderDetails = HeadersToAdd
+            do {
+                switch x {
+                    
+                case .HomeScreen:
+                    PageTitle.text = "Tracks"
+                    HeadersToAdd = try BuildHeaderBar(middle: PageTitle, right: Transition_Options, Apperance: .Equidistant)
+                    HomeView.HeaderDetails = HeadersToAdd
+                case .DetailScreen:
+                    PageTitle.text = "TrackName"
+                    HeadersToAdd = try BuildHeaderBar(left: Transition_Home ,middle: TrackTitle, right: Transition_Options, Apperance: .Equidistant)
+                    DetailView.HeaderDetails = HeadersToAdd
+                case .BuilltinSounds:
+                    break
+                case .Options:
+                    PageTitle.text = "Options"
+                    HeadersToAdd = try BuildHeaderBar(left: Transition_Home, middle: PageTitle,  Apperance: .AvoidRight)
+                    OptionsView.HeaderDetails = HeadersToAdd
+                case .testcase:
+                    break
+                case .Layerdsound:
+                    PageTitle.text = "Sound"
+                    HeadersToAdd.append(contentsOf: [
+                        PageTitle,
+                        Transition_Home
+                    ])
+                    LayeredSoundView.HeaderDetails = HeadersToAdd
+                }
+                
             }
-            
+            catch {
+                print("aweful failure \(error)")
+            }
         }
         
         
     }
     
-    func BuildHeaderBar(left:HeaderItem?, middle:HeaderItem?, right:HeaderItem?, Apperance:HeaderSetup) throws -> [HeaderItem] {
-        var HeaderButtons  = [HeaderItem]()
+    static func BuildHeaderBar(left:HeaderItem? = nil, middle:HeaderItem? = nil, right:HeaderItem? = nil, Apperance:HeaderSetup) throws -> [HeaderItem] {
+        var UnOrderedButtons  = [HeaderItem]()
+        var OrderedButtons = [HeaderItem]()
         var FillerItem = HeaderItem(Type: .Filler, Position: .Unknown, image: Image(systemName: ""), transition: {})
-        
-        if let Leftside = left { HeaderButtons.append(Leftside) }
-        if let Middleside = middle { HeaderButtons.append(Middleside) }
-        if let Rightside = right { HeaderButtons.append(Rightside) }
-        
+        var count = 0
+        if let Leftside = left { UnOrderedButtons.append(Leftside) }
+        if let Middleside = middle { UnOrderedButtons.append(Middleside) }
+        if let Rightside = right { UnOrderedButtons.append(Rightside) }
+    
         switch Apperance {
             
         case .Equidistant:
-            break
+            OrderedButtons = UnOrderedButtons
         case .AvoidMiddle:
-            HeaderButtons[2] = HeaderButtons[1]
-            HeaderButtons.insert(FillerItem, at: 1 )
+            
+            for x in UnOrderedButtons {
+                if count ==  1 {OrderedButtons.append(FillerItem)} else { OrderedButtons.append(x) }
+                count += 1
+            }
+            
+           
         case .AvoidRight:
-            HeaderButtons.append(FillerItem)
+            for x in UnOrderedButtons {
+                count += 1
+                if count ==  3 {OrderedButtons.append(FillerItem)} else { OrderedButtons.append(x) }
+                
+            }
         case .AvoidLeft:
-            HeaderButtons[2] = HeaderButtons[1]
-            HeaderButtons[1] = HeaderButtons[0]
-            HeaderButtons.insert(FillerItem, at: 0)
+            for x in UnOrderedButtons {
+                if count ==  0 {OrderedButtons.append(FillerItem)} else { OrderedButtons.append(x) }
+                count += 1
+            }
+            
         }
-        
-        return HeaderButtons
+        count = 0
+        return OrderedButtons
     }
     
 

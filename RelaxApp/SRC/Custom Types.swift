@@ -43,7 +43,8 @@ enum CurrentScreen:CaseIterable {
 
 enum HeaderItemType {
     case Button
-    case Title
+    case StaticTitle
+    case TrackTitle
     case Filler
 }
 

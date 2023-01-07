@@ -21,15 +21,8 @@
 		CF391CEC28AF618700026B70 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CEB28AF618700026B70 /* Rain.mp3 */; };
 		CF391CF228AF74BD00026B70 /* Fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CF391CF128AF74BD00026B70 /* Fire.mp3 */; };
 		CF391D3628AF852500026B70 /* UnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D3528AF852500026B70 /* UnitTests.swift */; };
-		CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
-		CF391D3E28AF85A100026B70 /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CF391D3F28AF85A100026B70 /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
-		CF391D4028AF85A100026B70 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
-		CF391D4128AF85A100026B70 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
-		CF391D4328AF85A100026B70 /* Custom Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Types.swift */; };
 		CF391D4428AF85A100026B70 /* BuiltinSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D34328AA887C002F30CE /* BuiltinSounds.swift */; };
-		CF391D4628AF85A100026B70 /* SoundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */; };
-		CF391D4728AF85A100026B70 /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
 		CF391D4B28B0892600026B70 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
 		CF49E23E28DAB9370073D201 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = CF49E23D28DAB9370073D201 /* Popovers */; };
 		CF612E9B28AB692200AA8B9C /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
@@ -38,10 +31,8 @@
 		CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */; };
 		CF61639728E16544001FC1DB /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61639628E16544001FC1DB /* Header.swift */; };
 		CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
-		CF66A6CF28D82E6A001C379B /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF66A6D028D82E6A001C379B /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF66A6EC28D95F96001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
-		CF66A6ED28D95FBA001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
 		CF66A6EE28D95FBA001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
 		CF66A6F028D97F62001C379B /* MixerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EF28D97F62001C379B /* MixerButton.swift */; };
 		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
@@ -70,10 +61,25 @@
 		CFBD198428C8583800F8C6A3 /* Mayor.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF391CE728AF511500026B70 /* Mayor.ttf */; };
 		CFBD198528C85BC900F8C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
 		CFBD198628C85BC900F8C6A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF08D2D928AA62EC002F30CE /* Assets.xcassets */; };
-		CFBD198828C86CC600F8C6A3 /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
-		CFBD198928C86CCD00F8C6A3 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
-		CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
 		CFBE6CD92967CC6300EE02EA /* Default Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE6CD82967CC6300EE02EA /* Default Data.swift */; };
+		CFBE6CDD29696BB900EE02EA /* Default Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE6CD82967CC6300EE02EA /* Default Data.swift */; };
+		CFBE6CDF29696C2100EE02EA /* MixerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EF28D97F62001C379B /* MixerButton.swift */; };
+		CFBE6CE129696C2800EE02EA /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61639628E16544001FC1DB /* Header.swift */; };
+		CFBE6CE229696C2900EE02EA /* Default Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBE6CD82967CC6300EE02EA /* Default Data.swift */; };
+		CFBE6CE329696C2900EE02EA /* Custom Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9C28AB695300AA8B9C /* Custom Types.swift */; };
+		CFBE6CE429696C2900EE02EA /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
+		CFBE6CE529696C2900EE02EA /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
+		CFBE6CE629696C2900EE02EA /* RelaxAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D528AA62EC002F30CE /* RelaxAppApp.swift */; };
+		CFBE6CE729696C2900EE02EA /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF61639628E16544001FC1DB /* Header.swift */; };
+		CFBE6CE829696C2900EE02EA /* NoiseBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D30328AA63C2002F30CE /* NoiseBlock.swift */; };
+		CFBE6CE929696C2900EE02EA /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF644E9D28B1BF9700270901 /* DebugView.swift */; };
+		CFBE6CEA29696C2900EE02EA /* SoundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612EA028AB6C3600AA8B9C /* SoundDetailView.swift */; };
+		CFBE6CEB29696C2900EE02EA /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF391D4A28B0892600026B70 /* OptionsView.swift */; };
+		CFBE6CEC29696C2900EE02EA /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D2D728AA62EC002F30CE /* RootView.swift */; };
+		CFBE6CED29696C2900EE02EA /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF612E9A28AB692200AA8B9C /* StateManager.swift */; };
+		CFBE6CEE29696C2900EE02EA /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
+		CFBE6CEF29696C2900EE02EA /* MixerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EF28D97F62001C379B /* MixerButton.swift */; };
+		CFBE6CF029696C2900EE02EA /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
 		CFCB764328EFD9BC0028AAB8 /* constant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFCB764228EFD9BC0028AAB8 /* constant.mp3 */; };
 		CFCB764428EFD9BC0028AAB8 /* constant.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFCB764228EFD9BC0028AAB8 /* constant.mp3 */; };
 /* End PBXBuildFile section */
@@ -472,21 +478,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF391D3E28AF85A100026B70 /* PlayBackBar.swift in Sources */,
+				CFBE6CE529696C2900EE02EA /* PlayBackBar.swift in Sources */,
+				CFBE6CE729696C2900EE02EA /* Header.swift in Sources */,
+				CFBE6CE229696C2900EE02EA /* Default Data.swift in Sources */,
+				CFBE6CF029696C2900EE02EA /* LayeredSoundView.swift in Sources */,
+				CFBE6CED29696C2900EE02EA /* StateManager.swift in Sources */,
+				CFBE6CEA29696C2900EE02EA /* SoundDetailView.swift in Sources */,
+				CFBE6CEC29696C2900EE02EA /* RootView.swift in Sources */,
+				CFBE6CE629696C2900EE02EA /* RelaxAppApp.swift in Sources */,
+				CFBE6CE829696C2900EE02EA /* NoiseBlock.swift in Sources */,
 				CF391D4428AF85A100026B70 /* BuiltinSounds.swift in Sources */,
-				CF391D4628AF85A100026B70 /* SoundDetailView.swift in Sources */,
-				CFBD198A28C86CD200F8C6A3 /* OptionsView.swift in Sources */,
-				CF66A6CF28D82E6A001C379B /* TrackListScrollView.swift in Sources */,
-				CF391D4028AF85A100026B70 /* RootView.swift in Sources */,
-				CFBD198828C86CC600F8C6A3 /* GyroManager.swift in Sources */,
-				CF391D4328AF85A100026B70 /* Custom Types.swift in Sources */,
-				CF391D4128AF85A100026B70 /* StateManager.swift in Sources */,
 				CF391D3F28AF85A100026B70 /* AudioHandler.swift in Sources */,
-				CF66A6ED28D95FBA001C379B /* LayeredSoundView.swift in Sources */,
-				CF391D3C28AF85A100026B70 /* NoiseBlock.swift in Sources */,
-				CFBD198928C86CCD00F8C6A3 /* DebugView.swift in Sources */,
-				CF391D4728AF85A100026B70 /* RelaxAppApp.swift in Sources */,
+				CFBE6CEF29696C2900EE02EA /* MixerButton.swift in Sources */,
+				CFBE6CEB29696C2900EE02EA /* OptionsView.swift in Sources */,
 				CF391D3628AF852500026B70 /* UnitTests.swift in Sources */,
+				CFBE6CE429696C2900EE02EA /* GyroManager.swift in Sources */,
+				CFBE6CE329696C2900EE02EA /* Custom Types.swift in Sources */,
+				CFBE6CE929696C2900EE02EA /* DebugView.swift in Sources */,
+				CFBE6CEE29696C2900EE02EA /* TrackListScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,8 +503,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBE6CE129696C2800EE02EA /* Header.swift in Sources */,
 				CFBD197828C8582C00F8C6A3 /* BuiltinSounds.swift in Sources */,
 				CFBD196B28C8580D00F8C6A3 /* RelaxAppUITestsLaunchTests.swift in Sources */,
+				CFBE6CDD29696BB900EE02EA /* Default Data.swift in Sources */,
 				CFBD197C28C8582F00F8C6A3 /* StateManager.swift in Sources */,
 				CFBD196928C8580D00F8C6A3 /* RelaxAppUITests.swift in Sources */,
 				CFBD197B28C8582F00F8C6A3 /* GyroManager.swift in Sources */,
@@ -508,6 +519,7 @@
 				CF66A6EE28D95FBA001C379B /* LayeredSoundView.swift in Sources */,
 				CFBD197A28C8582F00F8C6A3 /* Custom Types.swift in Sources */,
 				CFBD197528C8582A00F8C6A3 /* SoundDetailView.swift in Sources */,
+				CFBE6CDF29696C2100EE02EA /* MixerButton.swift in Sources */,
 				CFBD197928C8582C00F8C6A3 /* DebugView.swift in Sources */,
 				CF66A6D028D82E6A001C379B /* TrackListScrollView.swift in Sources */,
 			);
