@@ -41,7 +41,31 @@ enum CurrentScreen:CaseIterable {
     case Layerdsound
 }
 
-struct ScreenPage {
+enum HeaderItemType {
+    case Button
+    case Title
+    case Filler
+}
+
+enum HeaderPosition {
+    case Left
+    case Middle
+    case Right
+    case Unknown
+}
+
+enum HeaderSetup {
+    case Equidistant
+    case AvoidMiddle
+    case AvoidRight
+    case AvoidLeft
+}
+
+enum UIerrors: Error {
+    case HeaderSetupFailure
+}
+struct ScreenPage: Identifiable {
+    var id = UUID()
     let ScreenType:CurrentScreen
     var HeaderDetails:[HeaderItem]?
     
@@ -56,47 +80,38 @@ struct ScreenPage {
 }
 struct HeaderItem: Identifiable{
     var id = UUID()
-    var isButton:Bool
-    var hasTransition:Bool
+    var HeaderType:HeaderItemType
+    var HeaderPosition:HeaderPosition
     var image:Image
-    var text:String
-    var ImageRef:String?
+    var text:String?
     var attachedScreenPage:ScreenPage?
     var additionalAction:()?
     var transitionAction:() -> Void
     ///Used to create HeaderButton Without a transition
-    init(isButton: Bool, hasTransition: Bool, image: Image, text: String, ImageRef: String? = nil, attachedScreenPage: ScreenPage? = nil, additionalAction: ()? = nil) {
-        self.isButton = isButton
-        self.hasTransition = hasTransition
-        self.image = image
+    init(Type:HeaderItemType, Position:HeaderPosition, text:String? = nil, attachedScreenPage: ScreenPage? = nil, additionalAction: ()? = nil) {
+        self.HeaderType = Type
+        self.HeaderPosition = Position
+        self.image = Image(systemName: "")
         self.text = text
-        self.ImageRef = ImageRef
         self.attachedScreenPage = attachedScreenPage
         self.additionalAction = additionalAction
         self.transitionAction = {}
         if attachedScreenPage != nil {
             self.transitionAction = {
             globalstate.currentHeader = attachedScreenPage!
-                
             }
         }
-       
     }
-    init(isButton: Bool, hasTransition: Bool, image: Image, text: String, ImageRef: String? = nil, attachedScreenPage: ScreenPage? = nil, additionalAction: ()? = nil, transition: @escaping () -> Void) {
-        self.isButton = isButton
-        self.hasTransition = hasTransition
+    init(Type:HeaderItemType, Position:HeaderPosition ,image: Image, text:String? = nil, attachedScreenPage: ScreenPage? = nil, additionalAction: ()? = nil, transition: @escaping () -> Void) {
+        self.HeaderType = Type
+        self.HeaderPosition = Position
         self.image = image
         self.text = text
-        self.ImageRef = ImageRef
         self.attachedScreenPage = attachedScreenPage
         self.additionalAction = additionalAction
         self.transitionAction = {transition()}
-        
-       
     }
-    
 }
-
 
 struct Layeredsound: Equatable, Hashable {
     var id = UUID()

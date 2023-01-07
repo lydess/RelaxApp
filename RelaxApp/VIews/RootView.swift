@@ -61,6 +61,7 @@ struct RootView: View {
 
                 OptionsView()
                     .transition(.move(edge: .leading))
+                    
                 
             case .testcase:
                 VStack {

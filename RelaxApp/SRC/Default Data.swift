@@ -8,17 +8,17 @@
 import Foundation
 import SwiftUI
 class ColorAssets {
-    static let silver = Color(uiColor: UIColor(named: "Silver") ?? .gray)
-    static let mainback = Color(uiColor: UIColor(named: "Rootback") ?? .white)
-    static let playbar = Color(uiColor: UIColor(named: "Playbar") ?? .purple)
-    static let platinum = Color(uiColor: UIColor(named: "Platinum") ?? .brown)
-    static let pink = Color(uiColor: UIColor(named: "Pink") ?? .brown)
-    static let red = Color(uiColor: UIColor(named: "Red") ?? .blue)
-    static let bleu = Color(uiColor: UIColor(named: "Bleu") ?? .blue)
-    static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .gray)
-    static let black = Color(uiColor: UIColor(named: "Black") ?? .brown)
-    static let header = Color(uiColor: UIColor(named: "Header") ?? .blue)
-    static let green = Color(uiColor: UIColor(named: "green") ?? .green)
+    static let silver = Color(uiColor: UIColor(named: "Silver") ?? .systemPink)
+    static let mainback = Color(uiColor: UIColor(named: "Rootback") ?? .systemPink)
+    static let playbar = Color(uiColor: UIColor(named: "Playbar") ?? .systemPink)
+    static let platinum = Color(uiColor: UIColor(named: "Platinum") ?? .systemPink)
+    static let pink = Color(uiColor: UIColor(named: "Pink") ?? .systemPink)
+    static let red = Color(uiColor: UIColor(named: "Red") ?? .systemPink)
+    static let bleu = Color(uiColor: UIColor(named: "Bleu") ?? .systemPink)
+    static let gear = Color(uiColor: UIColor(named: "gearcolor") ?? .systemPink)
+    static let black = Color(uiColor: UIColor(named: "Black") ?? .systemPink)
+    static let header = Color(uiColor: UIColor(named: "Header") ?? .systemPink)
+    static let green = Color(uiColor: UIColor(named: "green") ?? .systemPink)
 }
 
 
@@ -33,10 +33,9 @@ class ScreenPages {
     static func AttachScreensToButtons() {
         for x in CurrentScreen.allCases {
 
-            let Transition_Home = HeaderItem(isButton: true, hasTransition: true, image: Image(systemName: "chevron.backward.circle"), text: "", transition: { globalstate.currentHeader = HomeView} )
-            let Transition_Options = HeaderItem(isButton: true, hasTransition: true, image: Image(systemName: "gearshape.fill"), text: "", transition: { globalstate.currentHeader = OptionsView} )
-            //let Transition_Detail = HeaderItem(isButton: true, hasTransition: true, image: Image(systemName: ""), text: "", transition: { globalstate.currentHeader = DetailView} )
-            var Title = HeaderItem(isButton: false, hasTransition: false, image: Image(systemName: ""), text: "Hello world")
+            let Transition_Home = HeaderItem(Type: .Button, Position: .Right, image: Image(systemName: "chevron.left"), transition: { globalstate.currentHeader = HomeView} )
+            let Transition_Options = HeaderItem(Type: .Button, Position: .Left, image: Image(systemName: "gearshape.fill"), transition: { globalstate.currentHeader = OptionsView} )
+            var Title = HeaderItem(Type: .Title, Position: .Middle)
             
             var HeadersToAdd = [HeaderItem]()
             switch x {
@@ -78,6 +77,32 @@ class ScreenPages {
         }
         
         
+    }
+    
+    func BuildHeaderBar(left:HeaderItem?, middle:HeaderItem?, right:HeaderItem?, Apperance:HeaderSetup) throws -> [HeaderItem] {
+        var HeaderButtons  = [HeaderItem]()
+        var FillerItem = HeaderItem(Type: .Filler, Position: .Unknown, image: Image(systemName: ""), transition: {})
+        
+        if let Leftside = left { HeaderButtons.append(Leftside) }
+        if let Middleside = middle { HeaderButtons.append(Middleside) }
+        if let Rightside = right { HeaderButtons.append(Rightside) }
+        
+        switch Apperance {
+            
+        case .Equidistant:
+            break
+        case .AvoidMiddle:
+            HeaderButtons[2] = HeaderButtons[1]
+            HeaderButtons.insert(FillerItem, at: 1 )
+        case .AvoidRight:
+            HeaderButtons.append(FillerItem)
+        case .AvoidLeft:
+            HeaderButtons[2] = HeaderButtons[1]
+            HeaderButtons[1] = HeaderButtons[0]
+            HeaderButtons.insert(FillerItem, at: 0)
+        }
+        
+        return HeaderButtons
     }
     
 

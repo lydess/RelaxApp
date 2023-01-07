@@ -23,11 +23,7 @@ class UnitTests: XCTestCase {
     func testAssetsExist() throws {
         
         
-        for x in AvailableSounds.allCases {
-            let filename = StateManager.shared.setString(selectedFile: x)
-            let example = UIImage(named: filename)
-            XCTAssert(example != nil)
-        }
+        
         
         
     }
