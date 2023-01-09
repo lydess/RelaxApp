@@ -52,7 +52,7 @@ class BuiltinSounds{
                                    ))
    
     corelist.append(SoundItem(backcolor: ColorAssets.silver,
-                                    noisetitle: "Make Your Own",
+                                    noisetitle: "My Sounds",
                                     descripton: "Use the buttons to build your own sound",
                                     image: Image(uiImage: UIImage(named: "Custom")!),
                                     id: UUID(),
@@ -60,12 +60,13 @@ class BuiltinSounds{
                                     sound: .fire,
                                     islayeredsound: true,
                                 layeredsounds: [
-                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain), name: "Rain"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown), name: "Brown Noise"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white), name: "White Noise"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire), name: "Fire")]
+                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: Audio.SetAudio(fileSelected: .rain), name: "Rain"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: Audio.SetAudio(fileSelected: .brown), name: "Brown Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: Audio.SetAudio(fileSelected: .white), name: "White Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: Audio.SetAudio(fileSelected: .fire), name: "Fire")]
                                    ))
-    
+#if DEBUG
+        
     corelist.append(SoundItem(backcolor: ColorAssets.silver,
                                     noisetitle: "Advanced",
                                     descripton: "lets get weird",
@@ -75,11 +76,13 @@ class BuiltinSounds{
                                     sound: .fire,
                                     islayeredsound: true,
                                 layeredsounds: [
-                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: audiohandle.SetAudio(fileSelected: .rain), name: "Rain"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .brown), name: "Brown Noise"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: audiohandle.SetAudio(fileSelected: .white), name: "White Noise"),
-                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: audiohandle.SetAudio(fileSelected: .fire), name: "Fire")]
+                                    Layeredsound(sound: .rain, image: Image(systemName: "cloud.rain"), player: Audio.SetAudio(fileSelected: .rain), name: "Rain"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: Audio.SetAudio(fileSelected: .brown), name: "Brown Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "waveform.path.ecg"), player: Audio.SetAudio(fileSelected: .white), name: "White Noise"),
+                                    Layeredsound(sound: .brown, image: Image(systemName: "flame"), player: Audio.SetAudio(fileSelected: .fire), name: "Fire")]
                                    ))
+        
+#endif
 
 
         return corelist

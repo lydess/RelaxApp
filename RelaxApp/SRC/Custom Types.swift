@@ -37,15 +37,16 @@ enum CurrentScreen:CaseIterable {
     case DetailScreen
     case BuilltinSounds
     case Options
-    case testcase
+    case DebugView
     case Layerdsound
 }
 
 enum HeaderItemType {
-    case Button
+    case Transition
     case StaticTitle
     case TrackTitle
     case Filler
+    case Alert
 }
 
 enum HeaderPosition {

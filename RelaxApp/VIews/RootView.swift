@@ -8,10 +8,13 @@
 import SwiftUI
 
 
-let Gyrostate = GyroManager()
-let audiohandle = AudioHandler()
+let Gyro = GyroManager()
+let Audio = AudioHandler()
+let RDB = DataBaseHandler()
 
+// Globalstate is always last, it relies on methods from above to properly initalise the initial user state
 let globalstate = StateManager()
+
 struct RootView: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -27,21 +30,24 @@ struct RootView: View {
             switch statem.currentHeader.ScreenType {
             case .HomeScreen:
                 VStack{
-                    
-                    TrackListScrollView()
-                        .transition(.move(edge: .leading))
-                    .onAppear(perform: {
-                        Gyrostate.activateGyro()
-                        globalstate.currentlist = debug.setuplist()
-                    })
-                    .onDisappear(perform: {
-                        Gyrostate.deactivateGyro()
-                    })
-                    .transition(.move(edge: .leading))
-                    if statem.isplaying{
-                        PlayBackBar(block: statem.currentPlayingItem)
+                    if horizontalSizeClass == .regular {
+                        TrackListScrollView().frame(width: UIScreen.main.bounds.width - 100)
+                    } else {
+                        TrackListScrollView()
+                            .transition(.move(edge: .leading))
+                            .onAppear(perform: {
+                                Gyro.activateGyro()
+                                globalstate.currentlist = debug.setuplist()
+                            })
+                            .onDisappear(perform: {
+                                Gyro.deactivateGyro()
+                            })
+                        
+                        if statem.isplaying{
+                            PlayBackBar(block: statem.currentPlayingItem)
+                        }
+                        
                     }
-                    
                 }
             case .DetailScreen:
                 VStack{
@@ -63,11 +69,8 @@ struct RootView: View {
                     .transition(.move(edge: .leading))
                     
                 
-            case .testcase:
-                VStack {
-                    Image(systemName: "circle.fill")
-                   
-                }
+            case .DebugView:
+                DebugView()
             case .BuilltinSounds:
 
                 

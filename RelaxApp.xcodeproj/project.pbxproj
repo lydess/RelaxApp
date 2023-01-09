@@ -35,6 +35,10 @@
 		CF66A6EC28D95F96001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
 		CF66A6EE28D95FBA001C379B /* LayeredSoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */; };
 		CF66A6F028D97F62001C379B /* MixerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF66A6EF28D97F62001C379B /* MixerButton.swift */; };
+		CF7088EC296C1B51001448C1 /* DBhandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7088EA296C1B50001448C1 /* DBhandler.swift */; };
+		CF7088ED296C1B51001448C1 /* DBmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7088EB296C1B51001448C1 /* DBmodel.swift */; };
+		CF7088F1296C1BBA001448C1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = CF7088F0296C1BBA001448C1 /* Realm */; };
+		CF7088F3296C1BBA001448C1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CF7088F2296C1BBA001448C1 /* RealmSwift */; };
 		CF74D6E228ACCE8C003104FF /* PlayBackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */; };
 		CF7A07CE28D557420048B5D1 /* TrackListScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */; };
 		CF8105D128B482320065E13B /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8105D028B482320065E13B /* GyroManager.swift */; };
@@ -127,6 +131,8 @@
 		CF644E9D28B1BF9700270901 /* DebugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		CF66A6EB28D95F96001C379B /* LayeredSoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayeredSoundView.swift; sourceTree = "<group>"; };
 		CF66A6EF28D97F62001C379B /* MixerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerButton.swift; sourceTree = "<group>"; };
+		CF7088EA296C1B50001448C1 /* DBhandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBhandler.swift; sourceTree = "<group>"; };
+		CF7088EB296C1B51001448C1 /* DBmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBmodel.swift; sourceTree = "<group>"; };
 		CF74D6E028ACCAB7003104FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CF74D6E128ACCE8C003104FF /* PlayBackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayBackBar.swift; sourceTree = "<group>"; };
 		CF7A07CD28D557420048B5D1 /* TrackListScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListScrollView.swift; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF7088F3296C1BBA001448C1 /* RealmSwift in Frameworks */,
+				CF7088F1296C1BBA001448C1 /* Realm in Frameworks */,
 				CF49E23E28DAB9370073D201 /* Popovers in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +269,7 @@
 		CF612E9628AB68C000AA8B9C /* SRC */ = {
 			isa = PBXGroup;
 			children = (
+				CF7088EE296C1B5C001448C1 /* Data */,
 				CF612EA428AB716B00AA8B9C /* Audio */,
 				CF612E9A28AB692200AA8B9C /* StateManager.swift */,
 				CF612E9C28AB695300AA8B9C /* Custom Types.swift */,
@@ -277,6 +286,15 @@
 				CF612EA228AB6C6200AA8B9C /* AudioHandler.swift */,
 			);
 			path = Audio;
+			sourceTree = "<group>";
+		};
+		CF7088EE296C1B5C001448C1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CF7088EA296C1B50001448C1 /* DBhandler.swift */,
+				CF7088EB296C1B51001448C1 /* DBmodel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		CF74D6DF28ACB3B5003104FF /* Built-in audio */ = {
@@ -318,6 +336,8 @@
 			name = RelaxApp;
 			packageProductDependencies = (
 				CF49E23D28DAB9370073D201 /* Popovers */,
+				CF7088F0296C1BBA001448C1 /* Realm */,
+				CF7088F2296C1BBA001448C1 /* RealmSwift */,
 			);
 			productName = RelaxApp;
 			productReference = CF08D2D228AA62EC002F30CE /* RelaxApp.app */;
@@ -393,6 +413,7 @@
 			mainGroup = CF08D2C928AA62EC002F30CE;
 			packageReferences = (
 				CF49E23C28DAB9370073D201 /* XCRemoteSwiftPackageReference "Popovers" */,
+				CF7088EF296C1BBA001448C1 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = CF08D2D328AA62EC002F30CE /* Products */;
 			projectDirPath = "";
@@ -465,8 +486,10 @@
 				CF61639728E16544001FC1DB /* Header.swift in Sources */,
 				CF391D4B28B0892600026B70 /* OptionsView.swift in Sources */,
 				CF66A6EC28D95F96001C379B /* LayeredSoundView.swift in Sources */,
+				CF7088EC296C1B51001448C1 /* DBhandler.swift in Sources */,
 				CF644E9E28B1BF9700270901 /* DebugView.swift in Sources */,
 				CF612EA328AB6C6200AA8B9C /* AudioHandler.swift in Sources */,
+				CF7088ED296C1B51001448C1 /* DBmodel.swift in Sources */,
 				CF08D2D628AA62EC002F30CE /* RelaxAppApp.swift in Sources */,
 				CF66A6F028D97F62001C379B /* MixerButton.swift in Sources */,
 				CF08D30428AA63C2002F30CE /* NoiseBlock.swift in Sources */,
@@ -845,6 +868,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		CF7088EF296C1BBA001448C1 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -852,6 +883,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CF49E23C28DAB9370073D201 /* XCRemoteSwiftPackageReference "Popovers" */;
 			productName = Popovers;
+		};
+		CF7088F0296C1BBA001448C1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF7088EF296C1BBA001448C1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		CF7088F2296C1BBA001448C1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF7088EF296C1BBA001448C1 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

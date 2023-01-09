@@ -11,6 +11,7 @@ import MediaPlayer
 import SwiftUI
 
 class StateManager: ObservableObject {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Published var PrimaryPlayer = AVAudioPlayer()
     @Published var BackgroundPlayers = [Layeredsound]()
     @Published var currentDisplayedItem = SoundItem(backcolor: .red,
@@ -42,6 +43,7 @@ class StateManager: ObservableObject {
     func handleInitialLaunch() {
         if IsStartup {
             ScreenPages.AttachScreensToButtons()
+            RDB.InitalDBSetup()
             self.currentHeader = ScreenPages.HomeView
             IsStartup = false
         }

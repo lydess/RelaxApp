@@ -53,16 +53,9 @@ class RelaxAppUITests: XCTestCase {
     }
     func testMenuNav() throws
     {
-       
         let app = XCUIApplication()
         let button = app.buttons["Brown Noise"]
-
-
-        
-        
         continueAfterFailure = false
-        
-        
     }
 
     func testLaunchPerformance() throws {

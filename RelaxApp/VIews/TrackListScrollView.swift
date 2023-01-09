@@ -12,7 +12,7 @@ struct TrackListScrollView: View {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @Environment(\.verticalSizeClass) var verticalSizeClass
     @StateObject private var State = globalstate
-    @StateObject private var Gyro = Gyrostate
+    @StateObject private var gyro = Gyro
     @State private var openinganim = false
     @State private var animoffsety = CGFloat(850)
     @State private var animoffsetx = CGFloat(0)
@@ -104,13 +104,12 @@ struct TrackListScrollView: View {
                 
 } else {
     VStack {
-        LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 150, content: {
+        
+        LazyVGrid(columns: [gridconfig, gridconfig] , alignment: .center, spacing: 125, content: {
             ForEach(0...4, id:\.self){ i in
                     let block = State.currentlist[i]
                     
                 Button(action: {
-                    State.PrimaryPlayer.stop()
-                    State.isplaying = false
                     State.currentDisplayedItem =
                     SoundItem(backcolor: block.backcolor,
                                 noisetitle: block.noisetitle,
@@ -132,16 +131,11 @@ struct TrackListScrollView: View {
                             }
                             return final
                         }()
-                        //State.currentscreen = .Layerdsound
+                        State.currentHeader = ScreenPages.LayeredSoundView
                         print(State.activemixers)
-                      
                     }else {
-                        //State.currentscreen = .DetailScreen
+                        State.currentHeader = ScreenPages.DetailView
                     }
-                
-                    
-                    
-                    
                 }, label: {
                     
                     VStack{
@@ -157,7 +151,6 @@ struct TrackListScrollView: View {
                             .resizable()
                             .frame(width: 180, height: 150, alignment: .center)
                             .cornerRadius(5)
-                            
                     }
                     
                 }).buttonStyle(.plain)
@@ -165,11 +158,12 @@ struct TrackListScrollView: View {
                             State.cellcount += 1
                             print(State.cellcount)
                         }
-                    
                 }
         })
         
+        Spacer()
     }
+    
     
             }
         }

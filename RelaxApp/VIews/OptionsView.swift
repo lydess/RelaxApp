@@ -19,7 +19,9 @@ struct OptionsView: View {
             ZStack {
                 #if DEBUG
                 VStack{
-                    Text("").frame(width: 10, height: 20, alignment: .center)
+                    Button("Debug"){
+                        globalstate.currentHeader = ScreenPages.DebugView
+                    }
 
                 }
                 #endif

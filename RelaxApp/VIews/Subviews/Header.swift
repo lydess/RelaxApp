@@ -14,13 +14,24 @@ struct Header: View {
     @State var currentbuttons = [HeaderButton]()
     @State var CurrentText = ""
     var body: some View {
-        HStack {
-            ForEach(globalstate.currentHeader.HeaderDetails ?? [HeaderItem]()) { currentbutton in
-                Spacer()
-                HeaderButton(HeaderData: currentbutton)
-                    
-                    .offset(x: currentbutton.HeaderType == .StaticTitle ? 35: 0)
-                Spacer()
+        if horizontalSizeClass == .compact {
+            HStack {
+                ForEach(globalstate.currentHeader.HeaderDetails ?? [HeaderItem]()) { currentbutton in
+                    Spacer()
+                    HeaderButton(HeaderData: currentbutton)
+                    //TODO come up with a better way of fixing this responsiveness issue
+                    //The deeeper issue is getting the size class to be available during initial startup before views are loaded, since size class isent known till viewload
+                        .offset(x: currentbutton.HeaderType == .StaticTitle ? -40: 0)
+                    Spacer()
+                }
+            }
+        } else {
+            HStack {
+                ForEach(globalstate.currentHeader.HeaderDetails ?? [HeaderItem]()) { currentbutton in
+                   Spacer()
+                    HeaderButton(HeaderData: currentbutton)
+                    Spacer()
+                }
             }
         }
     }
@@ -33,8 +44,10 @@ struct Header_Previews: PreviewProvider {
 }
 
 struct HeaderButton:View, Identifiable {
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    @State var alertShown = false
     var ButtonSize = CGFloat(36)
-    var textSize = CGFloat(40)
+    var textSize = CGFloat(29)
     var title = globalstate.currentDisplayedItem
     var id = UUID()
     var HeaderData:HeaderItem
@@ -43,23 +56,39 @@ struct HeaderButton:View, Identifiable {
         switch HeaderData.HeaderType {
         case .Filler:
             Rectangle().frame(width: 44, height: 44, alignment: .center)
-                .foregroundColor(.red)
+                .foregroundColor(ColorAssets.mainback)
         case .StaticTitle:
             Text(HeaderData.text ?? "Relax")
-                .font(.custom("VarelaRound-Regular.ttf", size: 29))
+                .font(.custom("VarelaRound-Regular.ttf", size: horizontalSizeClass == .compact ? textSize:textSize + 15))
                 .foregroundColor(ColorAssets.textbleu)
-        case .Button:
+        case .Transition:
             Button(action: HeaderData.transitionAction, label: {
-                HeaderData.image
-                .resizable()
-                .foregroundColor(ColorAssets.textbleu)
-                .frame(width: ButtonSize, height: ButtonSize, alignment: .center)
+                if HeaderData.image == Image(systemName: "chevron.left") {
+                    HeaderData.image
+                        .resizable()
+                        .foregroundColor(ColorAssets.textbleu)
+                        .frame(width: ButtonSize - (ButtonSize / 3), height: ButtonSize / 1.1, alignment: .center)
+                } else {
+                    HeaderData.image
+                        .resizable()
+                        .foregroundColor(ColorAssets.textbleu)
+                        .frame(width: ButtonSize, height: ButtonSize, alignment: .center)
+                }
             })
-                .offset(x: HeaderData.HeaderPosition == .Right ? 18:0)
+             
         case .TrackTitle:
-            Text(HeaderData.text ?? "Relax")
-                .font(.custom("VarelaRound-Regular.ttf", size: 29))
+            Text(globalstate.currentDisplayedItem.noisetitle)
+                .font(.custom("VarelaRound-Regular.ttf", size: horizontalSizeClass == .compact ? textSize:textSize + 15))
                 .foregroundColor(ColorAssets.textbleu)
+        
+        case .Alert:
+            Button(action: {alertShown.toggle()}, label: {Image(systemName: "questionmark.circle")
+                    .resizable()
+                    .frame(width: ButtonSize, height: ButtonSize, alignment: .center)
+                    .foregroundColor(ColorAssets.textbleu)
+            })
+                .alert("Tap the Symbols to add tracks, and Mix them to create your own soothing sound!", isPresented: $alertShown, actions: {})
+                
         }
         
     }

@@ -52,7 +52,7 @@ struct SoundDetailView: View {
                         for i in statem.BackgroundPlayers {
                             i.player.stop()
                         }
-                        statem.PrimaryPlayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
+                        statem.PrimaryPlayer = Audio.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
                         statem.PrimaryPlayer.numberOfLoops = 100
                         statem.PrimaryPlayer.play()
                         statem.isplaying = true
@@ -81,7 +81,7 @@ struct SoundDetailView: View {
                 } else {
                     Button(action: {
                         statem.currentPlayingItem = statem.currentDisplayedItem
-                        statem.PrimaryPlayer = audiohandle.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
+                        statem.PrimaryPlayer = Audio.SetAudio(fileSelected: statem.currentDisplayedItem.sound)
                         for i in statem.BackgroundPlayers {
                             i.player.stop()
                         }

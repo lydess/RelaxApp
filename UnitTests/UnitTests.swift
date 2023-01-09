@@ -9,7 +9,8 @@ import XCTest
 import UIKit
 import Foundation
 import SwiftUI
-
+import Realm
+import RealmSwift
 class UnitTests: XCTestCase {
 
     override func setUpWithError() throws {
@@ -22,11 +23,25 @@ class UnitTests: XCTestCase {
 
     func testAssetsExist() throws {
         
-        
-        
-        
+        let Gyrostate = GyroManager()
+        let audiohandle = AudioHandler()
+        var teststate = StateManager()
+        teststate.handleInitialLaunch()
+        ScreenPages.AttachScreensToButtons()
         
     }
+    
+    func testdbfunctions() throws {
+
+        
+        var dbtest = RDB
+        RDB.testadd()
+        RDB.testread()
+        RDB.cleardb()
+        RDB.findpath()
+        
+    }
+
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
